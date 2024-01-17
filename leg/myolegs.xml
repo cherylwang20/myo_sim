@@ -13,9 +13,11 @@
     <compiler angle="radian" meshdir=".." texturedir=".."/>
 
     <worldbody>
-        <site name="pelvis_target" size="0.02" pos="0 0 .92"/>
+        <site name="pelvis_target" size="0.02" pos="0 0 .91"/>
+        <!-- <site name="calcn_l_target" pos = "0 0 0.31" /> -->
         <body name="root" pos="0 0 1" euler="0 0 -1.57">
             <site name="pelvis" size="0.02"/>
+            <!-- <site name="calcn_l" size = "0.02"/> -->
             <include file="assets/myolegs_chain.xml"/>
             <freejoint/>
         </body>
