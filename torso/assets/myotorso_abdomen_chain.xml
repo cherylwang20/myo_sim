@@ -52,6 +52,10 @@
             <site name="thoracis_spine" pos="-.018 .194 0" class="myotorso_marker"/>
             <site name="chest" pos="0.084 0.221 0" class="myotorso_marker"/>
 
+            <site name="LSHO" pos="0.004 0.421 -0.2" class="myo_scale_marker"/>
+            <site name="RSHO" pos="0.004 0.421 0.2" class="myo_scale_marker"/>
+            <site name="C7" pos="-0.054 0.441 -0.0" class="myo_scale_marker"/>
+            <site name="CLAV" pos="0.04 0.381 -0.0" class="myo_scale_marker"/>
         </body>
     </body>
 
