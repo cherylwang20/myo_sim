@@ -9,10 +9,10 @@
 ====================================================== -->
 
     <include file="../scene/myosuite_scene_noPedestal.xml"/>
-    <include file="../torso/assets/myotorso_abdomen_assets.xml"/>
-    <include file="../leg/assets/myolegs_assets.xml"/>
-    <include file="../leg/assets/myolegs_tendon.xml"/>
-    <include file="../leg/assets/myolegs_muscle.xml"/>
+    <include file="../torso/assets_huawei/myotorso_abdomen_assets.xml"/>
+    <include file="../leg/assets_huawei/myolegs_assets.xml"/>
+    <include file="../leg/assets_huawei/myolegs_tendon.xml"/>
+    <include file="../leg/assets_huawei/myolegs_muscle.xml"/>
     <!-- <include file="../leg/assets/myolegs_tendon_act.xml"/> -->
     <!-- <include file="../leg/assets/myolegs_jnt_act.xml"/> -->
 
@@ -22,8 +22,8 @@
     <worldbody>
         <body name="root" pos="0 0 1" euler="0 0 -1.57">
             <freejoint name="root"/>
-            <include file="../torso/assets/myotorso_abdomen_chain.xml"/>
-            <include file="../leg/assets/myolegs_chain.xml"/>
+            <include file="../torso/assets_huawei/myotorso_abdomen_chain.xml"/>
+            <include file="../leg/assets_huawei/myolegs_chain.xml"/>
         </body>
     </worldbody>
 

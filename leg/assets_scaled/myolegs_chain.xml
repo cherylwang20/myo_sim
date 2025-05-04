@@ -92,8 +92,9 @@
         <site name="tfl_l-P1" pos="-0.0311 0.0214 -0.1241"/>
         <site name="RASI" pos="0.0095 0.0181 0.1285" class="myo_scale_marker"/>
         <site name="LASI" pos="0.0095 0.0181 -0.1285" class="myo_scale_marker"/>
-        <site name="RPSI" pos="-0.155 0.035 0.045" class="myo_scale_marker"/>
-        <site name="LPSI" pos="-0.155 0.035 -0.045" class="myo_scale_marker"/>
+        <site name="SACR" pos="-0 0.035 -0.045" class="myo_scale_marker"/>
+        <!--site name="RPSI" pos="-0.155 0.035 0.045" class="myo_scale_marker"/>
+        <site name="LPSI" pos="-0.155 0.035 -0.045" class="myo_scale_marker"/>-->
         <site name="Gmax1_at_pelvis_r_site_glmax1_r_side" pos="-0.0929654 -0.0868446 0.124923"/>
         <site name="Gmax2_at_pelvis_r_site_glmax2_r_side" pos="-0.13018 -0.1232159 0.1219181"/>
         <site name="Gmax3_at_pelvis_r_site_glmax3_r_side" pos="-0.0530013 -0.127251 0.0521302"/>
