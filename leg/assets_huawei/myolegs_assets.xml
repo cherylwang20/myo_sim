@@ -70,19 +70,19 @@
 
         <mesh file="../myo_sim/meshes/r_pelvis.stl" name="r_pelvis" scale = '1.1879 1.1879 1.1879'/>
         <mesh file="../myo_sim/meshes/l_pelvis.stl" name="l_pelvis" scale = '1.1879 1.1879 1.1879'/>
-        <mesh file="../myo_sim/meshes/r_femur.stl" name="r_femur" scale = '0.892 0.892 0.892'/>
-        <mesh file="../myo_sim/meshes/r_tibia.stl" name="r_tibia"/>
-        <mesh file="../myo_sim/meshes/r_fibula.stl" name="r_fibula"/>
-        <mesh file="../myo_sim/meshes/r_talus.stl" name="r_talus"/>
-        <mesh file="../myo_sim/meshes/r_foot.stl" name="r_foot"/>
-        <mesh file="../myo_sim/meshes/r_bofoot.stl" name="r_bofoot"/>
+        <mesh file="../myo_sim/meshes/r_femur.stl" name="r_femur" scale = '1.2148 1.2148 1.2148'/>
+        <mesh file="../myo_sim/meshes/r_tibia.stl" name="r_tibia" scale = '1.0322 1.0322 1.0322'/>
+        <mesh file="../myo_sim/meshes/r_fibula.stl" name="r_fibula" scale = '1.0322 1.0322 1.0322'/>
+        <mesh file="../myo_sim/meshes/r_talus.stl" name="r_talus" scale = '1.033 1.033 1.033'/>
+        <mesh file="../myo_sim/meshes/r_foot.stl" name="r_foot" scale = '1.033 1.033 1.033'/>
+        <mesh file="../myo_sim/meshes/r_bofoot.stl" name="r_bofoot" scale = '1.033 1.033 1.033'/>
         <mesh file="../myo_sim/meshes/r_patella.stl" name="r_patella"/>
-        <mesh file="../myo_sim/meshes/l_femur.stl" name="l_femur" scale = '0.892 0.892 0.892'/>
-        <mesh file="../myo_sim/meshes/l_tibia.stl" name="l_tibia"/>
-        <mesh file="../myo_sim/meshes/l_fibula.stl" name="l_fibula"/>
-        <mesh file="../myo_sim/meshes/l_talus.stl" name="l_talus"/>
-        <mesh file="../myo_sim/meshes/l_foot.stl" name="l_foot"/>
-        <mesh file="../myo_sim/meshes/l_bofoot.stl" name="l_bofoot"/>
+        <mesh file="../myo_sim/meshes/l_femur.stl" name="l_femur" scale = '1.2148 1.2148 1.2148'/>
+        <mesh file="../myo_sim/meshes/l_tibia.stl" name="l_tibia" scale = '1.0322 1.0322 1.0322'/>
+        <mesh file="../myo_sim/meshes/l_fibula.stl" name="l_fibula" scale = '1.0322 1.0322 1.0322'/>
+        <mesh file="../myo_sim/meshes/l_talus.stl" name="l_talus" scale = '1.033 1.033 1.033'/>
+        <mesh file="../myo_sim/meshes/l_foot.stl" name="l_foot" scale = '1.033 1.033 1.033'/>
+        <mesh file="../myo_sim/meshes/l_bofoot.stl" name="l_bofoot" scale = '1.033 1.033 1.033'/>
         <mesh file="../myo_sim/meshes/l_patella.stl" name="l_patella"/>
     </asset>
 

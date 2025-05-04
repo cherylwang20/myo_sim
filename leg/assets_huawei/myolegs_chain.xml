@@ -175,7 +175,7 @@
             <site name="AMmid_at_femshaft_r_site_addmagMid_r_side" pos="-0.0100694 -0.108641 0.0230602"/>
             <site name="AMdist_at_femshaft_r_site_addmagDist_r_side" pos="0.0146959 -0.298529 0.0158276"/>
             <site name="AMisch_at_condyles_r_site_addmagIsch_r_side" pos="-0.0360341 -0.49032 -0.0446456"/>
-            <body name="tibia_r" pos="-0.00000046 -0.404425 -0.00126526">
+            <body name="tibia_r" pos="-4.6e-07 -0.404425 -0.00126526">
                 <site name="knee_r" class="myo_leg_marker"/>
                 <inertial pos="-0.005 -0.175 0.0025" quat="0.70204 -0.711847 0.0203385 0" mass="3.8" diaginertia="0.0771589 0.0771589 0.00690387" />
                 <joint axis="0.992246 0.123982 -0.00878916" name="knee_angle_r_translation2" pos="0 0 0" range="7.69254e-11 0.006792" type="slide"/>
@@ -389,7 +389,7 @@
             <site name="AMmid_at_femshaft_l_site_addmagMid_l_side" pos="-0.0100694 -0.108641 -0.0230602"/>
             <site name="AMdist_at_femshaft_l_site_addmagDist_l_side" pos="0.0146959 -0.298529 -0.0158276"/>
             <site name="AMisch_at_condyles_l_site_addmagIsch_l_side" pos="-0.0360341 -0.49032 0.0446456"/>
-            <body name="tibia_l" pos="-0.00000046 -0.404425 0.00126526">
+            <body name="tibia_l" pos="-4.6e-07 -0.404425 0.00126526">
                 <site name="knee_l" class="myo_leg_marker"/>
                 <inertial pos="-0.005 -0.175 -0.0025" quat="0.712137 -0.701754 0.0200501 0" mass="3.8" diaginertia="0.0771589 0.0771589 0.00690387" />
                 <joint axis="-0.992246 -0.123982 -0.00878916" name="knee_angle_l_translation2" pos="0 0 0" range="-0.006792 -7.69254e-11" type="slide"/>
