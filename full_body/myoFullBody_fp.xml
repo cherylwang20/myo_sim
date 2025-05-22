@@ -11,14 +11,23 @@
     <include file="assets/myoFullBody_assets.xml"/>
 
     <worldbody>
-        <body name="Full Body" pos="-.025 0.1 1">
+        <body name="Full Body" pos="0 0 1.11">
             <include file="assets/myoFullBody_body.xml"/>
             <freejoint/>
         </body>
+
+        <body name="plate" pos="0 0 0.170">
+            <joint type="slide" axis="1 0 0" name="slide_joint" limited="false" damping="10000" stiffness="50000" armature="1"/>
+            <joint type="slide" axis="0 1 0" name="slide_y_joint" limited="false" damping="10000" stiffness="50000" armature="1"/>
+            <inertial pos="0 0 0" mass="80" diaginertia="0.0001 0.0001 0.0001"/>
+            <geom type="box" size="0.8 0.8 0.03" group="0" rgba="0.5 0.2 0.1 1"/>
+        </body>
     </worldbody>
 
+
+
     <keyframe>
-        <key qpos='-0.025 0.1 1 1 0 0 0 0 0 0 0 0 0 0.1 0.1 0.7 0.08395 -0.02023 0.0130636 0.0430074 0.008183 0.02969 0.1048 0.039303 0.0226632 -0.0787215 0.0032808 -0.010751 -0.5236 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0'/>
+        <key qpos='0 0 1.11 0.707388 0 0 -0.706825 0 0 0 -0.305 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26168 -0.251346 -0.076791 0 0 0.57585 0 0 0.352562 0 0 0 0 0 0.26168 -0.251346 -0.076791 0 0 0.57585 -0.001678 0 0.352562 0 0 0 0 0 0 0'/>
     </keyframe>
 
 </mujoco>
