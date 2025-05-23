@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<mujoco model="MyoSuite's MyoFullBody Model">
+
+<!-- =================================================
+	Copyright 2024
+	Model	:: MyoFull (MuJoCoV2.0)
+	Author	:: Huiyi Wang, Guillaume Durandau, Vikash Kumar (vikashplus@gmail.com), Vittorio Caggiano
+	License	:: Under Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+====================================================== -->
+    <include file="../scene/myosuite_scene.xml"/>
+    <include file="assets/myoFullBody_assets.xml"/>
+    <include file="../exo_sim/ankle/includes/ut_exo_assets_dx.xml"/>
+    <include file="../exo_sim/ankle/includes/ut_exo_assets_sx.xml"/>
+
+    <worldbody>
+        <body name="Full Body" pos="0 0 1.15">
+            <include file="assets/myoFullBody_body.xml"/>
+            <freejoint/>
+        </body>
+
+        <body name="utexo_root_dx" pos="-.15 .03 0.16" euler="0 0 2.9">
+            <freejoint name="utexo_root_dx"/>
+            <include file="../exo_sim/ankle/includes/ut_exo_chain_dx.xml"/>
+        </body>
+
+        <body name="utexo_root_sx" pos=".1 .27 0.16" euler="0 0 0.2">
+            <freejoint name="utexo_root_sx"/>
+            <include file="../exo_sim/ankle/includes/ut_exo_chain_sx.xml"/>
+        </body>
+
+        <body name="plate" pos="0 0 0.170">
+            <joint type="slide" axis="1 0 0" name="slide_joint" limited="false" damping="10000" stiffness="50000" armature="1"/>
+            <joint type="slide" axis="0 1 0" name="slide_y_joint" limited="false" damping="10000" stiffness="50000" armature="1"/>
+            <inertial pos="0 0 0" mass="80" diaginertia="0.0001 0.0001 0.0001"/>
+            <geom type="box" size="0.8 0.8 0.03" group="0" rgba="0.5 0.2 0.1 1"/>
+        </body>
+    </worldbody>
+
+    <equality>
+
+        <!-- EXO_L:-->
+        <weld body2="part3_dx" body1="calcn_r"/>
+        <connect body1="part3_sx" anchor="-0.17 0.05 0.005" body2="calcn_l"/>
+        <connect body1="part3_sx" anchor="-0.25 0.05 0.004" body2="talus_l"/>
+        <connect body1="part2_sx" anchor="-.24 .05 .1" body2="tibia_l"/>
+
+         <!-- EXO_R:-->
+        <weld body1="calcn_r" body2="part3_dx"/>
+        <connect body1="part3_dx" anchor="-0.071 0.05 0.005" body2="calcn_r"/>
+        <connect body1="part3_dx" anchor="0.005 0.06 0.005" body2="talus_r"/>    
+        <connect body1="part2_dx" anchor=".012 .05 .1" body2="tibia_r"/> 
+
+    </equality>
+
+
+
+
+    <!--keyframe>
+        <key qpos='0 0 1.11 0.707388 0 0 -0.706825 0 0 0 -0.305 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26168 -0.251346 -0.076791 0 0 0.57585 0 0 0.352562 0 0 0 0 0 0.26168 -0.251346 -0.076791 0 0 0.57585 -0.001678 0 0.352562 0 0 0 0 0 0 0'/>
+    </keyframe>-->
+
+</mujoco>
