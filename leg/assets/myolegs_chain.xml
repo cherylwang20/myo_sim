@@ -92,7 +92,7 @@
         <site name="tfl_l-P1" pos="-0.0311 0.0214 -0.1241"/>
         <site name="RASI" pos="0.0095 0.0181 0.1285" class="myo_scale_marker"/>
         <site name="LASI" pos="0.0095 0.0181 -0.1285" class="myo_scale_marker"/>
-        <site name="SACR" pos="-0.14 0.035 0" class="myo_scale_marker"/>
+        <site name="SACR" pos="-0.16 -0.025 0" class="myo_scale_marker"/>
         <!--site name="RPSI" pos="-0.155 0.035 0.045" class="myo_scale_marker"/>
         <site name="LPSI" pos="-0.155 0.035 -0.045" class="myo_scale_marker"/>-->
         <site name="Gmax1_at_pelvis_r_site_glmax1_r_side" pos="-0.0929654 -0.0868446 0.124923"/>
@@ -160,9 +160,9 @@
             <site name="vasmed_r-P2" pos="0.0356 -0.2769 0.0009"/>
             <site name="RHJC" pos="0 0 0"/>
             <site name="RTRC" pos="-0.010 -0.03 0.08" class="myo_scale_marker"/>
-            <site name="RT1" pos="0.055 -0.25 -0.004" class="myo_scale_marker"/>
-            <site name="RT2" pos="0.055 -0.19 0.034" class="myo_scale_marker"/>
-            <site name="RT3" pos="0.055 -0.12 0.001" class="myo_scale_marker"/>
+            <site name="RT1" pos="0.065 -0.19 -0.004" class="myo_scale_marker"/>
+            <site name="RT2" pos="0.035 -0.22 0.064" class="myo_scale_marker"/>
+            <site name="RT3" pos="0.045 -0.12 0.008" class="myo_scale_marker"/>
             <site name="RLFE" pos="0 -0.404 0.05" class="myo_scale_marker"/>
             <site name="RMFE" pos="0 -0.404 -0.05" class="myo_scale_marker"/>
             <site name="KnExt_at_fem_r_site_recfem_r_side" pos="0.028412 -0.418795 -0.0326861"/>
@@ -231,9 +231,9 @@
                 <site name="vaslat_r-P5" pos="0.0325 -0.0634 0.0051"/>
                 <site name="vasmed_r-P5" pos="0.0319 -0.0636 -0.0068"/>
                 <site name="RKJC" pos="0.0017 -0.0024 -0.0085"/>
-                <site name="RS1" pos="0.027 -0.2801 0.0239" class="myo_scale_marker"/>
-                <site name="RS2" pos="0.027 -0.2201 -0.0039" class="myo_scale_marker"/>
-                <site name="RS3" pos="0.0417 -0.1665 0.0229" class="myo_scale_marker"/>
+                <site name="RS1" pos="0.027 -0.2201 -0.0039" class="myo_scale_marker"/>
+                <site name="RS2" pos="0.0417 -0.1665 0.0229" class="myo_scale_marker"/>
+                <site name="RS3" pos="0.027 -0.1265 -0.0159" class="myo_scale_marker"/>
                 <site name="RLM" pos="-0.005 -0.3888 0.043" class="myo_scale_marker"/>
                 <site name="RMM" pos="0.006 -0.3888 -0.038" class="myo_scale_marker"/>
                 <site name="R_tibial_plateau" pos="-0.0081 -0.017 -0.0015"/>
@@ -275,7 +275,7 @@
                         <site name="tibant_r-P4" pos="0.1166 0.0178 -0.0305"/>
                         <site name="tibpost_r-P3" pos="0.0417 0.0334 -0.0286"/>
                         <site name="tibpost_r-P4" pos="0.0772 0.0159 -0.0281"/>
-                        <site name="RCAL" pos="-0.015 0.02 -0.005" class="myo_scale_marker"/>
+                        <site name="RCAL" pos="-0.025 0.03 -0.005" class="myo_scale_marker"/>
                         <site name="R1MT" pos="0.185 0.005 -0.04" class="myo_scale_marker"/>
                         <site name="R5MT" pos="0.175 -0.005 0.050" class="myo_scale_marker"/>
                         <geom name="r_foot_col1" size=".02" class="coll" fromto="0.175 0 -.03 0.010 0 -.01"/>
@@ -374,9 +374,9 @@
             <site name="vasmed_l-P1" pos="0.014 -0.2099 -0.0188"/>
             <site name="vasmed_l-P2" pos="0.0356 -0.2769 -0.0009"/>
             <site name="LTRC" pos="-0.015 -0.03 -0.08" class="myo_scale_marker"/>
-            <site name="LT1" pos="0.055 -0.20 -0.026" class="myo_scale_marker"/>
-            <site name="LT2" pos="0.055 -0.15 -0.064" class="myo_scale_marker"/>
-            <site name="LT3" pos="0.055 -0.11 -0.031" class="myo_scale_marker"/>
+            <site name="LT1" pos="0.055 -0.21 -0.056" class="myo_scale_marker"/>
+            <site name="LT2" pos="0.065 -0.17 0.024" class="myo_scale_marker"/>
+            <site name="LT3" pos="0.055 -0.15 -0.044" class="myo_scale_marker"/>
             <site name="LLFE" pos="0 -0.404 -0.05" class="myo_scale_marker"/>
             <site name="LMFE" pos="0 -0.404 0.05" class="myo_scale_marker"/>
             <site name="KnExt_at_fem_l_site_recfem_l_side" pos="0.028412 -0.418795 0.0326861"/>
@@ -445,9 +445,9 @@
                 <site name="vaslat_l-P5" pos="0.0325 -0.0634 -0.0051"/>
                 <site name="vasmed_l-P5" pos="0.0319 -0.0636 0.0068"/>
                 <site name="LKJC" pos="0.0017 -0.0024 0.0085"/>
-                <site name="LS1" pos="0.027 -0.2801 -0.0239" class="myo_scale_marker"/>
-                <site name="LS2" pos="0.027 -0.2201 0.0039" class="myo_scale_marker"/>
-                <site name="LS3" pos="0.0417 -0.1665 -0.0229" class="myo_scale_marker"/>
+                <site name="LS1" pos="0.027 -0.2401 -0.0039" class="myo_scale_marker"/>
+                <site name="LS2" pos="0.0417 -0.1865 -0.0429" class="myo_scale_marker"/>
+                <site name="LS3" pos="0.027 -0.1465 -0.0059" class="myo_scale_marker"/>
                 <site name="LLM" pos="-0.005 -0.3888 -0.043" class="myo_scale_marker"/>
                 <site name="LMM" pos="0.006 -0.3888 0.038" class="myo_scale_marker"/>
                 <site name="L_tibial_plateau" pos="-0.0081 -0.017 0.0015"/>
@@ -489,7 +489,7 @@
                         <site name="tibant_l-P4" pos="0.1166 0.0178 0.0305"/>
                         <site name="tibpost_l-P3" pos="0.0417 0.0334 0.0286"/>
                         <site name="tibpost_l-P4" pos="0.0772 0.0159 0.0281"/>
-                        <site name="LCAL" pos="-0.015 0.02 -0.005" class="myo_scale_marker"/>
+                        <site name="LCAL" pos="-0.025 0.03 0.005" class="myo_scale_marker"/>
                         <site name="L1MT" pos="0.185 0.005 0.04" class="myo_scale_marker"/>
                         <site name="L5MT" pos="0.175 -0.005 -0.050" class="myo_scale_marker"/>
                         <geom name="l_foot_col1" size=".02" class="coll" fromto="0.175 0 0.03 0.010 0 0.01"/>

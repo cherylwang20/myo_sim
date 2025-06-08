@@ -28,11 +28,11 @@
         <material name="mat_myotorso" texture="tex_myotorso" texuniform="true" />
         <mesh file="../myo_sim/meshes/torso_lowpoly-v1.stl" name="torso" />
 
-        <mesh file="../myo_sim/meshes/sacrum.stl" name="pelvis_geom_1_sacrum" scale="1.2657 1.2657 1.2657" />
-        <mesh file="../myo_sim/meshes/hat_spine.stl" name="torso_geom_1_hat_spine" scale="1.2657 1.2657 1.2657" />
-        <mesh file="../myo_sim/meshes/hat_jaw.stl" name="torso_geom_2_hat_jaw" scale="1.2657 1.2657 1.2657" />
-        <mesh file="../myo_sim/meshes/hat_skull.stl" name="torso_geom_3_hat_skull" scale="1.2657 1.2657 1.2657" />
-        <mesh file="../myo_sim/meshes/hat_ribs_scap.stl" name="torso_geom_4_hat_ribs" scale="1.2657 1.2657 1.2657" />
+        <mesh file="../myo_sim/meshes/sacrum.stl" name="pelvis_geom_1_sacrum" scale="1.16 1.16 1.16" />
+        <mesh file="../myo_sim/meshes/hat_spine.stl" name="torso_geom_1_hat_spine" scale="1.16 1.16 1.16" />
+        <mesh file="../myo_sim/meshes/hat_jaw.stl" name="torso_geom_2_hat_jaw" scale="1.16 1.16 1.16" />
+        <mesh file="../myo_sim/meshes/hat_skull.stl" name="torso_geom_3_hat_skull" scale="1.16 1.16 1.16" />
+        <mesh file="../myo_sim/meshes/hat_ribs_scap.stl" name="torso_geom_4_hat_ribs" scale="1.16 1.16 1.16" />
 
         <material name="MatSkin_myotorso" specular="0.2" shininess=".1" reflectance="0.5" rgba="0.9 .7 1 1" />
     </asset>

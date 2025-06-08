@@ -10,10 +10,10 @@ sim.qpos = kf.qpos
 mujoco.mj_forward(model, sim)
 
 groups = {
-    'torso': [('LACR', 'RACR')], #,('CLAV', 'C7')],
+    'torso': [('LACR', 'RACR') , ('C7', 'SACR'), ('CLAV', 'SACR'), ('RACR', 'SACR'), ('LACR', 'SACR')],#('CLAV', 'C7'),
     'pelvis': [('RASI', 'LASI'), ('SACR', 'RASI'), ('SACR', 'LASI')],
-    'thigh': [('RTRC', 'RLFE'), ('LTRC', 'LLFE'), ('RT3','RT1'), ('LT3', 'LT1'), ('RT2','RT1'), ('LT2', 'LT1')],
-    'shank': [('RLFE', 'RLM'), ('LLFE', 'LLM'),('RS3', 'RS1'), ('LS3', 'LS1'),('RS2', 'RS1'), ('LS2', 'LS1')],
+    'thigh': [('RTRC', 'RLFE'), ('LTRC', 'LLFE'), ('RASI', 'LLFE'), ('LASI', 'RLFE'), ('RASI', 'RLFE'), ('LASI', 'LLFE')],# ('RT3', 'RT1'), ('LT3', 'LT1'),('RT2', 'RT1'), ('LT2', 'LT1')],
+    'shank': [('RLFE', 'RLM'), ('LLFE', 'LLM') ,('RS3', 'RS1'), ('LS3', 'LS1'),('RS2', 'RS1'), ('LS2', 'LS1')],
     'foot': [('RCAL', 'R1MT'), ('RCAL', 'R5MT'), ('LCAL', 'L1MT'), ('LCAL', 'L5MT')],
     # Add other segments and pairs as needed
 }
@@ -60,12 +60,6 @@ first_10_timesteps = marker_data[:10]  # Shape: (10, 33, 3)
 # Calculate average position per marker (across first 10 timesteps)
 average_positions = np.mean(first_10_timesteps, axis=0)  # Shape: (33, 3)
 
-# Print results
-print(f"Marker Data Shape: {marker_data.shape}")
-print(f"First 10 Timesteps Shape: {first_10_timesteps.shape}")
-print("\nAverage Positions (x, y, z) for first 10 timesteps:")
-for label, pos in zip(marker_labels, average_positions):
-    print(f"{label}: {pos}")
 
 exp_marker = {
     label: {'pos': pos} 
@@ -84,7 +78,6 @@ for segment, pairs in groups.items():
             distance = euclidean_distance(site1_pos, site2_pos)
             distances[(site1, site2)] = distance
     exp_distance[segment] = distances
-
 
 print(exp_distance)
 
