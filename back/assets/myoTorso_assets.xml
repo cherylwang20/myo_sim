@@ -12,10 +12,10 @@
     <joint limited="true" armature="1e-05" damping="0.05"/>
     <site size="0.001 0.005 0.005"/>
     <tendon limited="false" width="0.005" rgba="0.95 0.3 0.3 1"/>
-    <default class="muscle">
+    <default class="muscle_torso">
       <general ctrllimited="true" ctrlrange="0 1" dyntype="muscle" gaintype="muscle" biastype="muscle" dynprm="0.01 0.04 0 0 0 0 0 0 0 0" gainprm="0.75 1.05 -1 200 0.5 1.6 1.5 1.3 1.2 0" biasprm="0.75 1.05 -1 200 0.5 1.6 1.5 1.3 1.2 0"/>
     </default>
-    <default class="motor">
+    <default class="motor_torso">
       <general gainprm="5 0 0 0 0 0 0 0 0 0"/>
     </default>
   </default>
@@ -46,9 +46,6 @@
 
 
   <equality>
-    <joint name="LB_wrapjnt_r3_con" joint1="LB_wrapjnt_r3" joint2="flex_extension" polycoef="0 0.6 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
-    <joint name="LB_wrapjnt_t1_con" joint1="LB_wrapjnt_t1" joint2="flex_extension" polycoef="0 0.03306 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
-    <joint name="LB_wrapjnt_t2_con" joint1="LB_wrapjnt_t2" joint2="flex_extension" polycoef="0 0.01102 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
     <joint name="Abs_r3_con" joint1="Abs_r3" joint2="flex_extension" polycoef="0 0.6429 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
     <joint name="L4_L5_FE_con" joint1="L4_L5_FE" joint2="flex_extension" polycoef="0 0.185 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>
     <joint name="L4_L5_AR_con" joint1="L4_L5_AR" joint2="axial_rotation" polycoef="0 0.03778 0 0 0" solimp="0.9999 0.9999 0.001 0.5 2"/>

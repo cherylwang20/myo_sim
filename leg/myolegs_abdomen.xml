@@ -20,7 +20,8 @@
     <size memory="10M"/>
 
     <worldbody>
-        <body name="root" pos="0 0 1" euler="0 0 -1.57">
+        <camera name="side" pos="2.598 3.214 1.705" xyaxes="-0.750 0.661 0.000 -0.118 -0.134 0.984"/>
+        <body name="root" pos="0 0 0.95" euler="0 0 1.57">
             <freejoint name="root"/>
             <include file="../torso/assets/myotorso_abdomen_chain.xml"/>
             <include file="../leg/assets/myolegs_chain.xml"/>

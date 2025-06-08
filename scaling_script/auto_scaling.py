@@ -2,6 +2,8 @@ import xml.etree.ElementTree as ET
 import os
 import re
 from pathlib import Path
+from typing import Union, List, Tuple
+
 
 def scale_body_parts(input_file, output_file, body_part_scales):
     """
@@ -194,8 +196,6 @@ def replace_assets_path_and_increment_pos(
     tree.write(output_file, encoding='utf-8', xml_declaration=True)
     print(f"Modified XML saved to {output_file}")
 
-from typing import Union, List, Tuple
-
 def scale_body_part_masses(
     input_file: str,
     output_file: str,
@@ -315,13 +315,21 @@ if __name__ == "__main__":
     lower_input_xml = "./leg/assets/myolegs_assets.xml"
     lower_output_xml = "./leg/assets_test/myolegs_assets.xml"
 
+    scale_dict = {
+        "pelvis": 1.1179,
+        "thigh": 1.08,
+        "shank": 1.095,
+        "foot":0.97,
+        "torso": 1.16,
+    }
+
     # Define body parts and their meshes + scaling
     leg_part_scales = {
         # Format: "body_part": (scale, ["mesh_pattern1", "mesh_pattern2", ...])
-        "pelvis": (1.1879, ["r_pelvis", "l_pelvis"]),  # All meshes containing "pelvis" or "hip"
-        "thigh": ([1.2148, 1.2148, 1.2148], ["r_femur", "l_femur"]),
-        "shank": (1.0322, ["r_tibia","l_tibia", 'r_talus', 'l_talus']),
-        "foot": (1.0330, ["r_foot", "l_foot", "r_bofoot", "l_bofoot"]),
+        "pelvis": (scale_dict['pelvis'], ["r_pelvis", "l_pelvis"]),  # All meshes containing "pelvis" or "hip"
+        "thigh": (scale_dict['thigh'], ["r_femur", "l_femur"]),
+        "shank": (scale_dict['shank'], ["r_tibia","l_tibia", 'r_talus', 'l_talus']),
+        "foot": (scale_dict['foot'], ["r_foot", "l_foot", "r_bofoot", "l_bofoot"]),
     }
 
     scale_body_parts(lower_input_xml, lower_output_xml, leg_part_scales)
@@ -333,7 +341,7 @@ if __name__ == "__main__":
     # Define body parts and their meshes + scaling
     upper_part_scales = {
         # Format: "body_part": (scale, ["mesh_pattern1", "mesh_pattern2", ...])
-        "torso": (1.2657, ["sacrum", "hat_spine", "hat_jaw", "hat_skull", "hat_ribs_scap"]), 
+        "torso": (scale_dict['torso'], ["sacrum", "hat_spine", "hat_jaw", "hat_skull", "hat_ribs_scap"]), 
     }
 
     scale_body_parts(upper_input_xml, upper_output_xml, upper_part_scales)
@@ -347,7 +355,7 @@ if __name__ == "__main__":
         {
             'start_line': 14,
             'end_line': 58,
-            'scale': 1.2657  # Uniform scaling
+            'scale': scale_dict['torso']  # Uniform scaling
         }
     ]
     
@@ -363,50 +371,50 @@ if __name__ == "__main__":
         {
             'start_line': 12,
             'end_line': 107,
-            'scale': 1.2657  # Uniform scaling
+            'scale': scale_dict['pelvis']  # Uniform scaling
         },
         # thigh
         {
             'start_line': 108,
             'end_line': 178,
-            'scale': 1.2148  # Uniform scaling
+            'scale': scale_dict['thigh']  # Uniform scaling
         },
         {
             'start_line': 323,
             'end_line': 392,
-            'scale': 1.2148  # Uniform scaling
+            'scale': scale_dict['thigh']  # Uniform scaling
         },
         {
             'start_line': 307,
             'end_line': 320,
-            'scale': 1.2148  # Uniform scaling
+            'scale': scale_dict['thigh']  # Uniform scaling
         },
         {
             'start_line': 521,
             'end_line': 534,
-            'scale': 1.2148  # Uniform scaling
+            'scale': scale_dict['thigh']  # Uniform scaling
         },
         # shank
         {
             'start_line': 179,
             'end_line': 245,
-            'scale': 1.0322  # Uniform scaling
+            'scale': scale_dict['shank']  # Uniform scaling
         },
         {
             'start_line': 393,
             'end_line': 459,
-            'scale': 1.0322  # Uniform scaling
+            'scale': scale_dict['shank']  # Uniform scaling
         },
         # foot
         {
             'start_line': 246,
             'end_line': 302,
-            'scale': 1.033  # Uniform scaling
+            'scale': scale_dict['shank']  # Uniform scaling
         },
         {
             'start_line': 460,
             'end_line': 516,
-            'scale': 1.033  # Uniform scaling
+            'scale': scale_dict['shank']  # Uniform scaling
         }
     ]
     
@@ -414,10 +422,10 @@ if __name__ == "__main__":
 
     # defining the initial mass
     lower_mass_scales = {
-        "pelvis": (1.1879, ["pelvis"]), 
-        "thigh": (1.2148, ["femur_r", "femur_l"]),
-        "shank": (1.0322, ["tibia_r","tibia_l"]),
-        "foot": (1.0330, ["calcn_l", "calcn_r"]),
+        "pelvis": (scale_dict['pelvis'], ["pelvis"]), 
+        "thigh": (scale_dict['thigh'], ["femur_r", "femur_l"]),
+        "shank": (scale_dict['shank'], ["tibia_r","tibia_l"]),
+        "foot": (scale_dict['foot'], ["calcn_l", "calcn_r"]),
     }
 
     scale_body_part_masses(
@@ -429,7 +437,7 @@ if __name__ == "__main__":
     )
 
     upper_mass_scales = {
-        "torso": (1.2657, ["scarum", "torso"]), 
+        "torso": (scale_dict['torso'], ["scarum", "torso"]), 
     }
 
     scale_body_part_masses(
