@@ -42,6 +42,9 @@
             <default class="myo_leg_marker">
                 <site size="0.02" group="4" rgba="0.8 0.8 .2 1"/>
             </default>
+            <default class="myo_scale_marker">
+                <site size="0.008" group="5" rgba="1 0.6 1 1" />
+            </default>
         </default>
     </default>
 

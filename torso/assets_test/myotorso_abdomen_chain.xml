@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujocoinclude model="MyoTorsoRigid_v0.0.1">
+
+
+    <body name="scarum" pos="0 0 0" quat="0.707035 0.707179 0 0" childclass="myotorso">
+        <inertial diaginertia="0.1028 0.0871 0.0579" mass="9.925588521654468" pos="-0.0707 0 0" />
+        <geom mesh="pelvis_geom_1_sacrum" name="pelvis_geom_1" type="mesh" />
+
+        <site name="ercspn_r_ercspn_r-P1" pos="-0.162400 0.050924 0.050576" />
+        <site name="ercspn_l_ercspn_l-P1" pos="-0.162400 0.050924 -0.050576" />
+        <site name="intobl_r_intobl_r-P1" pos="-0.046400 0.081200 0.134212" />
+        <site name="intobl_l_intobl_l-P1" pos="-0.046400 0.081200 -0.134212" />
+        <site name="extobl_r_extobl_r-P1" pos="-0.034800 -0.073776 0.011600" />
+        <site name="extobl_l_extobl_l-P1" pos="-0.034800 -0.073776 -0.011600" />
+
+        <body name="torso" pos="-0.116812 0.094540 0.000000">
+            
+
+            <geom type="capsule" class="myotorso_coll" size="0.080 0.077" pos="0.041760 -0.023200 0.000000" euler="0 0 1.57" />
+            <geom type="ellipsoid" class="myotorso_coll" size="0.260 0.095 0.140" pos="0.018560 0.185600 0.000000" euler="0 0 1.7" />
+            <geom type="capsule" class="myotorso_coll" size="0.110 0.065" pos="0.012760 0.290000 0.000000" euler="0 0 1.57" />
+            <geom type="capsule" class="myotorso_coll" size="0.075 0.145" pos="-0.010440 0.388600 0.000000" euler="0 0 1.57" />
+
+            <inertial diaginertia="1.4745 1.4314 0.7555" mass="28.854411478345536" pos="-0.034800 0.371200 0.000000" quat="0.707107 0.707107 0 0" />
+            <joint axis="0 0 1" name="lumbar_extension" pos="0.000000 0.000000 0.000000" range="-0.8727 .2618" />
+            <joint axis="1 0 0" name="lumbar_bending" pos="0.000000 0.000000 0.000000" range="-.3491 .3491" />
+            <joint axis="0 1 0" name="lumbar_rotation" pos="0.000000 0.000000 0.000000" range="-0.0873 0.0873" damping="5" />
+
+            <geom name="pelvis_wrap" type="cylinder" size=".05 .05" pos="0.000000 0.020300 0.000000" class="myotorso_wrap" />
+            <geom mesh="torso_geom_1_hat_spine" name="torso_geom_1" type="mesh" />
+            <geom mesh="torso_geom_2_hat_jaw" name="torso_geom_2" type="mesh" />
+            <geom mesh="torso_geom_3_hat_skull" name="torso_geom_3" type="mesh" />
+            <geom mesh="torso_geom_4_hat_ribs" name="torso_geom_4" type="mesh" />
+
+            <site name="ercspn_r_ercspn_r-P2" pos="-0.063800 0.127600 0.027956" />
+            <site name="ercspn_l_ercspn_l-P2" pos="-0.063800 0.127600 -0.027956" />
+            <site name="intobl_r_intobl_r-P2" pos="0.081200 0.185600 0.017400" />
+            <site name="intobl_l_intobl_l-P2" pos="0.081200 0.185600 -0.017400" />
+            <site name="extobl_r_extobl_r-P2" pos="0.075400 0.127600 0.127600" />
+            <site name="extobl_l_extobl_l-P2" pos="0.075400 0.127600 -0.127600" />
+
+            <site name="head" pos="0.011600 0.580000 0.000000" class="myotorso_marker" />
+            <site name="clavicle_l" pos="0.024360 0.452400 -0.067280" class="myotorso_marker" />
+            <site name="clavicle_r" pos="0.024360 0.452400 0.067280" class="myotorso_marker" />
+            <site name="clavicle_spine" pos="-0.011600 0.464000 0.000000" class="myotorso_marker" />
+            <site name="spine_1" pos="0.034800 0.000000 0.000000" class="myotorso_marker" />
+            <site name="thoracis_spine" pos="-0.020880 0.225040 0.000000" class="myotorso_marker" />
+            <site name="chest" pos="0.097440 0.256360 0.000000" class="myotorso_marker" />
+
+            <site name="LACR" pos="0.004640 0.488360 -0.174000" class="myo_scale_marker" />
+            <site name="RACR" pos="0.004640 0.488360 0.174000" class="myo_scale_marker" />
+            <site name="C7" pos="-0.062640 0.499960 -0.000000" class="myo_scale_marker" />
+            <site name="CLAV" pos="0.046400 0.476760 -0.000000" class="myo_scale_marker" />
+        </body>
+    </body>
+
+</mujocoinclude>
