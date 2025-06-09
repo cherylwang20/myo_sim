@@ -483,10 +483,12 @@
                 <site name="MF_m1t.3_l_MF_m1t.3_l-P2" pos="-0.04094 -0.016 -0.0031"/>
                 <site name="MF_m1.laminar_l_MF_m1.laminar_l-P2" pos="-0.0341019 -0.00560525 -0.00619"/>
                 <body name="torso" pos="-0.018 -0.085 0" euler="0 0 -0.33">
-                  <include file="../../myo_sim/head/assets/myohead_rigid_chain.xml"/>
+                  <body name = "head_model" pos="-0.005 -0.01 0">
+                    <include file="../../myo_sim/head/assets/myohead_rigid_chain.xml"/>
+                  </body>
                   <inertial pos="0.0046 0.246 0" mass="18.619" diaginertia="0.165 0.15 0.125"/>
-                  <site name="LACR" pos="0.004 0.421 -0.15" class="myo_scale_marker_torso"/>
-                  <site name="RACR" pos="0.004 0.421 0.15" class="myo_scale_marker_torso"/>
+                  <site name="LACR" pos="0.004 0.421 -0.1353" class="myo_scale_marker_torso"/>
+                  <site name="RACR" pos="0.004 0.421 0.1353" class="myo_scale_marker_torso"/>
                   <site name="C7" pos="-0.054 0.431 -0.0" class="myo_scale_marker_torso"/>
                   <site name="CLAV" pos="0.04 0.411 -0.0" class="myo_scale_marker_torso"/>
                   <geom name="torso_geom_1" pos="-0.019 0.121 0" quat="0.980067 0 0 0.198669" type="mesh" rgba="1 1 1 1" mesh="torso_geom_1_thoracic12_s"/>

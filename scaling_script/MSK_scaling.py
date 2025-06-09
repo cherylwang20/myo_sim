@@ -1,9 +1,15 @@
 import mujoco
 import numpy as np
+import os
 from scipy.io import loadmat
 
-model_path = r'C:\Users\chery\Documents\myo_sim\leg\myolegs_abdomen.xml' 
-model = mujoco.MjModel.from_xml_path(model_path)
+## input your desired model path here
+path = os.getcwd()
+leg_abdomen_model = path + r'\leg\myolegs_abdomen.xml' 
+full_body_model = path + r'\body\myofullbody.xml'
+
+
+model = mujoco.MjModel.from_xml_path(full_body_model)
 sim = mujoco.MjData(model)
 kf = model.keyframe('start')
 sim.qpos = kf.qpos
@@ -15,10 +21,8 @@ groups = {
     'thigh': [('RTRC', 'RLFE'), ('LTRC', 'LLFE'), ('RASI', 'LLFE'), ('LASI', 'RLFE'), ('RASI', 'RLFE'), ('LASI', 'LLFE')],# ('RT3', 'RT1'), ('LT3', 'LT1'),('RT2', 'RT1'), ('LT2', 'LT1')],
     'shank': [('RLFE', 'RLM'), ('LLFE', 'LLM') ,('RS3', 'RS1'), ('LS3', 'LS1'),('RS2', 'RS1'), ('LS2', 'LS1')],
     'foot': [('RCAL', 'R1MT'), ('RCAL', 'R5MT'), ('LCAL', 'L1MT'), ('LCAL', 'L5MT')],
-    # Add other segments and pairs as needed
 }
 
-# Function to calculate Euclidean distance
 def euclidean_distance(point1, point2):
     return np.linalg.norm(point1 - point2)
 
@@ -38,7 +42,7 @@ for segment, pairs in groups.items():
     distances_by_segment[segment] = distances
 
 # Print the results
-print(distances_by_segment)
+#print(distances_by_segment)
 
 
 # Load the .mat file
@@ -79,7 +83,7 @@ for segment, pairs in groups.items():
             distances[(site1, site2)] = distance
     exp_distance[segment] = distances
 
-print(exp_distance)
+#print(exp_distance)
 
 average_ratios_by_segment = {}
 
