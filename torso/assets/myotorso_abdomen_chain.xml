@@ -56,10 +56,10 @@
                 <!-- <include file="../../myo_sim/arm/assets/myoarm_simpleL_chain.xml"/> -->
             </body>
 
-            <site name="LACR" pos="0.004 0.421 -0.15" class="myo_scale_marker"/>
-            <site name="RACR" pos="0.004 0.421 0.15" class="myo_scale_marker"/>
-            <site name="C7" pos="-0.054 0.431 -0.0" class="myo_scale_marker"/>
-            <site name="CLAV" pos="0.04 0.411 -0.0" class="myo_scale_marker"/>
+            <site name="LACR" pos="0.004 0.421 -0.15" class="myo_scale_marker_torso"/>
+            <site name="RACR" pos="0.004 0.421 0.15" class="myo_scale_marker_torso"/>
+            <site name="C7" pos="-0.054 0.431 -0.0" class="myo_scale_marker_torso"/>
+            <site name="CLAV" pos="0.04 0.411 -0.0" class="myo_scale_marker_torso"/>
         </body>
 
     </body>
