@@ -6,15 +6,10 @@
                  Mohamed Irfan Refai, Guillaume Durandau, Vikash Kumar (vikashplus@gmail.com), Vittorio Caggiano
   License	:: Under Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
   ====================================================== -->
-<<<<<<< HEAD
     <body name="sacrum" pos="0 0 0" quat="0.707035 0.707179 0 0" childclass="myotorso">
       <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="7.486" diaginertia="0.08 0.075 0.03"/>
 
       <!-- pelvis sites -->
-=======
-    <body name="pelvis_torso" pos="0 0 0" quat="0.707035 0.707179 0 0">
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001"/>
->>>>>>> b62d9c1 (clean up)
       <site name="Ps_L1_VB_r_Ps_L1_VB_r-P2" pos="-0.0238 -0.057 0.0759"/>
       <site name="Ps_L1_TP_r_Ps_L1_TP_r-P2" pos="-0.0238 -0.057 0.0759"/>
       <site name="Ps_L1_L2_IVD_r_Ps_L1_L2_IVD_r-P2" pos="-0.0238 -0.057 0.0759"/>
@@ -506,6 +501,10 @@
                   <geom name="torso_geom_11" pos="-0.032 0.358 0" quat="0.992198 0 0 -0.124675" type="mesh"  mesh="torso_geom_11_thoracic2_s"/>
                   <geom name="torso_geom_12" pos="-0.028 0.375 0" quat="0.988771 0 0 -0.149438" type="mesh"  mesh="torso_geom_12_thoracic1_s"/>
                   <geom name="torso_geom_13" pos="0.028 0.365 0" type="mesh"  mesh="torso_geom_13_ribcage_s"/>
+                  <site name="LACR" pos="0.004 0.421 -0.15" class="myo_scale_marker_torso"/>
+                  <site name="RACR" pos="0.004 0.421 0.15" class="myo_scale_marker_torso"/>
+                  <site name="C7" pos="-0.054 0.431 -0.0" class="myo_scale_marker_torso"/>
+                  <site name="CLAV" pos="0.04 0.411 -0.0" class="myo_scale_marker_torso"/>
                   <geom type="capsule" class="myotorso_coll" size="0.080 0.077" pos=".036 -.020 0" euler="0 0 1.57"/>
                   <geom type="ellipsoid" class="myotorso_coll" size="0.260 0.095 0.140" pos=".016 .160 0" euler="0 0 1.7"/>
                   <geom type="capsule" class="myotorso_coll" size="0.110 0.065" pos=".011 .250 0" euler="0 0 1.57"/>

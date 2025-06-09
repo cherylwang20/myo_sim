@@ -29,7 +29,7 @@
         <geom type="capsule" group="4" contype="1" conaffinity="0" condim="3" margin="0.001" material="MatSkin_myotorso"/>
       </default>
     </default>
-    <default class="myo_scale_marker">
+    <default class="myo_scale_marker_torso">
         <site size="0.008" group="5" rgba="1 0.6 1 1"/>
     </default>
   </default>
