@@ -8,7 +8,7 @@
 	License	:: Under Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 ====================================================== -->
     <include file="../scene/myosuite_scene_noPedestal.xml"/>
-    <include file="../back/assets/myoTorso_assets.xml"/>
+    <include file="../torso/assets/myoTorso_assets.xml"/>
     <include file="../leg/assets/myolegs_assets.xml"/>
     <include file="../leg/assets/myolegs_tendon.xml"/>
     <include file="../leg/assets/myolegs_muscle.xml"/>
@@ -16,7 +16,7 @@
     <worldbody>
     <camera name="side" pos="2.598 3.214 1.705" xyaxes="-0.750 0.661 0.000 -0.118 -0.134 0.984"/>
         <body name="Full Body" pos="-.025 0.1 1">
-            <include file="../back/assets/myoTorso_body.xml"/>
+            <include file="../torso/assets/myotorso_chain.xml"/>
             <include file="../leg/assets/myolegs_chain.xml"/>
             <freejoint name = 'root'/>
         </body>
