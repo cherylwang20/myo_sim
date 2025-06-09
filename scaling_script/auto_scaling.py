@@ -1,8 +1,8 @@
 import xml.etree.ElementTree as ET
 import os
 import re
+import shutil
 from pathlib import Path
-from typing import Union, List, Tuple
 
 
 def scale_body_parts(input_file, output_file, body_part_scales):
@@ -102,7 +102,7 @@ def rescale_xml_by_line(input_file, output_file, line_scales):
                 z *= scale[2]
                 
                 # Replace with scaled values
-                new_pos = f'pos="{x:.6f} {y:.6f} {z:.6f}"'
+                new_pos = f'pos="{x:.3f} {y:.3f} {z:.3f}"'
                 line = line[:match.start()] + new_pos + line[match.end():]
                 modified = True
                 lines[i] = line
@@ -125,7 +125,7 @@ def replace_assets_path_and_increment_pos(
     input_file, 
     output_file, 
     old_str="assets", 
-    new_str="assets_test",
+    new_str="assets_scaled",
     body_name="root",
     pos_increment=0.2
 ):
@@ -137,7 +137,7 @@ def replace_assets_path_and_increment_pos(
         input_file (str): Path to input XML file
         output_file (str): Path to save modified XML file
         old_str (str): String to replace in paths (default: "assets")
-        new_str (str): New string to use (default: "assets_test")
+        new_str (str): New string to use (default: "assets_scaled")
         body_name (str): Name of the body whose pos should be modified (default: "root")
         pos_increment (float): Value to add to the last element of pos (default: 0.2)
     """
@@ -294,18 +294,48 @@ def scale_body_part_masses(
     if verbose:
         print(f"\nSaved to: {output_file}")
 
+def parse_and_replace_assets(xml_path, output_path):
+    """
+    Parses an XML file, replaces '/assets/' with '/assets_scaled/' 
+    in both text and attribute values, and writes the result to a new file.
+
+    Args:
+        xml_path (str): Path to the input XML file.
+        output_path (str): Path to the output XML file.
+    """
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+
+    # Compile a regex pattern to match '/assets/' only
+    pattern = re.compile(r'(?<=/)assets(?=/)')
+
+    def replace_assets(element):
+        # Replace in element text
+        if element.text and '/assets/' in element.text:
+            element.text = pattern.sub('assets_scaled', element.text)
+        # Replace in element attributes
+        for key, value in element.attrib.items():
+            if '/assets/' in value:
+                element.attrib[key] = pattern.sub('assets_scaled', value)
+        # Recursively process child elements
+        for child in element:
+            replace_assets(child)
+
+    replace_assets(root)
+    tree.write(output_path)
+
 
 if __name__ == "__main__":
     # creating a new main file for the scaled model
     old_xml_file = "./leg/myolegs_abdomen.xml"
-    new_xml_file = "./leg/myolegs_abdomen_test.xml"
+    new_xml_file = "./leg/myolegs_abdomen_scaled.xml"
 
     replace_assets_path_and_increment_pos(old_xml_file, new_xml_file)
 
 
     # define the path to scale the leg mesh files
-    leg_dir_path = "./leg/assets_test"
-    torso_dir_path = "./torso/assets_test"
+    leg_dir_path = "./leg/assets_scaled"
+    torso_dir_path = "./torso/assets_scaled"
 
     check_directory(leg_dir_path)
     check_directory(torso_dir_path)
@@ -313,14 +343,14 @@ if __name__ == "__main__":
 
     #scaling the lower body part
     lower_input_xml = "./leg/assets/myolegs_assets.xml"
-    lower_output_xml = "./leg/assets_test/myolegs_assets.xml"
+    lower_output_xml = "./leg/assets_scaled/myolegs_assets.xml"
 
     scale_dict = {
         "pelvis": 1.1179,
         "thigh": 1.08,
         "shank": 1.095,
         "foot":0.97,
-        "torso": 1.16,
+        "torso": 1.15
     }
 
     # Define body parts and their meshes + scaling
@@ -334,36 +364,79 @@ if __name__ == "__main__":
 
     scale_body_parts(lower_input_xml, lower_output_xml, leg_part_scales)
 
+    '''
+    move tendon and muscle xml to new scaled file. 
+    !!! replace later with scaling of tendon and muscle
+    '''
+    muscle_file = 'leg/assets/myolegs_muscle.xml'
+    tendon_file = 'leg/assets/myolegs_tendon.xml'
+
+    # Destination directory
+    dst_dir = 'leg/assets_scaled/'
+
+    # Copy the file to the destination directory
+    shutil.copy(muscle_file , dst_dir)
+    shutil.copy(tendon_file , dst_dir)
+
     #scaling torso part
     upper_input_xml = "./torso/assets/myotorso_abdomen_assets.xml"
-    upper_output_xml = "./torso/assets_test/myotorso_abdomen_assets.xml"
+    upper_output_xml = "./torso/assets_scaled/myotorso_abdomen_assets.xml"
 
     # Define body parts and their meshes + scaling
     upper_part_scales = {
         # Format: "body_part": (scale, ["mesh_pattern1", "mesh_pattern2", ...])
-        "torso": (scale_dict['torso'], ["sacrum", "hat_spine", "hat_jaw", "hat_skull", "hat_ribs_scap"]), 
+        "torso": (scale_dict['torso'], ["sacrum", "hat_thoracic", "hat_spine", "hat_lumbar", "hat_ribs"]), 
     }
 
     scale_body_parts(upper_input_xml, upper_output_xml, upper_part_scales)
 
+
+    #scaling head
+    head_input_xml = "./head/assets/myohead_simple_assets.xml"
+    head_output_xml = "./head/assets_scaled/myohead_simple_assets.xml"
+
+    # Define body parts and their meshes + scaling
+    head_part_scales = {
+        # Format: "body_part": (scale, ["mesh_pattern1", "mesh_pattern2", ...])
+        "head": (scale_dict['torso'], ["hat_cervical", "hat_jaw", "hat_skull"]), 
+    }
+
+    scale_body_parts(head_input_xml, head_output_xml, head_part_scales)
+
     # scaling the position of the upper body parts and sites
     torso_chain_input_xml = "./torso/assets/myotorso_abdomen_chain.xml"
-    torso_chain_output_xml = "./torso/assets_test/myotorso_abdomen_chain.xml"
+    torso_chain_output_xml = "./torso/assets_scaled/myotorso_abdomen_chain.xml"
     
     # Define line ranges to scale
     upper_body_line_scales = [
         {
             'start_line': 14,
-            'end_line': 58,
+            'end_line': 63,
             'scale': scale_dict['torso']  # Uniform scaling
         }
     ]
     
     rescale_xml_by_line(torso_chain_input_xml, torso_chain_output_xml, upper_body_line_scales)
 
-        # scaling the position of the upper body parts and sites
+    #scaling the head, since now it is defined separately
+     # scaling the position of the upper body parts and sites
+    head_chain_input_xml = "./head/assets/myohead_rigid_chain.xml"
+    head_chain_output_xml = "./head/assets_scaled/myohead_rigid_chain.xml"
+    
+    # Define line ranges to scale
+    head_line_scales = [
+        {
+            'start_line': 10,
+            'end_line': 23,
+            'scale': scale_dict['torso']  # Uniform scaling
+        }
+    ]
+    
+    rescale_xml_by_line(head_chain_input_xml, head_chain_output_xml, head_line_scales)
+
+       # scaling the position of the upper body parts and sites
     leg_chain_input_xml = "./leg/assets/myolegs_chain.xml"
-    leg_chain_output_xml = "./leg/assets_test/myolegs_chain.xml"
+    leg_chain_output_xml = "./leg/assets_scaled/myolegs_chain.xml"
     
     # Define line ranges to scale
     leg_line_scales = [
@@ -397,24 +470,24 @@ if __name__ == "__main__":
         # shank
         {
             'start_line': 179,
-            'end_line': 245,
+            'end_line': 253,
             'scale': scale_dict['shank']  # Uniform scaling
         },
         {
             'start_line': 393,
-            'end_line': 459,
+            'end_line': 465,
             'scale': scale_dict['shank']  # Uniform scaling
         },
         # foot
         {
-            'start_line': 246,
+            'start_line': 287,
             'end_line': 302,
-            'scale': scale_dict['shank']  # Uniform scaling
+            'scale': scale_dict['foot']  # Uniform scaling
         },
         {
-            'start_line': 460,
+            'start_line': 502,
             'end_line': 516,
-            'scale': scale_dict['shank']  # Uniform scaling
+            'scale': scale_dict['foot']  # Uniform scaling
         }
     ]
     
@@ -429,23 +502,27 @@ if __name__ == "__main__":
     }
 
     scale_body_part_masses(
-        input_file="./leg/assets_test/myolegs_chain.xml",
-        output_file="./leg/assets_test/myolegs_chain.xml",
+        input_file="./leg/assets_scaled/myolegs_chain.xml",
+        output_file="./leg/assets_scaled/myolegs_chain.xml",
         mass_scales=lower_mass_scales,
         target_total_mass=36.21,
         verbose=True
     )
 
     upper_mass_scales = {
-        "torso": (scale_dict['torso'], ["scarum", "torso"]), 
+        "torso": (scale_dict['torso'], ["scarum", "lumbar"]), 
     }
 
     scale_body_part_masses(
-        input_file="./torso/assets_test/myotorso_abdomen_chain.xml",
-        output_file="./torso/assets_test/myotorso_abdomen_chain.xml",
+        input_file="./torso/assets_scaled/myotorso_abdomen_chain.xml",
+        output_file="./torso/assets_scaled/myotorso_abdomen_chain.xml",
         mass_scales=upper_mass_scales,
         target_total_mass=38.78,
         verbose=True
     )
+
+    #replace the asset path for head in torso with scaled one:
+    parse_and_replace_assets(r'.\torso\assets_scaled\myotorso_abdomen_chain.xml', r'.\torso\assets_scaled\myotorso_abdomen_chain.xml')
+    parse_and_replace_assets(r'.\torso\assets_scaled\myotorso_abdomen_assets.xml', r'.\torso\assets_scaled\myotorso_abdomen_assets.xml') 
 
     

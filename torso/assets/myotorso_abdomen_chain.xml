@@ -43,6 +43,9 @@
 
             <body name="thoracic">
                 <geom mesh="hat_thoracic" name="thoracic" type="mesh"/>
+                    <body name="head_attachment" pos="0 0 0">  <!-- Position relative to thoracic_body -->
+                        <include file="../../myo_sim/head/assets/myohead_rigid_chain.xml" />
+                    </body>
                 <geom mesh="hat_ribs" name="ribs" type="mesh"/>
 
                 <site name="clavicle_l" pos="0.021 .390 -.058" class="myotorso_marker"/>
@@ -50,16 +53,14 @@
                 <site name="clavicle_spine" pos="-.01 .4 0" class="myotorso_marker"/>
                 <site name="thoracis_spine" pos="-.018 .194 0" class="myotorso_marker"/>
                 <site name="chest" pos="0.084 0.221 0" class="myotorso_marker"/>
+                
+                <site name="LACR" pos="0.004 0.421 -0.15" class="myo_scale_marker_torso"/>
+                <site name="RACR" pos="0.004 0.421 0.15" class="myo_scale_marker_torso"/>
+                <site name="C7" pos="-0.054 0.431 -0.0" class="myo_scale_marker_torso"/>
+                <site name="CLAV" pos="0.04 0.411 -0.0" class="myo_scale_marker_torso"/>
 
-                <include file="../../myo_sim/head/assets/myohead_rigid_chain.xml"/>
-                <!-- <include file="../../myo_sim/arm/assets/myoarm_simpleR_chain.xml"/> -->
-                <!-- <include file="../../myo_sim/arm/assets/myoarm_simpleL_chain.xml"/> -->
             </body>
 
-            <site name="LACR" pos="0.004 0.421 -0.15" class="myo_scale_marker_torso"/>
-            <site name="RACR" pos="0.004 0.421 0.15" class="myo_scale_marker_torso"/>
-            <site name="C7" pos="-0.054 0.431 -0.0" class="myo_scale_marker_torso"/>
-            <site name="CLAV" pos="0.04 0.411 -0.0" class="myo_scale_marker_torso"/>
         </body>
 
     </body>
