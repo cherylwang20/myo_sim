@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="MyoSuite's MyoFullBody Model">
+
+
+    <include file="../scene/myosuite_scene_noPedestal.xml" />
+    <include file="..\torso\assets_scaled\myoTorso_assets.xml" />
+    <include file="..\leg\assets_scaled\myolegs_assets.xml" />
+    <include file="..\leg\assets_scaled\myolegs_tendon.xml" />
+    <include file="..\leg\assets_scaled\myolegs_muscle.xml" />
+
+    <worldbody>
+    <camera name="side" pos="2.598 3.214 1.705" xyaxes="-0.750 0.661 0.000 -0.118 -0.134 0.984" />
+        <body name="Full Body" pos="-.025 0.1 1.1">
+            <include file="..\torso\assets_scaled\myotorso_chain.xml" />
+            <include file="..\leg\assets_scaled\myolegs_chain.xml" />
+            <freejoint name="root" />
+        </body>
+    </worldbody>
+
+    <visual>
+        <global offwidth="1240" offheight="1080" />
+    </visual>
+
+    <keyframe>
+           <key qpos=".036 0.045 0.9802 0.819 0.162 -0.184 0.872 -0.522 -0.057 -0.035 0.000 0.000 0.000 -0.284 -0.022 -0.037 -0.094 0.009 -0.036 0.103 0.051 -0.010 0.298 0.102 0.070 -0.279 -0.039 -0.614 -0.014 -0.006 -0.023 0.135 0.448 -0.228 -0.029 0.000 0.000 0.000 0.000 -0.705 -0.185 -0.278 0.031 -0.027 -0.063 0.254 -0.233 -0.007 -0.062 0.000 0.000 0.000 0.000" />
+           <key name="start" qpos="-0.025 0.1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+    </keyframe>
+
+</mujoco>

@@ -1,0 +1,705 @@
+<mujocoinclude model="MyoTorso">
+  
+    <body name="sacrum" pos="0 0 0." quat="0.707035 0.707179 0 0">
+      <inertial pos="0.000 0.000 0.000" quat="0.707107 0 0 0.707107" mass="8.3507962259809" diaginertia="0.08 0.075 0.03" />
+      <site name="Ps_L1_VB_r_Ps_L1_VB_r-P2" pos="-0.026 -0.063 0.083" />
+      <site name="Ps_L1_TP_r_Ps_L1_TP_r-P2" pos="-0.026 -0.063 0.083" />
+      <site name="Ps_L1_L2_IVD_r_Ps_L1_L2_IVD_r-P2" pos="-0.026 -0.063 0.083" />
+      <site name="Ps_L2_TP_r_Ps_L2_TP_r-P2" pos="-0.026 -0.063 0.083" />
+      <site name="Ps_L2_L3_IVD_r_Ps_L2_L3_IVD_r-P2" pos="-0.026 -0.063 0.083" />
+      <site name="Ps_L3_TP_r_Ps_L3_TP_r-P2" pos="-0.026 -0.063 0.083" />
+      <site name="Ps_L3_L4_IVD_r_Ps_L3_L4_IVD_r-P2" pos="-0.026 -0.063 0.083" />
+      <site name="Ps_L4_TP_r_Ps_L4_TP_r-P2" pos="-0.026 -0.063 0.083" />
+      <site name="Ps_L4_L5_IVD_r_Ps_L4_L5_IVD_r-P2" pos="-0.026 -0.063 0.083" />
+      <site name="Ps_L5_TP_r_Ps_L5_TP_r-P2" pos="-0.026 -0.063 0.083" />
+      <site name="Ps_L5_VB_r_Ps_L5_VB_r-P2" pos="-0.026 -0.063 0.083" />
+      <site name="Ps_L1_VB_l_Ps_L1_VB_l-P2" pos="-0.026 -0.063 -0.083" />
+      <site name="Ps_L1_TP_l_Ps_L1_TP_l-P2" pos="-0.026 -0.063 -0.083" />
+      <site name="Ps_L1_L2_IVD_l_Ps_L1_L2_IVD_l-P2" pos="-0.026 -0.063 -0.083" />
+      <site name="Ps_L2_TP_l_Ps_L2_TP_l-P2" pos="-0.026 -0.063 -0.083" />
+      <site name="Ps_L2_L3_IVD_l_Ps_L2_L3_IVD_l-P2" pos="-0.026 -0.063 -0.083" />
+      <site name="Ps_L3_TP_l_Ps_L3_TP_l-P2" pos="-0.026 -0.063 -0.083" />
+      <site name="Ps_L3_L4_IVD_l_Ps_L3_L4_IVD_l-P2" pos="-0.026 -0.063 -0.083" />
+      <site name="Ps_L4_TP_l_Ps_L4_TP_l-P2" pos="-0.026 -0.063 -0.083" />
+      <site name="Ps_L4_L5_IVD_l_Ps_L4_L5_IVD_l-P2" pos="-0.026 -0.063 -0.083" />
+      <site name="Ps_L5_TP_l_Ps_L5_TP_l-P2" pos="-0.026 -0.063 -0.083" />
+      <site name="Ps_L5_VB_l_Ps_L5_VB_l-P2" pos="-0.026 -0.063 -0.083" />
+      <site name="rect_abd_r_rect_abd_r-P1" pos="-0.046 -0.106 -0.012" />
+      <site name="rect_abd_l_rect_abd_l-P1" pos="-0.046 -0.106 0.012" />
+      <site name="IL_L1_r_IL_L1_r-P1" pos="-0.175 0.012 0.042" />
+      <site name="IL_L2_r_IL_L2_r-P1" pos="-0.166 0.031 0.047" />
+      <site name="IL_L3_r_IL_L3_r-P1" pos="-0.151 0.044 0.052" />
+      <site name="IL_L4_r_IL_L4_r-P1" pos="-0.145 0.040 0.049" />
+      <site name="IL_L1_l_IL_L1_l-P1" pos="-0.175 0.012 -0.042" />
+      <site name="IL_L2_l_IL_L2_l-P1" pos="-0.166 0.031 -0.047" />
+      <site name="IL_L3_l_IL_L3_l-P1" pos="-0.151 0.044 -0.052" />
+      <site name="IL_L4_l_IL_L4_l-P1" pos="-0.145 0.040 -0.049" />
+      <site name="IL_R5_r_IL_r5_R-P1" pos="-0.172 0.016 0.043" />
+      <site name="IL_R6_r_IL_r6_R-P1" pos="-0.160 0.034 0.047" />
+      <site name="IL_R7_r_IL_r7_R-P1" pos="-0.148 0.042 0.050" />
+      <site name="IL_R8_r_IL_r8_R-P1" pos="-0.151 0.047 0.055" />
+      <site name="IL_R9_r_IL_r9_R-P1" pos="-0.147 0.049 0.056" />
+      <site name="IL_R10_r_IL_r10_R-P1" pos="-0.143 0.053 0.058" />
+      <site name="IL_R11_r_IL_r11_R-P1" pos="-0.140 0.055 0.061" />
+      <site name="IL_R12_r_IL_r12_R-P1" pos="-0.137 0.057 0.064" />
+      <site name="IL_R5_l_IL_r5_R-P1" pos="-0.172 0.016 -0.043" />
+      <site name="IL_R6_l_IL_r6_R-P1" pos="-0.160 0.034 -0.047" />
+      <site name="IL_R7_l_IL_r7_R-P1" pos="-0.148 0.042 -0.050" />
+      <site name="IL_R8_l_IL_r8_R-P1" pos="-0.151 0.047 -0.055" />
+      <site name="IL_R9_l_IL_r9_R-P1" pos="-0.147 0.049 -0.056" />
+      <site name="IL_R10_l_IL_r10_R-P1" pos="-0.143 0.053 -0.058" />
+      <site name="IL_R11_l_IL_r11_R-P1" pos="-0.140 0.055 -0.061" />
+      <site name="IL_R12_l_IL_r12_R-P1" pos="-0.137 0.057 -0.064" />
+      <site name="LTpL_L4_r_pathpoint" pos="-0.166 0.019 0.041" />
+      <site name="LTpL_L3_r_pathpoint" pos="-0.174 0.019 0.044" />
+      <site name="LTpL_L2_r_pathpoint" pos="-0.176 0.014 0.046" />
+      <site name="LTpL_L1_r_pathpoint" pos="-0.178 0.011 0.047" />
+      <site name="LTpL_L4_l_pathpoint" pos="-0.166 0.019 -0.041" />
+      <site name="LTpL_L3_l_pathpoint" pos="-0.174 0.019 -0.044" />
+      <site name="LTpL_L2_l_pathpoint" pos="-0.176 0.014 -0.046" />
+      <site name="LTpL_L1_l_pathpoint" pos="-0.178 0.011 -0.047" />
+      <site name="QL_post_I.1-L3_r_I.1_r-P1" pos="-0.134 0.051 0.057" />
+      <site name="QL_post_I.2-L4_r_I.2_r-P1" pos="-0.123 0.062 0.065" />
+      <site name="QL_post_I.2-L3_r_I.2_r-P1" pos="-0.123 0.062 0.065" />
+      <site name="QL_post_I.2-L2_r_I.2_r-P1" pos="-0.123 0.062 0.065" />
+      <site name="QL_post_I.3-L1_r_I.3_r-P1" pos="-0.115 0.068 0.076" />
+      <site name="QL_post_I.3-L2_r_I.3_r-P1" pos="-0.115 0.068 0.076" />
+      <site name="QL_post_I.3-L3_r_I.3_r-P1" pos="-0.115 0.068 0.076" />
+      <site name="QL_post_I.1-L3_l_I.1_l-P1" pos="-0.134 0.051 -0.057" />
+      <site name="QL_post_I.2-L4_l_I.2_l-P1" pos="-0.123 0.062 -0.065" />
+      <site name="QL_post_I.2-L3_l_I.2_l-P1" pos="-0.123 0.062 -0.065" />
+      <site name="QL_post_I.2-L2_l_I.2_l-P1" pos="-0.123 0.062 -0.065" />
+      <site name="QL_post_I.3-L1_l_I.3_l-P1" pos="-0.115 0.068 -0.076" />
+      <site name="QL_post_I.3-L2_l_I.3_l-P1" pos="-0.115 0.068 -0.076" />
+      <site name="QL_post_I.3-L3_l_I.3_l-P1" pos="-0.115 0.068 -0.076" />
+      <site name="QL_ant_I.2-T12_r_I.2_r-P1" pos="-0.123 0.062 0.065" />
+      <site name="QL_ant_I.3-T12_r_I.3_r-P1" pos="-0.115 0.068 0.076" />
+      <site name="QL_ant_I.2-12.1_r_I.2_r-P2" pos="-0.123 0.062 0.065" />
+      <site name="QL_ant_I.3-12.1_r_I.3_r-P1" pos="-0.115 0.068 0.076" />
+      <site name="QL_ant_I.3-12.2_r_I.3_r-P1" pos="-0.115 0.068 0.076" />
+      <site name="QL_ant_I.3-12.3_r_I.3_r-P2" pos="-0.115 0.068 0.076" />
+      <site name="QL_ant_I.2-T12_l_I.2_l-P1" pos="-0.123 0.062 -0.065" />
+      <site name="QL_ant_I.3-T12_l_I.3_l-P1" pos="-0.115 0.068 -0.076" />
+      <site name="QL_ant_I.2-12.1_l_I.2_l-P2" pos="-0.123 0.062 -0.065" />
+      <site name="QL_ant_I.3-12.1_l_I.3_l-P1" pos="-0.115 0.068 -0.076" />
+      <site name="QL_ant_I.3-12.2_l_I.3_l-P1" pos="-0.115 0.068 -0.076" />
+      <site name="QL_ant_I.3-12.3_l_I.3_l-P2" pos="-0.115 0.068 -0.076" />
+      <site name="MF_m1t.3_r_MF_m1t.3_r-P1" pos="-0.159 0.029 0.042" />
+      <site name="MF_m2t.2_r_MF_m2t.2_r-P1" pos="-0.162 0.023 0.041" />
+      <site name="MF_m2t.3_r_MF_m2t.3_r-P1" pos="-0.165 0.009 0.038" />
+      <site name="MF_m3t.1_r_MF_m3t.1_r-P1" pos="-0.181 -0.038 0.019" />
+      <site name="MF_m3t.2_r_MF_m3t.2_r-P1" pos="-0.169 -0.018 0.024" />
+      <site name="MF_m3t.3_r_MF_m3t.3_r-P1" pos="-0.169 -0.018 0.024" />
+      <site name="MF_m4t.2_r_MF_m4t.2_r-P1" pos="-0.179 -0.032 0.017" />
+      <site name="MF_m4t.3_r_MF_m4t.3_r-P1" pos="-0.188 -0.045 0.014" />
+      <site name="MF_m5.laminar_r_MF_m5.laminar_r-P1" pos="-0.148 0.012 0.014" />
+      <site name="MF_m1t.3_l_MF_m1t.3_l-P1" pos="-0.159 0.029 -0.042" />
+      <site name="MF_m2t.2_l_MF_m2t.2_l-P1" pos="-0.162 0.023 -0.041" />
+      <site name="MF_m2t.3_l_MF_m2t.3_l-P1" pos="-0.165 0.009 -0.038" />
+      <site name="MF_m3t.1_l_MF_m3t.1_l-P1" pos="-0.181 -0.038 -0.019" />
+      <site name="MF_m3t.2_l_MF_m3t.2_l-P1" pos="-0.169 -0.018 -0.024" />
+      <site name="MF_m3t.3_l_MF_m3t.3_l-P1" pos="-0.169 -0.018 -0.024" />
+      <site name="MF_m4t.2_l_MF_m4t.2_l-P1" pos="-0.179 -0.032 -0.017" />
+      <site name="MF_m4t.3_l_MF_m4t.3_l-P1" pos="-0.188 -0.045 -0.014" />
+      <site name="MF_m5.laminar_l_MF_m5.laminar_l-P1" pos="-0.148 0.012 -0.014" />
+      <site name="EO5_r_EO5_r-P2" pos="-0.065 0.065 0.125" />
+      <site name="EO6_r_EO6_r-P2" pos="-0.077 0.068 0.115" />
+      <site name="IO1_r_IO1_r-P2" pos="-0.028 0.001 0.113" />
+      <site name="IO2_r_IO2_r-P2" pos="-0.038 0.028 0.118" />
+      <site name="IO3_r_IO3_r-P2" pos="-0.049 0.051 0.113" />
+      <site name="IO4_r_IO4_r-P2" pos="-0.063 0.065 0.122" />
+      <site name="IO5_r_IO5_r-P2" pos="-0.093 0.072 0.101" />
+      <site name="IO6_r_IO6_r-P2" pos="-0.121 0.067 0.077" />
+      <site name="EO5_l_EO5_l-P2" pos="-0.065 0.065 -0.125" />
+      <site name="EO6_l_EO6_l-P2" pos="-0.077 0.068 -0.115" />
+      <site name="IO1_l_IO1_l-P2" pos="-0.028 0.001 -0.135" />
+      <site name="IO2_l_IO2_l-P2" pos="-0.038 0.028 -0.140" />
+      <site name="IO3_l_IO3_l-P2" pos="-0.049 0.051 -0.135" />
+      <site name="IO4_l_IO4_l-P2" pos="-0.063 0.065 -0.122" />
+      <site name="IO5_l_IO5_l-P2" pos="-0.093 0.072 -0.101" />
+      <site name="IO6_l_IO6_l-P2" pos="-0.121 0.067 -0.077" />
+      <geom name="sacrum" type="mesh" rgba="1 1 1 1" mesh="sacrum_geom_1_sacrum" />
+      <site name="LTpT_T7_r_LTpT_t7_R-P1" pos="-0.144 0.067 0.000" />
+      <site name="LTpT_T8_r_LTpT_t8_R-P1" pos="-0.157 0.055 0.000" />
+      <site name="LTpT_T9_r_LTpT_t9_R-P1" pos="-0.182 0.030 0.000" />
+      <site name="LTpT_T10_r_LTpT_t10_R-P1" pos="-0.181 0.027 0.012" />
+      <site name="LTpT_T11_r_LTpT_t11_R-P1" pos="-0.173 0.034 0.026" />
+      <site name="LTpT_T12_r_LTpT_t12_R-P1" pos="-0.159 0.054 0.031" />
+      <site name="LTpT_R7_r_LTpT_r7_R-P1" pos="-0.144 0.067 0.000" />
+      <site name="LTpT_R8_r_LTpT_r8_R-P1" pos="-0.157 0.055 0.000" />
+      <site name="LTpT_R9_r_LTpT_r9_R-P1" pos="-0.182 0.030 0.000" />
+      <site name="LTpT_R10_r_LTpT_r10_R-P1" pos="-0.181 0.027 0.012" />
+      <site name="LTpT_R11_r_LTpT_r11_R-P1" pos="-0.173 0.034 0.026" />
+      <site name="LTpT_R12_r_LTpT_r12_R-P1" pos="-0.159 0.054 0.031" />
+      <site name="LTpT_T7_l_LTpT_t7_R-P1" pos="-0.144 0.067 -0.000" />
+      <site name="LTpT_T8_l_LTpT_t8_R-P1" pos="-0.157 0.055 -0.000" />
+      <site name="LTpT_T9_l_LTpT_t9_R-P1" pos="-0.182 0.030 0.000" />
+      <site name="LTpT_T10_l_LTpT_t10_R-P1" pos="-0.181 0.027 -0.012" />
+      <site name="LTpT_T11_l_LTpT_t11_R-P1" pos="-0.173 0.034 -0.026" />
+      <site name="LTpT_T12_l_LTpT_t12_R-P1" pos="-0.159 0.054 0.031" />
+      <site name="LTpT_R7_l_LTpT_r7_R-P1" pos="-0.144 0.067 -0.000" />
+      <site name="LTpT_R8_l_LTpT_r8_R-P1" pos="-0.157 0.055 -0.000" />
+      <site name="LTpT_R9_l_LTpT_r9_R-P1" pos="-0.182 0.030 0.000" />
+      <site name="LTpT_R10_l_LTpT_r10_R-P1" pos="-0.181 0.027 -0.012" />
+      <site name="LTpT_R11_l_LTpT_r11_R-P1" pos="-0.173 0.034 -0.026" />
+      <site name="LTpT_R12_l_LTpT_r12_R-P1" pos="-0.159 0.054 -0.031" />
+      <site name="LTpL_L5_r_pathpoint" pos="-0.155 0.081 0.038" />
+      <site name="LTpL_L5_l_pathpoint" pos="-0.155 0.081 -0.038" />
+      <site name="MF_m1t.2_r_MF_m1t.2_r-P1" pos="-0.134 0.092 0.021" />
+      <site name="MF_m2t.1_r_MF_m2t.1_r-P1" pos="-0.133 0.094 0.022" />
+      <site name="MF_m3s_r_MF_m3s_r-P1" pos="-0.134 0.092 0.019" />
+      <site name="MF_m4s_r_MF_m4s_r-P1" pos="-0.158 0.060 0.018" />
+      <site name="MF_m4t.1_r_MF_m4t.1_r-P1" pos="-0.167 0.046 0.017" />
+      <site name="MF_m5s_r_MF_m5s_r-P1" pos="-0.144 0.073 0.011" />
+      <site name="MF_m5t.1_r_MF_m5t.1_r-P1" pos="-0.191 0.006 0.011" />
+      <site name="MF_m5t.2_r_MF_m5t.2_r-P1" pos="-0.179 0.028 0.013" />
+      <site name="MF_m5t.3_r_MF_m5t.3_r-P1" pos="-0.168 0.047 0.013" />
+      <site name="MF_m4.laminar_r_MF_m4.laminar_r-P1" pos="-0.138 0.085 0.021" />
+      <site name="MF_m1t.2_l_MF_m1t.2_l-P1" pos="-0.134 0.092 -0.021" />
+      <site name="MF_m2t.1_l_MF_m2t.1_l-P1" pos="-0.133 0.094 -0.022" />
+      <site name="MF_m3s_l_MF_m3s_l-P1" pos="-0.134 0.092 -0.019" />
+      <site name="MF_m4s_l_MF_m4s_l-P1" pos="-0.158 0.060 -0.018" />
+      <site name="MF_m4t.1_l_MF_m4t.1_l-P1" pos="-0.167 0.046 -0.017" />
+      <site name="MF_m5s_l_MF_m5s_l-P1" pos="-0.144 0.073 -0.011" />
+      <site name="MF_m5t.1_l_MF_m5t.1_l-P1" pos="-0.191 0.006 -0.011" />
+      <site name="MF_m5t.2_l_MF_m5t.2_l-P1" pos="-0.179 0.028 -0.013" />
+      <site name="MF_m5t.3_l_MF_m5t.3_l-P1" pos="-0.168 0.047 -0.013" />
+      <site name="MF_m4.laminar_l_MF_m4.laminar_l-P1" pos="-0.138 0.085 -0.021" />
+      <body name="lumbar5" pos="-0.108 0.078 0.000" euler="0 0 -0.05">
+        <inertial pos="0.059 0.022 0.000" quat="0.707107 0 0 0.707107" mass="2.0347117707973768" diaginertia="0.01765 0.01219 0.00546" />
+        <geom name="back_cylinder_s" size="0.07 0.13" pos="-0.130 0.084 0.000" class="myoBack_wrap" />
+        <site name="back_cylinder_s_IL_L1_r_1_sidesite" pos="-0.037 0.108 -0.001" class="sidesite" />
+        <site name="back_cylinder_s_IL_L1_l_1_sidesite" pos="-0.046 0.124 -0.079" class="sidesite" />
+        <site name="back_cylinder_s_IL_R5_r_1_sidesite" pos="-0.037 0.084 -0.014" class="sidesite" />
+        <site name="back_cylinder_s_IL_R6_r_1_sidesite" pos="-0.038 0.098 -0.120" class="sidesite" />
+        <site name="back_cylinder_s_IL_R5_l_1_sidesite" pos="-0.039 0.100 -0.065" class="sidesite" />
+        <site name="back_cylinder_s_IL_R6_l_1_sidesite" pos="-0.045 0.121 -0.034" class="sidesite" />
+        <site name="back_cylinder_s_LTpT_R12_r_4_sidesite" pos="-0.045 0.115 0.043" class="sidesite" />
+        <site name="back_cylinder_s_LTpT_R12_r_2_sidesite" pos="-0.041 0.076 0.039" class="sidesite" />
+        <site name="back_cylinder_s_LTpT_R12_r_1_sidesite" pos="-0.042 0.054 0.099" class="sidesite" />
+        <site name="back_cylinder_s_LTpT_R12_l_4_sidesite" pos="-0.045 0.115 -0.043" class="sidesite" />
+        <site name="back_cylinder_s_LTpT_R12_l_2_sidesite" pos="-0.041 0.076 -0.039" class="sidesite" />
+        <site name="back_cylinder_s_LTpT_R12_l_1_sidesite" pos="-0.100 -0.003 0.059" class="sidesite" />
+        <site name="back_cylinder_s_LTpL_L1_r_1_sidesite" pos="-0.041 0.109 -0.086" class="sidesite" />
+        <site name="back_cylinder_s_LTpL_L1_l_1_sidesite" pos="-0.041 0.109 0.086" class="sidesite" />  
+        <joint name="flex_extension" pos="0.000 0.000 0.000" axis="0 0 1" range="-1.35 0.7538" />
+        <joint name="lat_bending" pos="0.000 0.000 0.000" axis="1 0 0" range="-0.4363 0.4363" />
+        <joint name="axial_rotation" pos="0.000 0.000 0.000" axis="0 1 0" range="-0.7854 0.7854" />
+        <geom name="lumbar5" type="mesh" rgba="1 1 1 1" mesh="lumbar5_geom_1_lumbar5" />
+        <site name="Ps_L5_TP_r_Ps_L5_TP_r-P1" pos="-0.006 0.032 0.028" />
+        <site name="Ps_L5_VB_r_Ps_L5_VB_r-P1" pos="0.011 0.014 0.021" />
+        <site name="Ps_L5_TP_l_Ps_L5_TP_l-P1" pos="-0.006 0.032 -0.028" />
+        <site name="Ps_L5_VB_l_Ps_L5_VB_l-P1" pos="0.011 0.014 -0.021" />
+        <site name="LTpT_T6_r_LTpT_t6_R-P1" pos="-0.040 0.018 0.000" />
+        <site name="LTpT_R6_r_LTpT_r6_R-P1" pos="-0.040 0.018 0.000" />
+        <site name="LTpT_T6_l_LTpT_t6_R-P1" pos="-0.040 0.018 -0.000" />
+        <site name="LTpT_R6_l_LTpT_r6_R-P1" pos="-0.040 0.018 -0.000" />
+        <site name="LTpL_L5_r_pathpoint_0" pos="-0.011 0.029 0.025" />
+        <site name="LTpL_L5_l_pathpoint_0" pos="-0.011 0.029 -0.025" />
+        <site name="MF_m1t.1_r_MF_m1t.1_r-P1" pos="-0.020 0.041 0.019" />
+        <site name="MF_m2s_r_MF_m2s_r-P1" pos="-0.020 0.041 0.017" />
+        <site name="MF_m5s_r_MF_m5s_r-P2" pos="-0.033 0.017 0.004" />
+        <site name="MF_m5t.1_r_MF_m5t.1_r-P2" pos="-0.039 0.019 0.003" />
+        <site name="MF_m5t.2_r_MF_m5t.2_r-P2" pos="-0.038 0.018 0.003" />
+        <site name="MF_m5t.3_r_MF_m5t.3_r-P2" pos="-0.036 0.017 0.003" />
+        <site name="MF_m3.laminar_r_MF_m3.laminar_r-P1" pos="-0.021 0.041 0.018" />
+        <site name="MF_m5.laminar_r_MF_m5.laminar_-P2" pos="-0.028 0.019 0.006" />
+        <site name="MF_m1t.1_l_MF_m1t.1_l-P1" pos="-0.020 0.041 -0.019" />
+        <site name="MF_m2s_l_MF_m2s_l-P1" pos="-0.020 0.041 -0.017" />
+        <site name="MF_m5s_l_MF_m5s_l-P2" pos="-0.033 0.017 -0.004" />
+        <site name="MF_m5t.1_l_MF_m5t.1_l-P2" pos="-0.039 0.019 -0.003" />
+        <site name="MF_m5t.2_l_MF_m5t.2_l-P2" pos="-0.038 0.018 -0.003" />
+        <site name="MF_m5t.3_l_MF_m5t.3_l-P2" pos="-0.036 0.017 -0.003" />
+        <site name="MF_m3.laminar_l_MF_m3.laminar_l-P1" pos="-0.021 0.041 -0.018" />
+        <site name="MF_m5.laminar_l_MF_m5.laminar_l-P2" pos="-0.028 0.019 -0.006" />
+        <body name="Abdomen" pos="0.108 0.078 0.000">
+          <inertial pos="0.000 0.000 0.000" mass="0.01" diaginertia="0.001 0.001 0.001" />
+          <joint name="Abs_t1" pos="0.000 0.000 0.000" axis="1 0 0" limited="true" type="slide" range="-.05 .015" />
+          <joint name="Abs_t2" pos="0.000 0.000 0.000" axis="0 1 0" limited="true" type="slide" range="-.03 .03" />
+          <joint name="Abs_r3" pos="0.000 0.000 0.000" axis="0 0 1" limited="true" range="-.7 .7" />
+          <site name="Abdomen_sidesite" pos="0.012 0.000 0.000" class="sidesite" />
+          <site name="EO1_r_EO1_r-P1" pos="0.007 0.069 0.034" />
+          <site name="EO2_r_EO2_r-P2" pos="0.008 0.036 0.040" />
+          <site name="EO3_r_EO3_r-P2" pos="0.007 0.014 0.046" />
+          <site name="EO4_r_default" pos="0.008 -0.007 0.044" />
+          <site name="IO1_r_IO1_r-P1" pos="0.003 -0.045 0.050" />
+          <site name="IO2_r_IO2_r-P1" pos="0.001 -0.013 0.057" />
+          <site name="IO3_r_IO3_r-P1" pos="0.004 0.032 0.046" />
+          <site name="EO1_l_EO1_l-P1" pos="0.007 0.069 -0.034" />
+          <site name="EO2_l_EO2_l-P2" pos="0.008 0.036 -0.040" />
+          <site name="EO3_l_EO3_l-P2" pos="0.007 0.014 -0.046" />
+          <site name="EO4_l_EO4_l-P2" pos="0.008 -0.007 -0.044" />
+          <site name="IO1_l_IO1_l-P1" pos="0.003 -0.045 -0.050" />
+          <site name="IO2_l_IO2_l-P1" pos="0.001 -0.013 -0.057" />
+          <site name="IO3_l_IO3_l-P1" pos="0.004 0.032 -0.046" />
+        </body>
+        <body name="lumbar4" pos="-0.000 0.033 0.000" euler="0 0 0.2">
+          <inertial pos="0.019 0.020 0.000" quat="0.707107 0 0 0.707107" mass="2.0068237256932457" diaginertia="0.01643 0.01123 0.0052" />
+          <joint name="L4_L5_FE" pos="0.000 0.000 0.000" axis="0 0 1" limited="true" range="-0.18607 0.083953" />
+          <joint name="L4_L5_LB" pos="0.000 0.000 0.000" axis="1 0 0" limited="true" range="-0.0889703 0.089703" />
+          <joint name="L4_L5_AR" pos="0.000 0.000 0.000" axis="0 1 0" limited="true" range="-0.3168812 0.3168812" />
+          <geom name="lumbar4" type="mesh" rgba="1 1 1 1" mesh="lumbar4_geom_1_lumbar4" />
+          <site name="Ps_L4_TP_r_Ps_L4_TP_r-P1" pos="-0.017 0.027 0.028" />
+          <site name="Ps_L4_L5_IVD_r_Ps_L4_L5_IVD_r-P1" pos="0.006 0.004 0.023" />
+          <site name="Ps_L4_TP_l_Ps_L4_TP_l-P1" pos="-0.017 0.027 -0.028" />
+          <site name="Ps_L4_L5_IVD_l_Ps_L4_L5_IVD_l-P1" pos="0.006 0.004 -0.023" />
+          <site name="IL_L4_r_IL_L4_r-P2" pos="-0.024 0.028 0.035" />
+          <site name="IL_L4_l_IL_L4_l-P2" pos="-0.024 0.028 -0.035" />
+          <site name="LTpT_T4_r_LTpT_t4_R-P1" pos="-0.050 0.008 0.003" />
+          <site name="LTpT_T5_r_LTpT_t5_R-P1" pos="-0.0473001 0.00396965 8e-05" />
+          <site name="LTpT_T8_r_LTpT_t8_R-P2" pos="-0.052 0.020 0.006" />
+          <site name="LTpT_T9_r_LTpT_t9_R-P2" pos="-0.051 0.020 0.008" />
+          <site name="LTpT_T10_r_LTpT_t10_R-P2" pos="-0.051 0.020 0.014" />
+          <site name="LTpT_T11_r_LTpT_t11_R-P2" pos="-0.051 0.019 0.024" />
+          <site name="LTpT_T12_r_LTpT_t12_R-P2" pos="-0.051 0.019 0.028" />
+          <site name="LTpT_R4_r_LTpT_r4_R-P1" pos="-0.050 0.008 0.003" />
+          <site name="LTpT_R5_r_LTpT_r5_R-P1" pos="-0.0473001 0.00396965 8e-05" />
+          <site name="LTpT_R7_r_LTpT_r7_R-P2" pos="-0.051 0.021 0.009" />
+          <site name="LTpT_R8_r_LTpT_r8_R-P2" pos="-0.051 0.020 0.013" />
+          <site name="LTpT_R9_r_LTpT_r9_R-P2" pos="-0.051 0.019 0.016" />
+          <site name="LTpT_R10_r_LTpT_r10_R-P2" pos="-0.051 0.019 0.021" />
+          <site name="LTpT_R11_r_LTpT_r11_R-P2" pos="-0.051 0.020 0.032" />
+          <site name="LTpT_R12_r_LTpT_r12_R-P2" pos="-0.051 0.019 0.037" />
+          <site name="LTpT_T4_l_LTpT_t4_R-P1" pos="-0.050 0.008 -0.003" />
+          <site name="LTpT_T5_l_LTpT_t5_R-P1" pos="-0.0473001 0.00396965 -8e-05" />
+          <site name="LTpT_T8_l_LTpT_t8_R-P2" pos="-0.052 0.020 -0.006" />
+          <site name="LTpT_T9_l_LTpT_t9_R-P2" pos="-0.051 0.020 -0.008" />
+          <site name="LTpT_T10_l_LTpT_t10_R-P2" pos="-0.051 0.020 -0.014" />
+          <site name="LTpT_T11_l_LTpT_t11_R-P2" pos="-0.051 0.019 -0.024" />
+          <site name="LTpT_T12_l_LTpT_t12_R-P2" pos="-0.051 0.019 0.028" />
+          <site name="LTpT_R4_l_LTpT_r4_R-P1" pos="-0.050 0.008 -0.003" />
+          <site name="LTpT_R5_l_LTpT_r5_R-P1" pos="-0.0473001 0.00396965 -8e-05" />
+          <site name="LTpT_R7_l_LTpT_r7_R-P2" pos="-0.051 0.021 -0.009" />
+          <site name="LTpT_R8_l_LTpT_r8_R-P2" pos="-0.051 0.020 -0.013" />
+          <site name="LTpT_R9_l_LTpT_r9_R-P2" pos="-0.051 0.019 -0.016" />
+          <site name="LTpT_R10_l_LTpT_r10_R-P2" pos="-0.051 0.019 -0.021" />
+          <site name="LTpT_R11_l_LTpT_r11_R-P2" pos="-0.051 0.020 -0.032" />
+          <site name="LTpT_R12_l_LTpT_r12_R-P2" pos="-0.051 0.019 -0.037" />
+          <site name="LTpL_L4_r_pathpoint_0" pos="-0.022 0.025 0.025" />
+          <site name="LTpL_L4_l_pathpoint_0" pos="-0.022 0.025 -0.025" />
+          <site name="QL_post_I.2-L4_r_L4_TP_r-P2" pos="-0.024 0.029 0.033" />
+          <site name="QL_post_I.2-L4_l_L4_TP_l-P2" pos="-0.024 0.029 -0.033" />
+          <site name="QL_mid_L4-12.3_r_quadratus_lumb_mid_L4_1_r-P2" pos="-0.024 0.034 0.031" />
+          <site name="QL_mid_L4-12.3_l_quadratus_lumb_mid_L4_1_r-P2" pos="-0.024 0.034 -0.031" />
+          <site name="MF_m1s_r_MF_m1s_r-P1" pos="-0.034 0.036 0.019" />
+          <site name="MF_m4s_r_MF_m4s_r-P2" pos="-0.039 -0.000 0.002" />
+          <site name="MF_m4t.1_r_MF_m4t.1_r-P2" pos="-0.046 0.000 0.003" />
+          <site name="MF_m4t.2_r_MF_m4t.2_r-P2" pos="-0.047 0.000 0.003" />
+          <site name="MF_m4t.3_r_MF_m4t.3_r-P2" pos="-0.049 0.000 0.003" />
+          <site name="MF_m2.laminar_r_MF_m2.laminar_r-P1" pos="-0.034 0.037 0.019" />
+          <site name="MF_m4.laminar_r_MF_m4.laminar_r-P2" pos="-0.035 0.006 0.008" />
+          <site name="MF_m1s_l_MF_m1s_l-P1" pos="-0.034 0.036 -0.019" />
+          <site name="MF_m4s_l_MF_m4s_l-P2" pos="-0.039 -0.000 -0.003" />
+          <site name="MF_m4t.1_l_MF_m4t.1_l-P2" pos="-0.046 0.000 -0.002" />
+          <site name="MF_m4t.2_l_MF_m4t.2_l-P2" pos="-0.047 0.000 -0.003" />
+          <site name="MF_m4t.3_l_MF_m4t.3_l-P2" pos="-0.049 0.000 -0.003" />
+          <site name="MF_m2.laminar_l_MF_m2.laminar_l-P1" pos="-0.034 0.037 -0.019" />
+          <site name="MF_m4.laminar_l_MF_m4.laminar_l-P2" pos="-0.035 0.006 -0.008" />
+          <body name="lumbar3" pos="0.001 0.034 0.000">
+            <inertial pos="0.015 0.020 0.000" quat="0.707107 0 0 0.707107" mass="1.8629214129559313" diaginertia="0.01608 0.01066 0.00551" />
+            <joint name="L3_L4_FE" pos="0.000 0.000 0.000" axis="0 0 1" limited="true" range="-0.249288 0.0925752" />
+            <joint name="L3_L4_LB" pos="0.000 0.000 0.000" axis="1 0 0" limited="true" range="-0.1568935 0.1568935" />
+            <joint name="L3_L4_AR" pos="0.000 0.000 0.000" axis="0 1 0" limited="true" range="-0.02968812 0.02968812" />
+            <geom name="lumbar3" type="mesh" rgba="1 1 1 1" mesh="lumbar3_geom_1_lumbar3" />
+            <site name="Ps_L3_TP_r_Ps_L3_TP_r-P1" pos="-0.027 0.023 0.031" />
+            <site name="Ps_L3_L4_IVD_r_Ps_L3_L4_IVD_r-P1" pos="0.001 0.007 0.023" />
+            <site name="Ps_L3_TP_l_Ps_L3_TP_l-P1" pos="-0.027 0.023 -0.031" />
+            <site name="Ps_L3_L4_IVD_l_Ps_L3_L4_IVD_l-P1" pos="0.001 0.007 -0.023" />
+            <site name="IL_L3_r_IL_L3_r-P2" pos="-0.032 0.022 0.034" />
+            <site name="IL_L3_l_IL_L3_l-P2" pos="-0.032 0.022 -0.034" />
+            <site name="LTpT_T3_r_LTpT_t3_R-P1" pos="-0.051 -0.004 0.004" />
+            <site name="LTpT_T8_r_LTpT_t8_R-P3" pos="-0.051 0.015 0.009" />
+            <site name="LTpT_T9_r_LTpT_t9_R-P3" pos="-0.051 0.015 0.011" />
+            <site name="LTpT_T10_r_LTpT_t10_R-P2_0" pos="-0.051 0.015 0.016" />
+            <site name="LTpT_T11_r_LTpT_t11_R-P3" pos="-0.055 0.015 0.023" />
+            <site name="LTpT_T12_r_LTpT_t12_R-P3" pos="-0.054 0.015 0.026" />
+            <site name="LTpT_R6_r_LTpT_r6_R-P2" pos="-0.052 0.016 0.012" />
+            <site name="LTpT_R7_r_LTpT_r7_R-P2_0" pos="-0.051 0.016 0.014" />
+            <site name="LTpT_R8_r_LTpT_r8_R-P2_0" pos="-0.051 0.015 0.018" />
+            <site name="LTpT_R9_r_LTpT_r9_R-P2_0" pos="-0.051 0.014 0.022" />
+            <site name="LTpT_R10_r_LTpT_r10_R-P2_0" pos="-0.051 0.014 0.026" />
+            <site name="LTpT_R11_r_LTpT_r11_R-P3" pos="-0.051 0.015 0.036" />
+            <site name="LTpT_R12_r_LTpT_r12_R-P2_0" pos="-0.051 0.015 0.039" />
+            <site name="LTpT_T3_l_LTpT_t3_R-P1" pos="-0.051 -0.004 -0.004" />
+            <site name="LTpT_T8_l_LTpT_t8_R-P3" pos="-0.051 0.015 -0.009" />
+            <site name="LTpT_T9_l_LTpT_t9_R-P3" pos="-0.051 0.015 -0.011" />
+            <site name="LTpT_T10_l_LTpT_t10_R-P2_0" pos="-0.051 0.015 -0.016" />
+            <site name="LTpT_T11_l_LTpT_t11_R-P3" pos="-0.055 0.015 -0.023" />
+            <site name="LTpT_T12_l_LTpT_t12_R-P3" pos="-0.054 0.015 0.026" />
+            <site name="LTpT_R6_l_LTpT_r6_R-P2" pos="-0.052 0.016 -0.012" />
+            <site name="LTpT_R7_l_LTpT_r7_R-P2_0" pos="-0.051 0.016 -0.014" />
+            <site name="LTpT_R8_l_LTpT_r8_R-P2_0" pos="-0.051 0.015 -0.018" />
+            <site name="LTpT_R9_l_LTpT_r9_R-P2_0" pos="-0.051 0.014 -0.022" />
+            <site name="LTpT_R10_l_LTpT_r10_R-P2_0" pos="-0.051 0.014 -0.026" />
+            <site name="LTpT_R11_l_LTpT_r11_R-P3" pos="-0.051 0.015 -0.036" />
+            <site name="LTpT_R12_l_LTpT_r12_R-P2_0" pos="-0.051 0.015 -0.039" />
+            <site name="LTpL_L3_r_pathpoint_0" pos="-0.032 0.022 0.022" />
+            <site name="LTpL_L3_l_pathpoint_0" pos="-0.032 0.022 -0.022" />
+            <site name="QL_post_I.1-L3_r_L3_TP_r-P2" pos="-0.032 0.022 0.033" />
+            <site name="QL_post_I.2-L3_r_L3_TP_r-P2" pos="-0.032 0.022 0.033" />
+            <site name="QL_post_I.3-L3_r_L3_TP_r-P2" pos="-0.032 0.022 0.033" />
+            <site name="QL_post_I.1-L3_l_L3_TP_l-P2" pos="-0.032 0.022 -0.033" />
+            <site name="QL_post_I.2-L3_l_L3_TP_l-P2" pos="-0.032 0.022 -0.033" />
+            <site name="QL_post_I.3-L3_l_L3_TP_l-P2" pos="-0.032 0.022 -0.033" />
+            <site name="QL_mid_L3-12.3_r_quadratus_lumb_mid_L3_1_r-P2" pos="-0.032 0.024 0.033" />
+            <site name="QL_mid_L3-12.2_r_quadratus_lumb_mid_L3_2_r-P3" pos="-0.032 0.024 0.033" />
+            <site name="QL_mid_L3-12.1_r_quadratus_lumb_mid_L3_3_r-P3" pos="-0.032 0.024 0.033" />
+            <site name="QL_mid_L3-12.3_l_quadratus_lumb_mid_L3_1_r-P2" pos="-0.032 0.024 -0.033" />
+            <site name="QL_mid_L3-12.2_l_quadratus_lumb_mid_L3_2_r-P3" pos="-0.032 0.024 -0.033" />
+            <site name="QL_mid_L3-12.1_l_quadratus_lumb_mid_L3_3_r-P3" pos="-0.032 0.024 -0.033" />
+            <site name="MF_m3s_r_MF_m3s_r-P2" pos="-0.041 -0.007 0.003" />
+            <site name="MF_m3t.1_r_MF_m3t.1_r-P2" pos="-0.048 -0.011 0.002" />
+            <site name="MF_m3t.2_r_MF_m3t.2_r-P2" pos="-0.048 -0.011 0.003" />
+            <site name="MF_m3t.3_r_MF_m3t.3_r-P2" pos="-0.048 -0.011 0.003" />
+            <site name="MF_m1.laminar_r_MF_m1.laminar_r-P1" pos="-0.043 0.028 0.019" />
+            <site name="MF_m3.laminar_r_MF_m3.laminar_r-P2" pos="-0.040 0.001 0.007" />
+            <site name="MF_m3s_l_MF_m3s_l-P2" pos="-0.041 -0.007 -0.003" />
+            <site name="MF_m3t.1_l_MF_m3t.1_l-P2" pos="-0.048 -0.011 -0.003" />
+            <site name="MF_m3t.2_l_MF_m3t.2_l-P2" pos="-0.048 -0.011 -0.003" />
+            <site name="MF_m3t.3_l_MF_m3t.3_l-P2" pos="-0.048 -0.011 -0.003" />
+            <site name="MF_m1.laminar_l_MF_m1.laminar_l-P1" pos="-0.043 0.028 -0.019" />
+            <site name="MF_m3.laminar_l_MF_m3.laminar_l-P2" pos="-0.040 0.001 -0.007" />
+            <body name="lumbar2" pos="-0.005 0.036 0.000">
+              <inertial pos="0.027 0.020 0.000" quat="0.707107 0 0 0.707107" mass="1.8841163272350707" diaginertia="0.01682 0.01091 0.00591" />
+              <joint name="L2_L3_FE" pos="0.000 0.000 0.000" axis="0 0 1" limited="true" range="-0.282282 0.1048278" />
+              <joint name="L2_L3_LB" pos="0.000 0.000 0.000" axis="1 0 0" limited="true" range="-0.159075 0.159075" />
+              <joint name="L2_L3_AR" pos="0.000 0.000 0.000" axis="0 1 0" limited="true" range="-0.10442594 0.10442594" />
+              <geom name="lumbar2" type="mesh" rgba="1 1 1 1" mesh="lumbar2_geom_1_lumbar2" />
+              <site name="Ps_L2_TP_r_Ps_L2_TP_r-P1" pos="-0.024 0.016 0.024" />
+              <site name="Ps_L2_L3_IVD_r_Ps_L2_L3_IVD_r-P1" pos="0.002 0.004 0.024" />
+              <site name="Ps_L2_TP_l_Ps_L2_TP_l-P1" pos="-0.024 0.016 -0.024" />
+              <site name="Ps_L2_L3_IVD_l_Ps_L2_L3_IVD_l-P1" pos="0.002 0.004 -0.024" />
+              <site name="IL_L2_r_IL_L2_r-P2" pos="-0.033 0.013 0.031" />
+              <site name="IL_L2_l_IL_L2_l-P2" pos="-0.033 0.013 -0.031" />
+              <site name="IL_R5_r_IL_r5_R-P2" pos="-0.055 0.002 0.046" />
+              <site name="IL_R6_r_IL_r6_R-P2" pos="-0.054 0.003 0.049" />
+              <site name="IL_R7_r_IL_r7_R-P2" pos="-0.054 0.003 0.052" />
+              <site name="IL_R8_r_IL_r8_R-P2" pos="-0.053 0.003 0.055" />
+              <site name="IL_R9_r_IL_r9_R-P2" pos="-0.053 0.003 0.057" />
+              <site name="IL_R10_r_IL_r10_R-P2" pos="-0.053 0.003 0.060" />
+              <site name="IL_R11_r_IL_r11_R-P2" pos="-0.053 0.003 0.063" />
+              <site name="IL_R5_l_IL_r5_R-P2" pos="-0.055 0.002 -0.046" />
+              <site name="IL_R6_l_IL_r6_R-P2" pos="-0.054 0.003 -0.049" />
+              <site name="IL_R7_l_IL_r7_R-P2" pos="-0.054 0.003 -0.052" />
+              <site name="IL_R8_l_IL_r8_R-P2" pos="-0.053 0.003 -0.055" />
+              <site name="IL_R9_l_IL_r9_R-P2" pos="-0.053 0.003 -0.057" />
+              <site name="IL_R10_l_IL_r10_R-P2" pos="-0.053 0.003 -0.060" />
+              <site name="IL_R11_l_IL_r11_R-P2" pos="-0.053 0.003 -0.063" />
+              <site name="LTpT_T2_r_LTpT_t2_R-P1" pos="-0.049 -0.016 0.004" />
+              <site name="LTpT_T5_r_LTpT_t5_R-P2" pos="-0.048 0.005 0.007" />
+              <site name="LTpT_T6_r_LTpT_t6_R-P2" pos="-0.048 0.005 0.010" />
+              <site name="LTpT_T7_r_LTpT_t7_R-P2" pos="-0.048 0.005 0.012" />
+              <site name="LTpT_T8_r_LTpT_t8_R-P2_0" pos="-0.050 0.003 0.012" />
+              <site name="LTpT_T9_r_LTpT_t9_R-P3_0" pos="-0.049 0.004 0.013" />
+              <site name="LTpT_T10_r_LTpT_t10_R-P3" pos="-0.048 0.004 0.017" />
+              <site name="LTpT_T11_r_LTpT_t11_R-P2_0" pos="-0.051 0.004 0.022" />
+              <site name="LTpT_T12_r_LTpT_t12_R-P2_0" pos="-0.050 0.004 0.025" />
+              <site name="LTpT_R4_r_LTpT_r4_R-P2" pos="-0.051 0.006 0.013" />
+              <site name="LTpT_R5_r_LTpT_r5_R-P2" pos="-0.052 0.005 0.016" />
+              <site name="LTpT_R6_r_LTpT_r6_R-P2_0" pos="-0.048 0.005 0.015" />
+              <site name="LTpT_R7_r_LTpT_r7_R-P2_1" pos="-0.048 0.005 0.019" />
+              <site name="LTpT_R8_r_LTpT_r8_R-P2_1" pos="-0.048 0.004 0.023" />
+              <site name="LTpT_R9_r_LTpT_r9_R-P2_1" pos="-0.048 0.004 0.027" />
+              <site name="LTpT_R10_r_LTpT_r10_R-P2_1" pos="-0.048 0.004 0.030" />
+              <site name="LTpT_R11_r_LTpT_r11_R-P4" pos="-0.048 0.005 0.039" />
+              <site name="LTpT_R12_r_LTpT_r12_R-P2_1" pos="-0.048 0.005 0.043" />
+              <site name="LTpT_T2_l_LTpT_t2_R-P1" pos="-0.049 -0.016 -0.004" />
+              <site name="LTpT_T5_l_LTpT_t5_R-P2" pos="-0.048 0.005 -0.007" />
+              <site name="LTpT_T6_l_LTpT_t6_R-P2" pos="-0.048 0.005 -0.010" />
+              <site name="LTpT_T7_l_LTpT_t7_R-P2" pos="-0.048 0.005 -0.012" />
+              <site name="LTpT_T8_l_LTpT_t8_R-P2_0" pos="-0.050 0.003 -0.012" />
+              <site name="LTpT_T9_l_LTpT_t9_R-P3_0" pos="-0.049 0.004 -0.013" />
+              <site name="LTpT_T10_l_LTpT_t10_R-P3" pos="-0.048 0.004 -0.017" />
+              <site name="LTpT_T11_l_LTpT_t11_R-P2_0" pos="-0.051 0.004 -0.022" />
+              <site name="LTpT_T12_l_LTpT_t12_R-P2_0" pos="-0.050 0.004 0.025" />
+              <site name="LTpT_R4_l_LTpT_r4_R-P2" pos="-0.051 0.006 -0.013" />
+              <site name="LTpT_R5_l_LTpT_r5_R-P2" pos="-0.052 0.005 -0.016" />
+              <site name="LTpT_R6_l_LTpT_r6_R-P2_0" pos="-0.048 0.005 -0.015" />
+              <site name="LTpT_R7_l_LTpT_r7_R-P2_1" pos="-0.048 0.005 -0.019" />
+              <site name="LTpT_R8_l_LTpT_r8_R-P2_1" pos="-0.048 0.004 -0.023" />
+              <site name="LTpT_R9_l_LTpT_r9_R-P2_1" pos="-0.048 0.004 -0.027" />
+              <site name="LTpT_R10_l_LTpT_r10_R-P2_1" pos="-0.048 0.004 -0.030" />
+              <site name="LTpT_R11_l_LTpT_r11_R-P4" pos="-0.048 0.005 -0.039" />
+              <site name="LTpT_R12_l_LTpT_r12_R-P2_1" pos="-0.048 0.005 -0.043" />
+              <site name="LTpL_L2_r_pathpoint_0" pos="-0.032 0.014 0.022" />
+              <site name="LTpL_L2_l_pathpoint_0" pos="-0.032 0.014 -0.022" />
+              <site name="QL_post_I.2-L2_r_L2_TP_r-P2" pos="-0.034 0.013 0.033" />
+              <site name="QL_post_I.3-L2_r_L2_TP_r-P2" pos="-0.034 0.013 0.033" />
+              <site name="QL_post_I.2-L2_l_L2_TP_l-P2" pos="-0.034 0.013 -0.033" />
+              <site name="QL_post_I.3-L2_l_L2_TP_l-P2" pos="-0.034 0.013 -0.033" />
+              <site name="QL_mid_L2-12.1_r_QL_mid_L2-12.1_l-P1_0" pos="-0.032 0.019 0.028" />
+              <site name="QL_mid_L2-12.1_l_QL_mid_L2-12.1_l-P1_0" pos="-0.032 0.019 -0.028" />
+              <site name="MF_m2s_r_MF_m2s_r-P2" pos="-0.039 -0.013 0.004" />
+              <site name="MF_m2t.1_r_MF_m2t.1_r-P2" pos="-0.044 -0.020 0.004" />
+              <site name="MF_m2t.2_r_MF_m2t.2_r-P2" pos="-0.044 -0.020 0.004" />
+              <site name="MF_m2t.3_r_MF_m2t.3_r-P2" pos="-0.043 -0.021 0.003" />
+              <site name="MF_m2.laminar_r_MF_m2.laminar_r-P2" pos="-0.036 -0.006 0.007" />
+              <site name="MF_m2s_l_MF_m2s_l-P2" pos="-0.039 -0.013 -0.004" />
+              <site name="MF_m2t.1_l_MF_m2t.1_l-P2" pos="-0.044 -0.020 -0.004" />
+              <site name="MF_m2t.2_l_MF_m2t.2_l-P2" pos="-0.044 -0.020 -0.004" />
+              <site name="MF_m2t.3_l_MF_m2t.3_l-P2" pos="-0.043 -0.021 -0.004" />
+              <site name="MF_m2.laminar_l_MF_m2.laminar_l-P2" pos="-0.036 -0.006 -0.007" />
+              <body name="lumbar1" pos="-0.005 0.032 0.000" euler="0 0 0.2">
+                <inertial pos="0.043 0.019 0.000" quat="0.707107 0 0 0.707107" mass="1.8707300655850883" diaginertia="0.01753 0.01113 0.0064" />
+                <joint name="L1_L2_FE" pos="0.000 0.000 0.000" axis="0 0 1" limited="true" range="-0.31161 0.115719" />
+                <joint name="L1_L2_LB" pos="0.000 0.000 0.000" axis="1 0 0" limited="true" range="-0.0820244 0.0820244" />
+                <joint name="L1_L2_AR" pos="0.000 0.000 0.000" axis="0 1 0" limited="true" range="-0.08269806 0.08269806" />
+                <geom name="lumbar1" type="mesh" rgba="1 1 1 1" mesh="lumbar1_geom_1_lumbar1" />
+                <site name="Ps_L1_VB_r_Ps_L1_VB_r-P1" pos="-0.011 0.026 0.022" />
+                <site name="Ps_L1_TP_r_Ps_L1_TP_r-P1" pos="-0.026 0.016 0.025" />
+                <site name="Ps_L1_L2_IVD_r_Ps_L1_L2_IVD_r-P1" pos="-0.001 0.004 0.023" />
+                <site name="Ps_L1_VB_l_Ps_L1_VB_l-P1" pos="-0.011 0.026 -0.022" />
+                <site name="Ps_L1_TP_l_Ps_L1_TP_l-P1" pos="-0.026 0.016 -0.025" />
+                <site name="Ps_L1_L2_IVD_l_Ps_L1_L2_IVD_l-P1" pos="-0.001 0.004 -0.023" />
+                <site name="IL_L1_r_IL_L1_r-P2" pos="-0.033 0.017 0.032" />
+                <site name="IL_L1_l_IL_L1_l-P2" pos="-0.033 0.017 -0.032" />
+                <site name="LTpT_T1_r_LTpT_t1_R-P1" pos="-0.051 -0.012 0.004" />
+                <site name="LTpT_T3_r_LTpT_t3_R-P2" pos="-0.041 -0.015 0.006" />
+                <site name="LTpT_T4_r_LTpT_t4_R-P2" pos="-0.041 -0.015 0.007" />
+                <site name="LTpT_T1_l_LTpT_t1_R-P1" pos="-0.051 -0.012 -0.004" />
+                <site name="LTpT_T3_l_LTpT_t3_R-P2" pos="-0.041 -0.015 -0.006" />
+                <site name="LTpT_T4_l_LTpT_t4_R-P2" pos="-0.041 -0.015 -0.007" />
+                <site name="LTpL_L1_r_pathpoint_0" pos="-0.032 0.017 0.024" />
+                <site name="LTpL_L1_l_pathpoint_0" pos="-0.032 0.017 -0.024" />
+                <site name="QL_post_I.3-L1_r_L1_TP-P1" pos="-0.036 0.016 0.032" />
+                <site name="QL_post_I.3-L1_l_L1_TP_l-P1" pos="-0.036 0.016 -0.032" />
+                <site name="MF_m1s_r_MF_m1s_r-P2" pos="-0.038 -0.014 0.003" />
+                <site name="MF_m1t.1_r_MF_m1t.1_r-P2" pos="-0.045 -0.018 0.003" />
+                <site name="MF_m1t.2_r_MF_m1t.2_r-P2" pos="-0.045 -0.018 0.003" />
+                <site name="MF_m1t.3_r_MF_m1t.3_r-P2" pos="-0.045 -0.018 0.003" />
+                <site name="MF_m1.laminar_r_MF_m1.laminar_r-P2" pos="-0.038 -0.006 0.007" />
+                <site name="MF_m1s_l_MF_m1s_l-P2" pos="-0.038 -0.014 -0.003" />
+                <site name="MF_m1t.1_l_MF_m1t.1_l-P2" pos="-0.045 -0.018 -0.003" />
+                <site name="MF_m1t.2_l_MF_m1t.2_l-P2" pos="-0.045 -0.018 -0.003" />
+                <site name="MF_m1t.3_l_MF_m1t.3_l-P2" pos="-0.045 -0.018 -0.003" />
+                <site name="MF_m1.laminar_l_MF_m1.laminar_l-P2" pos="-0.038 -0.006 -0.007" />
+                <body name="torso" pos="-0.020 -0.094 0.000" euler="0 0 -0.33">
+                  <body name="head_model" pos="-0.006 -0.011 0.000">
+                    <include file="../../myo_sim/head/assets_scaled/myohead_rigid_chain.xml" />
+                  </body>
+                  <inertial pos="0.005 0.271 0.000" mass="20.76990047175239" diaginertia="0.165 0.15 0.125" />
+                  <site name="LACR" pos="0.004 0.463 -0.149" class="myo_scale_marker_torso" />
+                  <site name="RACR" pos="0.004 0.463 0.149" class="myo_scale_marker_torso" />
+                  <site name="C7" pos="-0.059 0.474 -0.000" class="myo_scale_marker_torso" />
+                  <site name="CLAV" pos="0.044 0.452 -0.000" class="myo_scale_marker_torso" />
+                  <geom name="torso_geom_1" pos="-0.021 0.133 0.000" quat="0.980067 0 0 0.198669" type="mesh" rgba="1 1 1 1" mesh="torso_geom_1_thoracic12_s" />
+                  <geom name="torso_geom_2" pos="-0.035 0.161 0.000" quat="0.995004 0 0 0.0998334" type="mesh" rgba="1 1 1 1" mesh="torso_geom_2_thoracic11_s" />
+                  <geom name="torso_geom_3" pos="-0.044 0.188 0.000" quat="0.997189 0 0 0.0749297" type="mesh" rgba="1 1 1 1" mesh="torso_geom_3_thoracic10_s" />
+                  <geom name="torso_geom_4" pos="-0.047 0.218 0.000" quat="0.99875 0 0 0.0499792" type="mesh" rgba="1 1 1 1" mesh="torso_geom_4_thoracic9_s" />
+                  <geom name="torso_geom_5" pos="-0.050 0.245 0.000" quat="0.9998 0 0 -0.0199987" type="mesh" rgba="1 1 1 1" mesh="torso_geom_5_thoracic8_s" />
+                  <geom name="torso_geom_6" pos="-0.048 0.274 0.000" quat="0.99955 0 0 -0.0299955" type="mesh" rgba="1 1 1 1" mesh="torso_geom_6_thoracic7_s" />
+                  <geom name="torso_geom_7" pos="-0.047 0.297 0.000" quat="0.99955 0 0 -0.0299955" type="mesh" rgba="1 1 1 1" mesh="torso_geom_7_thoracic6_s" />
+                  <geom name="torso_geom_8" pos="-0.045 0.321 0.000" quat="0.99875 0 0 -0.0499792" type="mesh" rgba="1 1 1 1" mesh="torso_geom_8_thoracic5_s" />
+                  <geom name="torso_geom_9" pos="-0.043 0.345 0.000" quat="0.997189 0 0 -0.0749297" type="mesh" rgba="1 1 1 1" mesh="torso_geom_9_thoracic4_s" />
+                  <geom name="torso_geom_10" pos="-0.040 0.371 0.000" quat="0.995004 0 0 -0.0998334" type="mesh" rgba="1 1 1 1" mesh="torso_geom_10_thoracic3_s" />
+                  <geom name="torso_geom_11" pos="-0.035 0.394 0.000" quat="0.992198 0 0 -0.124675" type="mesh" rgba="1 1 1 1" mesh="torso_geom_11_thoracic2_s" />
+                  <geom name="torso_geom_12" pos="-0.031 0.413 0.000" quat="0.988771 0 0 -0.149438" type="mesh" rgba="1 1 1 1" mesh="torso_geom_12_thoracic1_s" />
+                  <geom name="torso_geom_13" pos="0.031 0.402 0.000" type="mesh" rgba="1 1 1 1" mesh="torso_geom_13_ribcage_s" />
+                  <geom type="capsule" class="myotorso_coll" size="0.080 0.077" pos="0.040 -0.022 0.000" euler="0 0 1.57" />
+                  <geom type="ellipsoid" class="myotorso_coll" size="0.260 0.095 0.140" pos="0.018 0.176 0.000" euler="0 0 1.7" />
+                  <geom type="capsule" class="myotorso_coll" size="0.110 0.065" pos="0.012 0.275 0.000" euler="0 0 1.57" />
+                  <geom type="capsule" class="myotorso_coll" size="0.075 0.145" pos="-0.010 0.369 0.000" euler="0 0 1.57" />
+                  <geom name="back_cylinder_l" size="0.17 0.13" pos="-0.231 0.044 0.000" class="myoBack_wrap" />
+                  <geom name="Chest_r_ellipsoid" size="0.073" pos="0.009 0.231 0.011" quat="0.97517 -0.0198338 -0.197677 0.0978434" rgba=".5 .5 .9 0.5" group="3" contype="0" conaffinity="0" />
+                  <geom name="Chest_l_ellipsoid" size="0.073" pos="0.009 0.231 -0.011" quat="0.97517 0.0198338 0.197677 0.0978434" rgba=".5 .5 .9 0.5" group="3" contype="0" conaffinity="0" />
+                  <geom name="Cylinder_abdomen" size="0.09 0.13" pos="0.248 0.110 0.000" class="myoBack_wrap" />
+                  <site name="Abs_sidesite" pos="0.033 0.055 0.000" class="sidesite" />
+                  <site name="LeftShoulder" pos="-0.121 0.330 -0.077" size="0.0005" rgba="0 1 0 1" />
+                  <site name="RightShoulder" pos="-0.121 0.330 0.077" size="0.0005" rgba="0 1 0 1" />
+                  <site name="Chest_r_sidesite" pos="-0.023 0.231 0.086" class="sidesite" />
+                  <site name="Chest_l_sidesite" pos="-0.023 0.231 -0.086" class="sidesite" />
+                  <site name="rect_abd_r_rect_abd_r-P2" pos="0.097 0.245 -0.038" />
+                  <site name="rect_abd_l_rect_abd_l-P2" pos="0.097 0.245 0.038" />
+                  <site name="back_cylinder_l_IL_L2_r_1_sidesite" pos="-0.074 -0.048 -0.023" class="sidesite" />
+                  <site name="back_cylinder_l_IL_L3_r_1_sidesite" pos="-0.120 0.239 0.059" class="sidesite" />
+                  <site name="back_cylinder_l_IL_L4_r_1_sidesite" pos="-0.051 0.178 -0.111" class="sidesite" />
+                  <site name="back_cylinder_l_IL_L2_l_1_sidesite" pos="-0.075 -0.052 -0.022" class="sidesite" />
+                  <site name="back_cylinder_l_IL_L3_l_1_sidesite" pos="-0.008 0.018 0.039" class="sidesite" />
+                  <site name="back_cylinder_l_IL_L4_l_1_sidesite" pos="-0.009 0.013 -0.118" class="sidesite" />
+                  <site name="IL_R5_r_IL_r5_R-P2_0" pos="-0.087 0.193 0.048" />
+                  <site name="IL_R5_r_IL_r5_R-P3" pos="-0.089 0.223 0.048" />
+                  <site name="IL_R5_r_IL_r5_R-P4" pos="-0.091 0.255 0.048" />
+                  <site name="IL_R5_r_IL_r5_R-P5" pos="-0.092 0.286 0.050" />
+                  <site name="IL_R5_r_IL_r5_R-P6" pos="-0.089 0.309 0.050" />
+                  <site name="IL_R5_r_IL_r5_R-P7" pos="-0.084 0.331 0.050" />
+                  <site name="IL_R6_r_IL_r6_R-P2_0" pos="-0.088 0.191 0.051" />
+                  <site name="IL_R6_r_IL_r6_R-P3" pos="-0.092 0.226 0.051" />
+                  <site name="IL_R6_r_IL_r6_R-P4" pos="-0.092 0.259 0.052" />
+                  <site name="IL_R6_r_IL_r6_R-P5" pos="-0.090 0.289 0.053" />
+                  <site name="IL_R6_r_IL_r6_R-P6" pos="-0.084 0.304 0.053" />
+                  <site name="IL_R7_r_IL_r7_R-P2_0" pos="-0.088 0.192 0.054" />
+                  <site name="IL_R7_r_IL_r7_R-P3" pos="-0.092 0.224 0.054" />
+                  <site name="IL_R7_r_IL_r7_R-P4" pos="-0.093 0.258 0.055" />
+                  <site name="IL_R7_r_IL_r7_R-P5" pos="-0.087 0.284 0.056" />
+                  <site name="IL_R8_r_IL_r8_R-P2_0" pos="-0.087 0.187 0.056" />
+                  <site name="IL_R8_r_IL_r8_R-P3" pos="-0.089 0.224 0.056" />
+                  <site name="IL_R8_r_IL_r8_R-P4" pos="-0.088 0.251 0.058" />
+                  <site name="IL_R9_r_IL_r9_R-P2_0" pos="-0.087 0.192 0.059" />
+                  <site name="IL_R9_r_IL_r9_R-P3" pos="-0.085 0.213 0.059" />
+                  <site name="IL_R10_r_IL_r10_R-P2_0" pos="-0.082 0.179 0.062" />
+                  <site name="IL_R11_r_IL_r11_R-P2_0" pos="-0.069 0.149 0.066" />
+                  <site name="IL_R12_r_IL_r12_R-P2" pos="-0.042 0.117 0.065" />
+                  <site name="IL_R5_l_IL_r5_R-P2_0" pos="-0.087 0.193 -0.048" />
+                  <site name="IL_R5_l_IL_r5_R-P3" pos="-0.089 0.223 -0.048" />
+                  <site name="IL_R5_l_IL_r5_R-P4" pos="-0.091 0.255 -0.048" />
+                  <site name="IL_R5_l_IL_r5_R-P5" pos="-0.092 0.286 -0.050" />
+                  <site name="IL_R5_l_IL_r5_R-P6" pos="-0.089 0.309 -0.050" />
+                  <site name="IL_R5_l_IL_r5_R-P7" pos="-0.084 0.331 -0.050" />
+                  <site name="IL_R6_l_IL_r6_R-P2_0" pos="-0.088 0.191 -0.051" />
+                  <site name="IL_R6_l_IL_r6_R-P3" pos="-0.092 0.226 -0.051" />
+                  <site name="IL_R6_l_IL_r6_R-P4" pos="-0.092 0.259 -0.052" />
+                  <site name="IL_R6_l_IL_r6_R-P5" pos="-0.090 0.289 -0.053" />
+                  <site name="IL_R6_l_IL_r6_R-P6" pos="-0.084 0.304 -0.053" />
+                  <site name="IL_R7_l_IL_r7_R-P2_0" pos="-0.088 0.192 -0.054" />
+                  <site name="IL_R7_l_IL_r7_R-P3" pos="-0.092 0.224 -0.054" />
+                  <site name="IL_R7_l_IL_r7_R-P4" pos="-0.093 0.258 -0.055" />
+                  <site name="IL_R7_l_IL_r7_R-P5" pos="-0.087 0.284 -0.056" />
+                  <site name="IL_R8_l_IL_r8_R-P2_0" pos="-0.087 0.187 -0.056" />
+                  <site name="IL_R8_l_IL_r8_R-P3" pos="-0.089 0.224 -0.056" />
+                  <site name="IL_R8_l_IL_r8_R-P4" pos="-0.088 0.251 -0.058" />
+                  <site name="IL_R9_l_IL_r9_R-P2_0" pos="-0.087 0.192 -0.059" />
+                  <site name="IL_R9_l_IL_r9_R-P3" pos="-0.085 0.213 -0.059" />
+                  <site name="IL_R10_l_IL_r10_R-P2_0" pos="-0.082 0.179 -0.062" />
+                  <site name="IL_R11_l_IL_r11_R-P2_0" pos="-0.069 0.149 -0.066" />
+                  <site name="IL_R12_l_IL_r12_R-P2" pos="-0.042 0.117 -0.065" />
+                  <site name="LTpT_T1_r_LTpT_t1_R-P2" pos="-0.058 0.439 0.029" />
+                  <site name="Chest_r_ellipsoid_LTpT_T1_r_1_sidesite" pos="-0.071 0.246 0.016" class="sidesite" />
+                  <site name="LTpT_T2_r_LTpT_t2_R-P2" pos="-0.062 0.418 0.029" />
+                  <site name="Chest_r_ellipsoid_LTpT_T2_r_1_sidesite" pos="-0.071 0.246 0.016" class="sidesite" />
+                  <site name="LTpT_T3_r_LTpT_t3_R-P2_0" pos="-0.072 0.395 0.029" />
+                  <site name="Chest_r_ellipsoid_LTpT_T3_r_2_sidesite" pos="-0.071 0.246 0.016" class="sidesite" />
+                  <site name="LTpT_T4_r_LTpT_t4_R-P2_0" pos="-0.081 0.371 0.029" />
+                  <site name="Chest_r_ellipsoid_LTpT_T4_r_2_sidesite" pos="-0.071 0.246 0.016" class="sidesite" />
+                  <site name="LTpT_T5_r_LTpT_t5_R-P2_0" pos="-0.084 0.346 0.031" />
+                  <site name="Chest_r_ellipsoid_LTpT_T5_r_2_sidesite" pos="-0.071 0.246 0.016" class="sidesite" />
+                  <site name="LTpT_T6_r_LTpT_t6_R-P3" pos="-0.082 0.205 0.017" />
+                  <site name="LTpT_T6_r_LTpT_t6_R-P2_0" pos="-0.092 0.318 0.030" />
+                  <site name="LTpT_T7_r_LTpT_t7_R-P3" pos="-0.084 0.205 0.022" />
+                  <site name="LTpT_T7_r_LTpT_t7_R-P2_0" pos="-0.090 0.289 0.029" />
+                  <site name="LTpT_T8_r_LTpT_t8_R-P2_1" pos="-0.089 0.259 0.028" />
+                  <site name="LTpT_T9_r_LTpT_t9_R-P2_0" pos="-0.085 0.240 0.029" />
+                  <site name="LTpT_T10_r_LTpT_t10_R-P2_1" pos="-0.077 0.209 0.020" />
+                  <site name="LTpT_T11_r_LTpT_t11_R-P2_1" pos="-0.067 0.178 0.019" />
+                  <site name="LTpT_T12_r_LTpT_t12_R-P2_1" pos="-0.058 0.144 0.020" />
+                  <site name="LTpT_R4_r_LTpT_r4_R-P2_0" pos="-0.085 0.204 0.029" />
+                  <site name="LTpT_R4_r_LTpT_r4_R-P3" pos="-0.085 0.232 0.031" />
+                  <site name="LTpT_R4_r_LTpT_r4_R-P4" pos="-0.086 0.261 0.034" />
+                  <site name="LTpT_R4_r_LTpT_r4_R-P5" pos="-0.084 0.291 0.037" />
+                  <site name="LTpT_R4_r_LTpT_r4_R-P6" pos="-0.083 0.363 0.042" />
+                  <site name="LTpT_R5_r_LTpT_r5_R-P2_0" pos="-0.088 0.203 0.033" />
+                  <site name="LTpT_R5_r_LTpT_r5_R-P3" pos="-0.087 0.230 0.035" />
+                  <site name="LTpT_R5_r_LTpT_r5_R-P4" pos="-0.088 0.261 0.038" />
+                  <site name="LTpT_R5_r_LTpT_r5_R-P5" pos="-0.086 0.290 0.040" />
+                  <site name="LTpT_R5_r_LTpT_r5_R-P6" pos="-0.082 0.334 0.043" />
+                  <site name="LTpT_R6_r_LTpT_r6_R-P2_1" pos="-0.088 0.201 0.034" />
+                  <site name="LTpT_R6_r_LTpT_r6_R-P3" pos="-0.088 0.230 0.038" />
+                  <site name="LTpT_R6_r_LTpT_r6_R-P4" pos="-0.089 0.260 0.041" />
+                  <site name="LTpT_R6_r_LTpT_r6_R-P5" pos="-0.085 0.289 0.043" />
+                  <site name="LTpT_R6_r_LTpT_r6_R-P6" pos="-0.081 0.311 0.044" />
+                  <site name="LTpT_R7_r_LTpT_r7_R-P2_2" pos="-0.088 0.200 0.039" />
+                  <site name="LTpT_R7_r_LTpT_r7_R-P3" pos="-0.089 0.229 0.044" />
+                  <site name="LTpT_R7_r_LTpT_r7_R-P4" pos="-0.090 0.260 0.046" />
+                  <site name="LTpT_R7_r_LTpT_r7_R-P5" pos="-0.087 0.285 0.048" />
+                  <site name="LTpT_R8_r_LTpT_r8_R-P2_2" pos="-0.089 0.199 0.045" />
+                  <site name="LTpT_R8_r_LTpT_r8_R-P3" pos="-0.089 0.227 0.048" />
+                  <site name="LTpT_R8_r_LTpT_r8_R-P4" pos="-0.088 0.254 0.051" />
+                  <site name="LTpT_R9_r_LTpT_r9_R-P2_2" pos="-0.089 0.197 0.048" />
+                  <site name="LTpT_R9_r_LTpT_r9_R-P3" pos="-0.088 0.220 0.051" />
+                  <site name="LTpT_R10_r_LTpT_r10_R-P2_2" pos="-0.087 0.190 0.052" />
+                  <site name="LTpT_R11_r_LTpT_r11_R-P2_0" pos="-0.072 0.162 0.050" />
+                  <site name="LTpT_R12_r_LTpT_r12_R-P2_2" pos="-0.050 0.134 0.051" />
+                  <site name="LTpT_T1_l_LTpT_t1_R-P2" pos="-0.058 0.439 -0.029" />
+                  <site name="Chest_l_ellipsoid_LTpT_T1_l_1_sidesite" pos="-0.071 0.246 -0.016" class="sidesite" />
+                  <site name="LTpT_T2_l_LTpT_t2_R-P2" pos="-0.062 0.418 -0.029" />
+                  <site name="Chest_l_ellipsoid_LTpT_T2_l_1_sidesite" pos="-0.071 0.246 -0.016" class="sidesite" />
+                  <site name="LTpT_T3_l_LTpT_t3_R-P2_0" pos="-0.072 0.395 -0.029" />
+                  <site name="Chest_l_ellipsoid_LTpT_T3_l_2_sidesite" pos="-0.071 0.246 -0.016" class="sidesite" />
+                  <site name="LTpT_T4_l_LTpT_t4_R-P2_0" pos="-0.081 0.371 -0.029" />
+                  <site name="Chest_l_ellipsoid_LTpT_T4_l_2_sidesite" pos="-0.071 0.246 -0.016" class="sidesite" />
+                  <site name="LTpT_T5_l_LTpT_t5_R-P2_0" pos="-0.084 0.346 -0.031" />
+                  <site name="Chest_l_ellipsoid_LTpT_T5_l_2_sidesite" pos="-0.071 0.246 -0.016" class="sidesite" />
+                  <site name="LTpT_T6_l_LTpT_t6_R-P3" pos="-0.082 0.205 -0.017" />
+                  <site name="LTpT_T6_l_LTpT_t6_R-P2_0" pos="-0.092 0.318 -0.030" />
+                  <site name="LTpT_T7_l_LTpT_t7_R-P3" pos="-0.084 0.205 -0.022" />
+                  <site name="LTpT_T7_l_LTpT_t7_R-P2_0" pos="-0.090 0.289 -0.029" />
+                  <site name="LTpT_T8_l_LTpT_t8_R-P2_1" pos="-0.089 0.259 -0.028" />
+                  <site name="LTpT_T9_l_LTpT_t9_R-P2_0" pos="-0.085 0.240 -0.029" />
+                  <site name="LTpT_T10_l_LTpT_t10_R-P2_1" pos="-0.077 0.209 -0.020" />
+                  <site name="LTpT_T11_l_LTpT_t11_R-P2_1" pos="-0.067 0.178 -0.019" />
+                  <site name="LTpT_T12_l_LTpT_t12_R-P2_1" pos="-0.058 0.144 0.020" />
+                  <site name="LTpT_R4_l_LTpT_r4_R-P2_0" pos="-0.085 0.204 -0.029" />
+                  <site name="LTpT_R4_l_LTpT_r4_R-P3" pos="-0.085 0.232 -0.031" />
+                  <site name="LTpT_R4_l_LTpT_r4_R-P4" pos="-0.086 0.261 -0.034" />
+                  <site name="LTpT_R4_l_LTpT_r4_R-P5" pos="-0.084 0.291 -0.037" />
+                  <site name="LTpT_R4_l_LTpT_r4_R-P6" pos="-0.083 0.363 -0.042" />
+                  <site name="LTpT_R5_l_LTpT_r5_R-P2_0" pos="-0.088 0.203 -0.033" />
+                  <site name="LTpT_R5_l_LTpT_r5_R-P3" pos="-0.087 0.230 -0.035" />
+                  <site name="LTpT_R5_l_LTpT_r5_R-P4" pos="-0.088 0.261 -0.038" />
+                  <site name="LTpT_R5_l_LTpT_r5_R-P5" pos="-0.086 0.290 -0.040" />
+                  <site name="LTpT_R5_l_LTpT_r5_R-P6" pos="-0.082 0.334 -0.043" />
+                  <site name="LTpT_R6_l_LTpT_r6_R-P2_1" pos="-0.088 0.201 -0.034" />
+                  <site name="LTpT_R6_l_LTpT_r6_R-P3" pos="-0.088 0.230 -0.038" />
+                  <site name="LTpT_R6_l_LTpT_r6_R-P4" pos="-0.089 0.260 -0.041" />
+                  <site name="LTpT_R6_l_LTpT_r6_R-P5" pos="-0.085 0.289 -0.043" />
+                  <site name="LTpT_R6_l_LTpT_r6_R-P6" pos="-0.081 0.311 -0.044" />
+                  <site name="LTpT_R7_l_LTpT_r7_R-P2_2" pos="-0.088 0.200 -0.039" />
+                  <site name="LTpT_R7_l_LTpT_r7_R-P3" pos="-0.089 0.229 -0.044" />
+                  <site name="LTpT_R7_l_LTpT_r7_R-P4" pos="-0.090 0.260 -0.046" />
+                  <site name="LTpT_R7_l_LTpT_r7_R-P5" pos="-0.087 0.285 -0.048" />
+                  <site name="LTpT_R8_l_LTpT_r8_R-P2_2" pos="-0.089 0.199 -0.045" />
+                  <site name="LTpT_R8_l_LTpT_r8_R-P3" pos="-0.089 0.227 -0.048" />
+                  <site name="LTpT_R8_l_LTpT_r8_R-P4" pos="-0.088 0.254 -0.051" />
+                  <site name="LTpT_R9_l_LTpT_r9_R-P2_2" pos="-0.089 0.197 -0.048" />
+                  <site name="LTpT_R9_l_LTpT_r9_R-P3" pos="-0.088 0.220 -0.051" />
+                  <site name="LTpT_R10_l_LTpT_r10_R-P2_2" pos="-0.087 0.190 -0.052" />
+                  <site name="LTpT_R11_l_LTpT_r11_R-P2_0" pos="-0.072 0.162 -0.050" />
+                  <site name="LTpT_R12_l_LTpT_r12_R-P2_2" pos="-0.050 0.134 -0.051" />
+                  <site name="QL_mid_L3-12.3_r_quadratus_lumb_mid_L3_1_r-P1" pos="-0.046 0.124 0.057" />
+                  <site name="QL_mid_L3-12.2_r_quadratus_lumb_mid_L3_2_r-P2" pos="-0.047 0.131 0.048" />
+                  <site name="QL_mid_L3-12.1_r_quadratus_lumb_mid_L3_3_r-P2" pos="-0.045 0.141 0.034" />
+                  <site name="QL_mid_L2-12.1_r_QL_mid_L2-12.1_l-P1" pos="-0.045 0.141 0.034" />
+                  <site name="QL_mid_L4-12.3_r_quadratus_lumb_mid_L4_1_r-P1" pos="-0.046 0.124 0.057" />
+                  <site name="QL_mid_L3-12.3_l_quadratus_lumb_mid_L3_1_r-P1" pos="-0.046 0.124 -0.057" />
+                  <site name="QL_mid_L3-12.2_l_quadratus_lumb_mid_L3_2_r-P2" pos="-0.047 0.131 -0.048" />
+                  <site name="QL_mid_L3-12.1_l_quadratus_lumb_mid_L3_3_r-P2" pos="-0.045 0.141 -0.034" />
+                  <site name="QL_mid_L2-12.1_l_QL_mid_L2-12.1_l-P1" pos="-0.045 0.141 -0.034" />
+                  <site name="QL_mid_L4-12.3_l_quadratus_lumb_mid_L4_1_r-P1" pos="-0.046 0.124 -0.057" />
+                  <site name="QL_ant_I.2-T12_r_T12_r-P2" pos="-0.016 0.143 0.019" />
+                  <site name="QL_ant_I.3-T12_r_T12_r-P2" pos="-0.016 0.143 0.019" />
+                  <site name="QL_ant_I.2-12.1_r_12.1_r-P3" pos="-0.044 0.137 0.041" />
+                  <site name="QL_ant_I.3-12.1_r_12.1_r-P2" pos="-0.044 0.137 0.041" />
+                  <site name="QL_ant_I.3-12.2_r_12.2_r-P2" pos="-0.044 0.130 0.051" />
+                  <site name="QL_ant_I.3-12.3_r_12.3_r-P3" pos="-0.042 0.122 0.060" />
+                  <site name="QL_ant_I.2-T12_l_T12_l-P2" pos="-0.016 0.143 -0.019" />
+                  <site name="QL_ant_I.3-T12_l_T12_l-P2" pos="-0.016 0.143 -0.019" />
+                  <site name="QL_ant_I.2-12.1_l_12.1_l-P3" pos="-0.044 0.137 -0.041" />
+                  <site name="QL_ant_I.3-12.1_l_12.1_l-P2" pos="-0.044 0.137 -0.041" />
+                  <site name="QL_ant_I.3-12.2_l_12.2_l-P2" pos="-0.044 0.130 -0.051" />
+                  <site name="QL_ant_I.3-12.3_l_12.3_l-P3" pos="-0.042 0.122 -0.060" />
+                  <site name="EO1_r_EO1_r-P2" pos="0.097 0.196 0.105" />
+                  <site name="EO2_r_EO2_r-P1" pos="0.100 0.160 0.115" />
+                  <site name="EO3_r_EO3_r-P1" pos="0.094 0.125 0.119" />
+                  <site name="EO4_r_EO4_r-P1" pos="0.082 0.101 0.115" />
+                  <site name="EO5_r_EO5_r-P1" pos="0.019 0.119 0.130" />
+                  <site name="EO6_r_EO6_r-P1" pos="-0.003 0.101 0.116" />
+                  <site name="IO4_r_IO4_r-P1" pos="0.085 0.121 0.126" />
+                  <site name="IO5_r_IO5_r-P1" pos="0.041 0.104 0.122" />
+                  <site name="IO6_r_IO6_r-P1" pos="0.006 0.093 0.110" />
+                  <site name="EO1_l_EO1_l-P2" pos="0.097 0.196 -0.105" />
+                  <site name="EO2_l_EO2_l-P1" pos="0.100 0.160 -0.115" />
+                  <site name="EO3_l_EO3_l-P1" pos="0.094 0.125 -0.119" />
+                  <site name="EO4_l_EO4_l-P1" pos="0.082 0.101 -0.115" />
+                  <site name="EO5_l_EO5_l-P1" pos="0.019 0.119 -0.130" />
+                  <site name="EO6_l_EO6_l-P1" pos="-0.003 0.101 -0.116" />
+                  <site name="IO4_l_IO4_l-P1" pos="0.085 0.121 -0.126" />
+                  <site name="IO5_l_IO5_l-P1" pos="0.041 0.104 -0.122" />
+                  <site name="IO6_l_IO6_l-P1" pos="0.006 0.093 -0.110" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+
+</mujocoinclude>

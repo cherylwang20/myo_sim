@@ -378,6 +378,7 @@
             <site name="LT2" pos="0.065 -0.17 0.024" class="myo_scale_marker"/>
             <site name="LT3" pos="0.055 -0.15 -0.044" class="myo_scale_marker"/>
             <site name="LLFE" pos="0 -0.404 -0.05" class="myo_scale_marker"/>
+            <site name="LS4" pos="0 -0.704 -0.05" class="myo_scale_marker"/>
             <site name="LMFE" pos="0 -0.404 0.05" class="myo_scale_marker"/>
             <site name="KnExt_at_fem_l_site_recfem_l_side" pos="0.028412 -0.418795 0.0326861"/>
             <site name="KnExt_at_fem_l_site_vasint_l_side" pos="0.0140493 -0.375075 0.00469312"/>

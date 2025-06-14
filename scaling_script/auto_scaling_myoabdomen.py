@@ -510,7 +510,7 @@ if __name__ == "__main__":
     )
 
     upper_mass_scales = {
-        "torso": (scale_dict['torso'], ["scarum", "lumbar"]), 
+        "torso": (scale_dict['torso'], ["sacrum", "lumbar"]), 
     }
 
     scale_body_part_masses(
