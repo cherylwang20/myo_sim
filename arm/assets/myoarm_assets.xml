@@ -17,7 +17,6 @@
     </visual>
 
     <default class="main">
-        <geom contype="0" conaffinity="0"/>
         <tendon rgba="0.95 0.3 0.3 41" width="0.001"/>
         <default class="arm">
             <joint limited="true" damping="1.05" armature="1e-4" stiffness="0"/>
@@ -128,7 +127,7 @@
         <pair geom1="radius_coll" geom2="thorax_coll1" condim="3"/>
         <pair geom1="radius_coll" geom2="thorax_coll2" condim="3"/>
         <pair geom1="radius_coll" geom2="thorax_coll3" condim="3"/>
-       <exclude body1="ulna" body2="radius"/>
+        <exclude body1="ulna" body2="radius"/>
         <exclude body1="radius" body2="firstmc"/>
         <exclude body1="proxph2" body2="proxph3"/>
         <exclude body1="proxph3" body2="proxph4"/>
