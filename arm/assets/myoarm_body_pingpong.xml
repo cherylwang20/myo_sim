@@ -530,14 +530,14 @@
                                                             <site name="IPthumb_site_EPL_side" pos="0.0167862 -0.030399 -0.0079041"/>
                                                             <site name="IPthumb_site_FPL_side" pos="0.00820158 -0.028993 -0.00586527"/>
                                                             <body name="distal_thumb" pos="0.014 -0.0259 -0.0101">
-                                                                <!--body name="ping_pong_paddle" pos="0 0 0.03" euler="0.1 -0.5 3.14">
+                                                                <body name="ping_pong_paddle" pos="0 0 0.03" euler="0.1 -0.5 3.14">
                                                                     <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
                                                                     <geom name="ping_pong_paddle" type="mesh" mesh="ping_pong_paddle_mesh"
                                                                         material="paddle_mat" rgba="1 1 1 1"
                                                                         pos="0 0 0" euler="0 0 0" class="visual"/>
                                                                     <geom name="pad" type="cylinder" size="0.082 0.01" pos="-0.07 0 0" class="collision"/>
                                                                     <geom name="handle" type="cylinder" euler="0 0.785 0" size="0.016 0.051" pos="0.04 0 0" class="collision"/>
-                                                                </body>-->
+                                                                </body>
                                                                 <geom class="myohand_coll" size="0.0065" fromto="0 0 0 0.010 -0.018 -0.007"/>
                                                                 <joint axis="-0.050102 -0.479623 0.876043" name="ip_flexion" pos="0 0 0" range="-1.309 0.436332"/>
                                                                 <geom mesh="thumbdist" name="thumbdist" type="mesh"/>
