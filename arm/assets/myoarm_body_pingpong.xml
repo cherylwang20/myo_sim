@@ -112,8 +112,8 @@
                         <joint axis="0.00479995 0.999089 0.0423995" name="elv_angle" pos="0 0 0" range="-1.658 2.269" user="0.251642"/>
                         <body name="humphant1" pos="0 0 0">
                             <inertial diaginertia="1 1 1" mass="0.001" pos="0 0 0"/>
-                            <joint axis="-0.998261 0.00229991 0.0588977" name="shoulder_elv" pos="0 0 0" range="0.7 0.707" user="9.61084e-06"/>
-                            <joint axis="0.00479995 0.999089 0.0423995" name="shoulder1_r2" pos="0 0 0" range="-0.7 -0.69" user="-0.251642"/>
+                            <joint axis="-0.998261 0.00229991 0.0588977" name="shoulder_elv" pos="0 0 0" range="0 3.142" user="9.61084e-06"/>
+                            <joint axis="0.00479995 0.999089 0.0423995" name="shoulder1_r2" pos="0 0 0" range="-2.242 1.658" user="-0.251642"/>
                             <body name="humerus" pos="0 0 0">
                                 <inertial diaginertia="0.0128576 0.0121576 0.00239265" mass="1.99757" pos="0.018064 -0.140141 -0.012746" quat="0.407851 0.343714 -0.567755 0.627034"/>
                                 <joint axis="0.00479995 0.999089 0.0423995" name="shoulder_rot" pos="0 0 0" range="-1.571 2.094" user="0.161391"/>
@@ -292,7 +292,7 @@
                                 <site class="marker" name="R.Elbow.Medial_marker" pos="-0.00407 -0.2844 -0.05408"/>
                                 <body name="ulna" pos="0.0061 -0.2904 -0.0123" childclass="elbow">
                                     <inertial diaginertia="0.00543663 0.00523521 0.001" mass="1.1053" pos="0.00971783 -0.0959509 0.024286" quat="0.792048 0.609078 0.0156735 0.0379256"/>
-                                    <joint axis="0.0494004 0.0366003 0.998108" name="elbow_flexion" pos="0 0 0" range="0.8 0.805" user="1.05676"/>
+                                    <joint axis="0.0494004 0.0366003 0.998108" name="elbow_flexion" pos="0 0 0" range="0 2.269" user="1.05676"/>
                                     <geom mesh="ulna_geom_1_ulna" name="ulna_geom_1" type="mesh"/>
                                     <geom class="wrap" name="PQ2_cylinder" pos="-0.0012 -0.2092 0.0428" quat="0.540392 0.481982 -0.422482 0.545141" size="0.007 0.05" type="cylinder"/>
 
@@ -535,6 +535,7 @@
                                                                     <geom name="ping_pong_paddle" type="mesh" mesh="ping_pong_paddle_mesh"
                                                                         material="paddle_mat" rgba="1 1 1 1"
                                                                         pos="0 0 0" euler="0 0 0" class="visual"/>
+                                                                    <site name="paddle" pos="-0.06 0. 0" group="4"/>
                                                                     <geom name="pad" type="cylinder" size="0.082 0.01" pos="-0.07 0 0" class="collision"/>
                                                                     <geom name="handle" type="cylinder" euler="0 1.57 0" size="0.016 0.051" pos="0.04 0 0" class="collision"/>
                                                                 </body>
