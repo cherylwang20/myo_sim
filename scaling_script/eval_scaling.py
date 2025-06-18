@@ -73,6 +73,16 @@ def read_IK(mat_file_path):
         raise
 
 
+data = np.load('qpos_traj_myofullbody_Subj04_walk_18.npy', allow_pickle=True).item()
+
+print(type(data))    # Should print: <class 'dict'>
+print(data.keys())   # Shows: dict_keys(['key1', 'key2'])
+
+# Access the values:
+print("Value for key1:", data['qpos'])
+print("Value for key2:", data['qvel'])
+
+'''
 path = os.getcwd()
 file = 'Subj04_jump.mat'
 df = read_IK(path + '/' + file)
@@ -136,3 +146,5 @@ for name, pos in df_markers.items():
     pos_new = [pos[0][2], pos[0][0], pos[0][1]]
     pos_str = " ".join(str(x) for x in pos_new)
     print(f'<site name="{name}_n2" pos="{pos_str}" size="0.01"/>')
+
+    '''

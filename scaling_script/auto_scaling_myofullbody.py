@@ -324,6 +324,80 @@ def parse_and_replace_assets(xml_path, output_path):
     replace_assets(root)
     tree.write(output_path)
 
+def scale_mujoco_muscle_xml(xml_path, output_path, scale_factor):
+    """
+    Scales muscle actuator parameters in a MuJoCo XML file.
+    
+    Args:
+        xml_path (str): Path to the input XML file.
+        output_path (str): Path to save the updated XML.
+        scale_factor (float): Linear model scaling factor (e.g., 1.2).
+    """
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+
+    def scale_gain_bias(gain_or_bias_str):
+        # Convert string to list of floats
+        prm = list(map(float, gain_or_bias_str.strip().split()))
+
+        if len(prm) < 9:
+            raise ValueError("gainprm or biasprm must have at least 9 values")
+
+        # Apply scaling
+        prm[2] *= scale_factor ** 2   # force
+        prm[3] *= scale_factor        # scale
+        prm[6] *= scale_factor        # vmax
+
+        return ' '.join(f"{x:.4f}" for x in prm)
+    
+    def scale_lengthrange(lengthrange_str):
+        vals = list(map(float, lengthrange_str.strip().split()))
+        if len(vals) != 2:
+            raise ValueError("lengthrange must have exactly 2 values")
+        vals = [x * scale_factor for x in vals]
+        return ' '.join(f"{x:.6f}" for x in vals)
+
+    for actuator in root.findall('.//general'):
+        if 'gainprm' in actuator.attrib:
+            old = actuator.attrib['gainprm']
+            actuator.attrib['gainprm'] = scale_gain_bias(old)
+
+        if 'biasprm' in actuator.attrib:
+            old = actuator.attrib['biasprm']
+            actuator.attrib['biasprm'] = scale_gain_bias(old)
+
+        if 'lengthrange' in actuator.attrib:
+            try:
+                actuator.attrib['lengthrange'] = scale_lengthrange(actuator.attrib['lengthrange'])
+            except ValueError:
+                continue
+
+    tree.write(output_path)
+    print(f"Muscle Rescale Updated XML saved to: {output_path}")
+
+def scale_tendon_springlength(xml_input_path, xml_output_path, scale_factor=1.0):
+    """
+    Scales the springlength of all tendon elements in a MuJoCo XML.
+
+    Args:
+        xml_input_path (str): Path to the input MuJoCo XML file.
+        xml_output_path (str): Path where the modified XML will be saved.
+        scale_factor (float): Factor to scale the springlengths (e.g., 1.1 for +10%).
+    """
+    tree = ET.parse(xml_input_path)
+    root = tree.getroot()
+
+    for tendon in root.findall(".//tendon/*"):
+        springlength = tendon.get("springlength")
+        if springlength is not None:
+            try:
+                original_val = float(springlength)
+                scaled_val = original_val * scale_factor
+                tendon.set("springlength", str(scaled_val))
+            except ValueError:
+                print(f"Skipping non-numeric springlength: {springlength}")
+
+    tree.write(xml_output_path)
 
 if __name__ == "__main__":
     # creating a new main file for the scaled model
@@ -346,11 +420,11 @@ if __name__ == "__main__":
     lower_output_xml = "./leg/assets_scaled/myolegs_assets.xml"
 
     scale_dict = {
-        "pelvis": 1.1,
-        "thigh": 1.1,
-        "shank": 1.1,
-        "foot": 1.1,
-        "torso": 1.1
+        "pelvis": 1.11,
+        "thigh": 1.08,
+        "shank": 1.09,
+        "foot": 0.97,
+        "torso": 1.02
     }
 
     # Define body parts and their meshes + scaling
@@ -364,19 +438,25 @@ if __name__ == "__main__":
 
     scale_body_parts(lower_input_xml, lower_output_xml, leg_part_scales)
 
-    '''
-    move tendon and muscle xml to new scaled file. 
-    !!! replace later with scaling of tendon and muscle
-    '''
-    muscle_file = 'leg/assets/myolegs_muscle.xml'
-    tendon_file = 'leg/assets/myolegs_tendon.xml'
+    #muscle_file = 'leg/assets/myolegs_muscle.xml'
+    ## scaling the muscle properties in torso
+    scale_mujoco_muscle_xml(
+        xml_path="./leg/assets_scaled/myolegs_muscle.xml",
+        output_path="./leg/assets_scaled/myolegs_muscle.xml",
+        scale_factor=scale_dict['thigh']
+    )
+
+    #tendon_file = 'leg/assets/myolegs_tendon.xml'
+    scale_tendon_springlength("./leg/assets_scaled/myolegs_tendon.xml", 
+                              "./leg/assets_scaled/myolegs_tendon.xml", 
+                              scale_factor=scale_dict['thigh'])
 
     # Destination directory
     dst_dir = 'leg/assets_scaled/'
 
     # Copy the file to the destination directory
-    shutil.copy(muscle_file , dst_dir)
-    shutil.copy(tendon_file , dst_dir)
+    #shutil.copy(muscle_file , dst_dir)
+    #shutil.copy(tendon_file , dst_dir)
 
     #scaling torso part
     upper_input_xml = "./torso/assets/myotorso_assets.xml"
@@ -392,6 +472,13 @@ if __name__ == "__main__":
     }
 
     scale_body_parts(upper_input_xml, upper_output_xml, upper_part_scales)
+
+    ## scaling the muscle properties in torso
+    scale_mujoco_muscle_xml(
+        xml_path=upper_output_xml,
+        output_path=upper_output_xml,
+        scale_factor=scale_dict['torso']
+    )
 
 
     #scaling head
@@ -527,5 +614,8 @@ if __name__ == "__main__":
     #replace the asset path for head in torso with scaled one:
     parse_and_replace_assets(r'.\torso\assets_scaled\myotorso_chain.xml', r'.\torso\assets_scaled\myotorso_chain.xml')
     parse_and_replace_assets(r'.\torso\assets_scaled\myotorso_assets.xml', r'.\torso\assets_scaled\myotorso_assets.xml') 
+
+
+
 
     

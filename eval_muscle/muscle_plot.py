@@ -13,20 +13,20 @@ def fix_slashes_in_includes(xml_path, output_path):
     tree.write(output_path)
 
 # Example usage
-fix_slashes_in_includes("../body/myofullbody_scaled.xml", "../body/myofullbody_scaled.xml")
+fix_slashes_in_includes("./body/myofullbody_scaled.xml", "./body/myofullbody_scaled.xml")
 
 
 # ---------- Configuration ----------
 xml_paths = {
-    "Default": "../body/myofullbody.xml",
-    "Scaled": "../body/myofullbody_scaled.xml"  # ✅ portable and correct
+    "Default": "./body/myofullbody.xml",
+    "Scaled": "./body/myofullbody_scaled.xml" 
 }
 
 
-muscle_name = "IL_L1_r"
+muscle_name = "IL_L1_r" #"glmax1_r"
 tendon_name = f"{muscle_name}_tendon"
-joint_name = "flex_extension"
-joint_range = np.linspace(-1.35, 0.75, 50)
+joint_name = "flex_extension" #"hip_flexion_r"
+joint_range = np.linspace(-1.35, 0.7, 50) #np.linspace(-0.55, 2, 50)
 eps = 1e-4
 # ------------------------------------
 
@@ -107,9 +107,9 @@ for label, xml_path in xml_paths.items():
 
         mtu_lengths.append(mtu_len)
         muscle_forces.append(force)
-
+    
     # Plot for this model
-    plt.plot(mtu_lengths, muscle_forces, label=label)
+    plt.plot(mtu_lengths, muscle_forces, label=label, linewidth = 2, alpha = 0.5)
 
 # Finalize plot
 plt.xlabel("Muscle-Tendon Unit Length (m)")
