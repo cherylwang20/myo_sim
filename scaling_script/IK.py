@@ -50,20 +50,23 @@ def load_mat(task):
     
     return df_markers
 
+def print_qpos_as_xml(best_qpos, key_name="frame_0000"):
+    qpos_str = ' '.join(f"{x:.8f}" for x in best_qpos)
+    xml = f'<key name="{key_name}" qpos="{qpos_str}"/>'
+    print(xml)
 
 
-def motion(model_name, task, body= 'leg', num_frames = 500):
-
-    mj_model = mujoco.MjModel.from_xml_path(
-                path+ f"/{body}/{model_name}.xml"
-                )
+def motion(model_name, task, body='leg', num_frames=500):
+    mj_model = mujoco.MjModel.from_xml_path(path + f"/{body}/{model_name}.xml")
     mj_data = mujoco.MjData(mj_model)
-
     df_markers = load_mat(task)
 
-    site_name_to_id = {name: mujoco.mj_name2id(mj_model, mujoco.mjtObj.mjOBJ_SITE, name) for name in df_markers.keys()}
+    site_name_to_id = {
+        name: mujoco.mj_name2id(mj_model, mujoco.mjtObj.mjOBJ_SITE, name)
+        for name in df_markers.keys()
+    }
 
-    camera = "front"
+    camera = "side"
     options_ref = mujoco.MjvOption()
     options_ref.flags[:] = 0
     options_ref.geomgroup[1:] = 0
@@ -71,9 +74,9 @@ def motion(model_name, task, body= 'leg', num_frames = 500):
     renderer_ref = mujoco.Renderer(mj_model, height=1080, width=1240)
     renderer_ref.scene.flags[:] = 0
 
-    #renderer_ref.update_scene(mj_data, camera=camera)
     error = []
     qpos_traj = []
+    qvel_traj = []
     frames = []
 
     for frame in tqdm(range(num_frames), desc="Frames optimized"):
@@ -86,7 +89,6 @@ def motion(model_name, task, body= 'leg', num_frames = 500):
                 site_ids.append(site_name_to_id[name])
         target_pos = np.array(target_pos)
 
-        # Only optimize every 10th frame
         if frame % 1 == 0:
             def ik_loss(qpos):
                 mj_data.qpos[:] = qpos
@@ -94,37 +96,43 @@ def motion(model_name, task, body= 'leg', num_frames = 500):
                 sim_marker_pos = np.array([mj_data.site_xpos[site_id] for site_id in site_ids])
                 return np.sum((sim_marker_pos - target_pos) ** 2)
 
-            # Start from previous pose for better convergence
-            if frame == 0:
-                qpos_init = mj_data.qpos.copy()
-            else:
-                qpos_init = qpos_traj[-1]
+            qpos_init = mj_data.qpos.copy() if frame == 0 else qpos_traj[-1]
+            
+            qpos_size = mj_model.nq
+            bounds = [ (None, None) ] * qpos_size  # Default: no limits
 
-            result = minimize(ik_loss, qpos_init, method='L-BFGS-B')
-            best_qpos = result.x
+            for jnt_id, is_limited in enumerate(mj_model.jnt_limited):
+                if is_limited:
+                    qpos_idx = mj_model.jnt_qposadr[jnt_id]
+                    low, high = mj_model.jnt_range[jnt_id]
+                    bounds[qpos_idx] = (low, high)
+
+            result = minimize(ik_loss, qpos_init, method='L-BFGS-B', bounds = bounds)
+            best_qpos = result.x #clip_qpos_to_limits(result.x, mj_model)
             loss = result.fun
             if not np.isnan(loss):
                 error.append(loss)
         else:
-            # Use last optimized qpos
             best_qpos = qpos_traj[-1]
-            loss = np.nan  # Or compute if needed
+            loss = np.nan
 
-        # Update state and render as before
         mj_data.qpos[:] = best_qpos
+        #print_qpos_as_xml(best_qpos)
         mujoco.mj_forward(mj_model, mj_data)
         renderer_ref.update_scene(mj_data, camera=camera)
         frame_in = renderer_ref.render()
         frames.append(frame_in)
         qpos_traj.append(best_qpos)
+        qvel_traj.append(mj_data.qvel.copy()) #update the script so 
+
         if frame % 10 == 0:
             tqdm.write(f"Frame {frame+1}/{num_frames}: final loss = {loss:.3f}" if not np.isnan(loss) else f"Frame {frame+1}/{num_frames}: (no optimization)")
-    
-    output_name = f'videos/playback_{model_name}_{task}.mp4'
+
+    output_name = f'./videos/playback_{model_name}_{task}.mp4'
     skvideo.io.vwrite(output_name, np.asarray(frames[5:]), inputdict={"-r": '100'}, outputdict={"-pix_fmt": "yuv420p"})
 
-    output_base = f'qpos_traj_{model_name}'
-    np.save(output_base + '.npy', output_base)
+    output_base = f'qpos_traj_{model_name}_{task}'
+    np.save(output_base + '.npy', {'qpos': np.array(qpos_traj), 'qvel': np.array(qvel_traj)})
     print('Average error loss is:', np.average(error))
     return error
 
@@ -132,11 +140,12 @@ model_def = 'myolegs_abdomen'
 model_scal = 'myolegs_abdomen_test'
 model_full = 'myoFullBody'
 
-qpos_read = np.load('qpos_traj_myoFullBody.npy')
+#qpos_read = np.load('qpos_traj_myoFullBody.npy')
 #print(qpos_read[0])
 
 #serror_full = motion(model_full, 'full_body')
-error_full_2 = motion('myofullbody', 'Subj04_run_63', 'body')
+error_full_def = motion('myofullbody', 'Subj04_walk_18', 'body')
+#error_full_scaled = motion('myofullbody_scaled', 'Subj04_run_63', 'body')
 
 
 '''
@@ -145,8 +154,8 @@ error_scale = motion(model_scal)
 
 
 plt.figure(figsize=(4, 2))
-plt.plot(error_def, label = 'default')
-plt.plot(error_scale, label = 'scaled')
+plt.plot(error_full_def, label = 'default')
+plt.plot(error_full_scaled, label = 'scaled')
 plt.legend()
 plt.show()
 '''
