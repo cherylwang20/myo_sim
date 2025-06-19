@@ -324,6 +324,7 @@ def parse_and_replace_assets(xml_path, output_path):
     replace_assets(root)
     tree.write(output_path)
 
+#scaling for torso
 def scale_mujoco_muscle_xml(xml_path, output_path, scale_factor):
     """
     Scales muscle actuator parameters in a MuJoCo XML file.
@@ -375,29 +376,91 @@ def scale_mujoco_muscle_xml(xml_path, output_path, scale_factor):
     tree.write(output_path)
     print(f"Muscle Rescale Updated XML saved to: {output_path}")
 
-def scale_tendon_springlength(xml_input_path, xml_output_path, scale_factor=1.0):
+def scale_mujoco_muscle_xml_by_name(xml_path, output_path, muscle_groups_scale_dict):
     """
-    Scales the springlength of all tendon elements in a MuJoCo XML.
+    Scales muscle actuator parameters in a MuJoCo XML file based on muscle name substrings.
 
     Args:
-        xml_input_path (str): Path to the input MuJoCo XML file.
-        xml_output_path (str): Path where the modified XML will be saved.
-        scale_factor (float): Factor to scale the springlengths (e.g., 1.1 for +10%).
+        xml_path (str): Path to the input XML file.
+        output_path (str): Path to save the updated XML.
+        muscle_groups_scale_dict (dict): Keys are tuples/lists of name substrings,
+                                         values are scale factors (e.g., {("bicep",): 1.1}).
     """
-    tree = ET.parse(xml_input_path)
+    tree = ET.parse(xml_path)
     root = tree.getroot()
 
-    for tendon in root.findall(".//tendon/*"):
-        springlength = tendon.get("springlength")
-        if springlength is not None:
-            try:
-                original_val = float(springlength)
-                scaled_val = original_val * scale_factor
-                tendon.set("springlength", str(scaled_val))
-            except ValueError:
-                print(f"Skipping non-numeric springlength: {springlength}")
+    def scale_gain_bias(gain_or_bias_str, scale_factor):
+        prm = list(map(float, gain_or_bias_str.strip().split()))
+        if len(prm) < 9:
+            raise ValueError("gainprm or biasprm must have at least 9 values")
+        prm[2] *= scale_factor ** 2   # force
+        prm[3] *= scale_factor        # scale
+        prm[6] *= scale_factor        # vmax
+        return ' '.join(f"{x:.4f}" for x in prm)
 
-    tree.write(xml_output_path)
+    def scale_lengthrange(lengthrange_str, scale_factor):
+        vals = list(map(float, lengthrange_str.strip().split()))
+        if len(vals) != 2:
+            raise ValueError("lengthrange must have exactly 2 values")
+        vals = [x * scale_factor for x in vals]
+        return ' '.join(f"{x:.6f}" for x in vals)
+
+    for actuator in root.findall('.//general'):
+        name = actuator.attrib.get("name", "").lower()
+        matched_scale = None
+
+        for substrings, scale in muscle_groups_scale_dict.items():
+            if any(sub in name for sub in substrings):
+                matched_scale = scale
+                break
+
+        if matched_scale is not None:
+            if 'gainprm' in actuator.attrib:
+                actuator.attrib['gainprm'] = scale_gain_bias(actuator.attrib['gainprm'], matched_scale)
+
+            if 'biasprm' in actuator.attrib:
+                actuator.attrib['biasprm'] = scale_gain_bias(actuator.attrib['biasprm'], matched_scale)
+
+            if 'lengthrange' in actuator.attrib:
+                try:
+                    actuator.attrib['lengthrange'] = scale_lengthrange(actuator.attrib['lengthrange'], matched_scale)
+                except ValueError:
+                    continue
+
+    tree.write(output_path)
+    print(f"Muscle rescaled XML saved to: {output_path}")
+
+def scale_tendon_springlength_by_muscle_groups(xml_input_path, xml_output_path, muscle_groups_scale_dict):
+    """
+    Scales springlengths of tendons in a MuJoCo XML based on groups of muscle name substrings.
+
+    Args:
+        xml_input_path (str): Path to input MuJoCo XML.
+        xml_output_path (str): Path to save modified XML.
+        muscle_groups_scale_dict (dict): Keys are tuples or lists of name substrings,
+                                         values are scale factors.
+                                         e.g., {("bicep", "brachialis"): 1.1}
+    """
+    springlength_re = re.compile(r'springlength="([\d.eE+-]+)"')
+    name_re = re.compile(r'name="([^"]+)"')
+
+    with open(xml_input_path, "r") as f_in, open(xml_output_path, "w") as f_out:
+        for line in f_in:
+            if 'springlength=' in line and 'name=' in line:
+                name_match = name_re.search(line)
+                spring_match = springlength_re.search(line)
+
+                if name_match and spring_match:
+                    name = name_match.group(1).lower()
+                    original_val = float(spring_match.group(1))
+
+                    for substrings, scale in muscle_groups_scale_dict.items():
+                        if any(sub in name for sub in substrings):
+                            scaled_val = original_val * scale
+                            line = springlength_re.sub(f'springlength="{scaled_val:.6f}"', line)
+                            break  # Apply only first matching group
+
+            f_out.write(line)
 
 if __name__ == "__main__":
     # creating a new main file for the scaled model
@@ -440,16 +503,81 @@ if __name__ == "__main__":
 
     #muscle_file = 'leg/assets/myolegs_muscle.xml'
     ## scaling the muscle properties in torso
-    scale_mujoco_muscle_xml(
-        xml_path="./leg/assets_scaled/myolegs_muscle.xml",
-        output_path="./leg/assets_scaled/myolegs_muscle.xml",
-        scale_factor=scale_dict['thigh']
-    )
+    muscle_scales = {
+        ("glmax1_r", "glmax2_r",
+         "glmax3_r", "glmed1_r", 
+         "glmed2_r", "glmed3_r",
+         "glmin1_r", "glmin2_r", 
+         "glmin3_r", "iliacus_r",
+         "piri_r", "psoas_r",
+         "tfl_r", "glmax1_l", "glmax2_l",
+         "glmax3_l", "glmed1_l", 
+         "glmed2_l", "glmed3_l",
+         "glmin1_l", "glmin2_l", 
+         "glmin3_l", "iliacus_l",
+         "piri_l", "psoas_l",
+         "tfl_l"): scale_dict['pelvis'],
+        ("addbrev_r", "addlong_r", "addmagDist_r",
+         "addmagIsch_r", "addmagMid_r", "addmagProx_r",
+         "bflh_r", "bfsh_r", "grac_r"
+         "gaslat_r", "gasmed_r", "recfem_r", 
+         "sart_r", "semimem_r", "semiten_r",
+         "vasint_r", "vaslat_r", "vasmed_r", 
+         "addbrev_l", "addlong_l", "addmagDist_l",
+         "addmagIsch_l", "addmagMid_l", "addmagProx_l",
+         "bflh_l", "bfsh_l", "grac_l"
+         "gaslat_l", "gasmed_l", "recfem_l", 
+         "sart_l", "semimem_l", "semiten_l",
+         "vasint_l", "vaslat_l", "vasmed_l"): scale_dict['thigh'],
+        ("edl_r", "ehl_r", "fdl_r",
+         "fhl_r", "perbrev_r", "perlong_r",
+         "soleus_r", "tibant_r", 
+         "tibpost_r", "edl_l", "ehl_l", "fdl_l",
+         "fhl_l", "perbrev_l", "perlong_l",
+         "soleus_l", "tibant_l", 
+         "tibpost_l"): scale_dict['shank']
+    }
 
-    #tendon_file = 'leg/assets/myolegs_tendon.xml'
-    scale_tendon_springlength("./leg/assets_scaled/myolegs_tendon.xml", 
-                              "./leg/assets_scaled/myolegs_tendon.xml", 
-                              scale_factor=scale_dict['thigh'])
+
+    scale_mujoco_muscle_xml_by_name("./leg/assets/myolegs_muscle.xml", "./leg/assets_scaled/myolegs_muscle.xml", muscle_scales)
+
+
+    tendon_scales = {
+        ("glmax1_r_tendon", "glmax2_r_tendon",
+         "glmax3_r_tendon", "glmed1_r_tendon", 
+         "glmed2_r_tendon", "glmed3_r_tendon",
+         "glmin1_r_tendon", "glmin2_r_tendon", 
+         "glmin3_r_tendon", "iliacus_r_tendon",
+         "piri_r_tendon", "psoas_r_tendon",
+         "tfl_r_tendon", "glmax1_l_tendon", "glmax2_l_tendon",
+         "glmax3_l_tendon", "glmed1_l_tendon", 
+         "glmed2_l_tendon", "glmed3_l_tendon",
+         "glmin1_l_tendon", "glmin2_l_tendon", 
+         "glmin3_l_tendon", "iliacus_l_tendon",
+         "piri_l_tendon", "psoas_l_tendon",
+         "tfl_l_tendon"): scale_dict['pelvis'],
+        ("addbrev_r_tendon", "addlong_r_tendon", "addmagDist_r_tendon",
+         "addmagIsch_r_tendon", "addmagMid_r_tendon", "addmagProx_r_tendon",
+         "bflh_r_tendon", "bfsh_r_tendon", "grac_r_tendon"
+         "gaslat_r_tendon", "gasmed_r_tendon", "recfem_r_tendon", 
+         "sart_r_tendon", "semimem_r_tendon", "semiten_r_tendon",
+         "vasint_r_tendon", "vaslat_r_tendon", "vasmed_r_tendon", 
+         "addbrev_l_tendon", "addlong_l_tendon", "addmagDist_l_tendon",
+         "addmagIsch_l_tendon", "addmagMid_l_tendon", "addmagProx_l_tendon",
+         "bflh_l_tendon", "bfsh_l_tendon", "grac_l_tendon"
+         "gaslat_l_tendon", "gasmed_l_tendon", "recfem_l_tendon", 
+         "sart_l_tendon", "semimem_l_tendon", "semiten_l_tendon",
+         "vasint_l_tendon", "vaslat_l_tendon", "vasmed_l_tendon"): scale_dict['thigh'],
+        ("edl_r_tendon", "ehl_r_tendon", "fdl_r_tendon",
+         "fhl_r_tendon", "perbrev_r_tendon", "perlong_r_tendon",
+         "soleus_r_tendon", "tibant_r_tendon", 
+         "tibpost_r_tendon", "edl_l_tendon", "ehl_l_tendon", "fdl_l_tendon",
+         "fhl_l_tendon", "perbrev_l_tendon", "perlong_l_tendon",
+         "soleus_l_tendon", "tibant_l_tendon", 
+         "tibpost_l_tendon"): scale_dict['shank']
+    }
+
+    scale_tendon_springlength_by_muscle_groups("./leg/assets/myolegs_tendon.xml", "./leg/assets_scaled/myolegs_tendon.xml", tendon_scales)
 
     # Destination directory
     dst_dir = 'leg/assets_scaled/'
@@ -479,7 +607,6 @@ if __name__ == "__main__":
         output_path=upper_output_xml,
         scale_factor=scale_dict['torso']
     )
-
 
     #scaling head
     head_input_xml = "./head/assets/myohead_simple_assets.xml"
