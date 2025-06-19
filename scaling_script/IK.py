@@ -43,18 +43,11 @@ def load_mat(task):
     file = f'{task}.mat'
     df_markers = read_markers(path + '/' + file)
 
-
     for marker in ['SACR']:#['RS2', 'LS2', 'RS3', 'LS3', 'RT1', 'RT2', 'RT3', 'LT1', 'LT2', 'LT3']:
         if marker in df_markers:
             del df_markers[marker]
     
     return df_markers
-
-def print_qpos_as_xml(best_qpos, key_name="frame_0000"):
-    qpos_str = ' '.join(f"{x:.8f}" for x in best_qpos)
-    xml = f'<key name="{key_name}" qpos="{qpos_str}"/>'
-    print(xml)
-
 
 def motion(model_name, task, body='leg', num_frames=500):
     mj_model = mujoco.MjModel.from_xml_path(path + f"/{body}/{model_name}.xml")
@@ -84,7 +77,7 @@ def motion(model_name, task, body='leg', num_frames=500):
         site_ids = []
         for name in df_markers.keys():
             marker_pos = df_markers[name][frame]
-            if not np.any(np.isnan(marker_pos)):
+            if not np.any(np.isnan(marker_pos)): #this checks where there's any NaN in marker. If yes eliminate that marker for this optimization.
                 target_pos.append(marker_pos)
                 site_ids.append(site_name_to_id[name])
         target_pos = np.array(target_pos)
@@ -117,7 +110,6 @@ def motion(model_name, task, body='leg', num_frames=500):
             loss = np.nan
 
         mj_data.qpos[:] = best_qpos
-        #print_qpos_as_xml(best_qpos)
         mujoco.mj_forward(mj_model, mj_data)
         renderer_ref.update_scene(mj_data, camera=camera)
         frame_in = renderer_ref.render()
