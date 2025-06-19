@@ -1,11 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
 <mujoco model="MyoSuite's MyoFullBody Model">
 
 
     <include file="../scene/myosuite_scene_noPedestal.xml" />
-    <include file="../torso/assets_scaled/myoTorso_assets.xml" />
-    <include file="../leg/assets_scaled/myolegs_assets.xml" />
-    <include file="../leg/assets_scaled/myolegs_tendon.xml" />
-    <include file="../leg/assets_scaled/myolegs_muscle.xml" />
+    <include file="..\torso\assets_scaled\myoTorso_assets.xml" />
+    <include file="..\leg\assets_scaled\myolegs_assets.xml" />
+    <include file="..\leg\assets_scaled\myolegs_tendon.xml" />
+    <include file="..\leg\assets_scaled\myolegs_muscle.xml" />
 
     <worldbody>
     <camera name="side" pos="2.598 3.214 1.705" xyaxes="-0.750 0.661 0.000 -0.118 -0.134 0.984" />
@@ -14,8 +15,8 @@
 
 
         <body name="Full Body" pos="-.025 0.1 1.1">
-            <include file="../torso/assets_scaled/myotorso_chain.xml" />
-            <include file="../leg/assets_scaled/myolegs_chain.xml" />
+            <include file="..\torso\assets_scaled\myotorso_chain.xml" />
+            <include file="..\leg\assets_scaled\myolegs_chain.xml" />
             <freejoint name="root" />
         </body>
     </worldbody>
