@@ -125,6 +125,9 @@
                                 <site name="Elbow_PT_ECRL_site_ECRL_side" pos="0.03 -0.2872 0.04"/>
                                 <site name="Elbow_PT_FCU_site_FCU_side" pos="0.03 -0.2872 -0.04"/>
 
+                                <site name="RLHE" pos="0.01 -0.2872 0.04" size="0.008" group="5" rgba="1 0.6 1 1"/>
+                                <site name="RMHE" pos="0.01 -0.2872 -0.04" size="0.008" group="5" rgba="1 0.6 1 1"/>
+
                                 <site name="ECRL-P1" pos="-0.0073 -0.2609 0.0091"/>
                                 <site name="ECRB-P1" pos="0.0135 -0.2905 0.017"/>
                                 <site name="ECU-P1" pos="0.0008 -0.2895 0.0188"/>
@@ -430,6 +433,10 @@
                                             <site name="ExtensorEllipse_ellipsoid_site_EIP_side" pos="-0.0195105 -0.00430577 0.0636576"/>
                                             <site name="PL_ellipsoid_site_PL_side" pos="-0.0286005 -0.023546 -0.0168168"/>
 
+                                            <site name="RUSP" pos="-0.0286005 -0.023546 -0.0168168" size="0.008" group="5" rgba="1 0.6 1 1"/>
+                                            <site name="RRSP" pos="0.0486005 -0.023546 -0.0168168" size="0.008" group="5" rgba="1 0.6 1 1"/>
+
+
                                             <site name="FDS_ellipsoid_site_FDS5_side" pos="-0.00481002 -0.034454 -0.0213554"/>
                                             <site name="FDS_ellipsoid_site_FDS4_side" pos="-0.00481002 -0.034454 -0.0213554" />
                                             <site name="FDS_ellipsoid_site_FDS3_side" pos="-0.00481002 -0.034454 -0.0213554" />
@@ -530,14 +537,14 @@
                                                             <site name="IPthumb_site_EPL_side" pos="0.0167862 -0.030399 -0.0079041"/>
                                                             <site name="IPthumb_site_FPL_side" pos="0.00820158 -0.028993 -0.00586527"/>
                                                             <body name="distal_thumb" pos="0.014 -0.0259 -0.0101">
-                                                                <body name="ping_pong_paddle" pos="0 0 0.03" euler="0.1 -0.5 3.14">
+                                                                <body name="ping_pong_paddle2" pos="0 0 0.03" euler="0.1 -0.5 3.14">
                                                                     <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
-                                                                    <geom name="ping_pong_paddle" type="mesh" mesh="ping_pong_paddle_mesh"
+                                                                    <geom name="ping_pong_paddle2" type="mesh" mesh="ping_pong_paddle_mesh"
                                                                         material="paddle_mat" rgba="1 1 1 1"
-                                                                        pos="0 0 0" euler="0 0 0" class="visual"/>
-                                                                    <site name="paddle" pos="-0.06 0. 0" group="4"/>
-                                                                    <geom name="pad" type="cylinder" size="0.082 0.01" pos="-0.07 0 0" class="collision"/>
-                                                                    <geom name="handle" type="cylinder" euler="0 1.57 0" size="0.016 0.051" pos="0.04 0 0" class="collision"/>
+                                                                        pos="0 0 0" euler="0 0 0"/>
+                                                                    <site name="paddle2" pos="-0.06 0. 0" group="4"/>
+                                                                    <geom name="pad2" type="cylinder" size="0.093 0.050" pos="-0.07 0 0" class="collision"/>
+                                                                    <geom name="handle2" type="cylinder" euler="0 1.57 0" size="0.016 0.051" pos="0.04 0 0" class="collision"/>
                                                                 </body>
                                                                 <geom class="myohand_coll" size="0.0065" fromto="0 0 0 0.010 -0.018 -0.007"/>
                                                                 <joint axis="-0.050102 -0.479623 0.876043" name="ip_flexion" pos="0 0 0" range="-1.309 0.436332"/>

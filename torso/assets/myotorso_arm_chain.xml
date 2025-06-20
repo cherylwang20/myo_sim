@@ -191,7 +191,7 @@
         <site name="back_cylinder_s_LTpT_R12_l_1_sidesite" pos="-0.0910785 -0.00276905 0.0534791" class="sidesite"/>
         <site name="back_cylinder_s_LTpL_L1_r_1_sidesite" pos="-0.0370101 0.0990854 -0.0777896" class="sidesite"/>
         <site name="back_cylinder_s_LTpL_L1_l_1_sidesite" pos="-0.0370101 0.0990854 0.0777896" class="sidesite"/>
-        <joint name="flex_extension" pos="0 0 0" axis="0 0 1" range="-1.35 0.7538"/>
+        <joint name="flex_extension" pos="0 0 0" axis="0 0 1" range="-0.1 0"/>
         <joint name="lat_bending" pos="0 0 0" axis="1 0 0" range="-0.4363 0.4363"/>
         <joint name="axial_rotation" pos="0 0 0" axis="0 1 0" range="-0.7854 0.7854"/>
         <geom name="lumbar5_geom_1" type="mesh" mesh="lumbar5_geom_1_lumbar5"/>
@@ -487,6 +487,10 @@
                   <body name="head_attach" pos="-0.005 -0.01 0">
                     <include file="../../../../simhive/myo_sim/head/assets/myohead_rigid_chain.xml"/>
                   </body>
+                  <site name="LACR" pos="0.004 0.429 -0.138" class="myo_scale_marker_torso" />
+                  <site name="RACR" pos="0.004 0.429 0.138" class="myo_scale_marker_torso" />
+                  <site name="C7" pos="-0.055 0.440 -0.000" class="myo_scale_marker_torso" />
+                  <site name="CLAV" pos="0.041 0.419 -0.000" class="myo_scale_marker_torso" />
                   <geom name="torso_geom_1" pos="-0.019 0.121 0" quat="0.980067 0 0 0.198669" type="mesh"  mesh="torso_geom_1_thoracic12_s"/>
                   <geom name="torso_geom_2" pos="-0.032 0.146 0" quat="0.995004 0 0 0.0998334" type="mesh"  mesh="torso_geom_2_thoracic11_s"/>
                   <geom name="torso_geom_3" pos="-0.04 0.171 0" quat="0.997189 0 0 0.0749297" type="mesh"  mesh="torso_geom_3_thoracic10_s"/>
@@ -501,7 +505,7 @@
                   <geom name="torso_geom_12" pos="-0.028 0.375 0" quat="0.988771 0 0 -0.149438" type="mesh"  mesh="torso_geom_12_thoracic1_s"/>
                   <geom name="torso_geom_13" pos="0.028 0.365 0" type="mesh"  mesh="torso_geom_13_ribcage_s"/>
                   <body pos="0 0.36 0.04" euler="-1.57 0 1.57">
-                      <include file="../../../../simhive/myo_sim/arm/assets/myoarm_body_pingpong.xml"/>
+                      <include file="../../../../simhive/myo_sim/arm/assets/myoarm_body.xml"/>
                   </body>
                   <geom type="capsule" class="myotorso_coll" size="0.080 0.077" pos=".036 -.020 0" euler="0 0 1.57"/>
                   <geom type="ellipsoid" class="myotorso_coll" size="0.260 0.095 0.140" pos=".016 .160 0" euler="0 0 1.7"/>
