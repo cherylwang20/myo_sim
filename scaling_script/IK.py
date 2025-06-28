@@ -115,13 +115,18 @@ def motion(model_name, task, body='leg', num_frames=500):
         frame_in = renderer_ref.render()
         frames.append(frame_in)
         qpos_traj.append(best_qpos)
-        qvel_traj.append(mj_data.qvel.copy()) #update the script so 
 
         if frame % 10 == 0:
             tqdm.write(f"Frame {frame+1}/{num_frames}: final loss = {loss:.3f}" if not np.isnan(loss) else f"Frame {frame+1}/{num_frames}: (no optimization)")
 
     output_name = f'./videos/playback_{model_name}_{task}.mp4'
     skvideo.io.vwrite(output_name, np.asarray(frames[5:]), inputdict={"-r": '100'}, outputdict={"-pix_fmt": "yuv420p"})
+    
+    qpos_traj = np.array(qpos_traj)
+    dt = 0.01  # 100 Hz
+    qvel_traj = (qpos_traj[1:] - qpos_traj[:-1]) / dt
+    zero_vel = np.zeros_like(qvel_traj[0])
+    qvel_traj = np.vstack([zero_vel, qvel_traj])
 
     output_base = f'qpos_traj_{model_name}_{task}'
     np.save(output_base + '.npy', {'qpos': np.array(qpos_traj), 'qvel': np.array(qvel_traj)})
