@@ -22,6 +22,9 @@
         <body name="full_body" pos="-.025 0.1 1.40">
             <include file="assets/myoarm_body.xml"/>
         </body>
+        <body name="left_arm" pos=".025 0.1 1.40">
+            <include file="assets/myoarm_left_body.xml"/>
+        </body>
     </worldbody>
 
 </mujoco>
