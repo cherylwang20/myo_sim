@@ -39,6 +39,9 @@
             <default class="marker">
                  <site rgba="1 0.1 0.5 0.5" size="0.001" group="4"/>
             </default>
+            <default class="myo_scale_marker_myoarm">
+                <site size="0.008" group="5" rgba="1 0.6 1 1"/>
+            </default>
         </default>
         <default class="upperarm_muscle">
             <general biasprm="0.75 1.05 -1 200 0.5 1.6 1.5 1.3 1.2 0" biastype="muscle" ctrllimited="true" ctrlrange="0 1" dynprm="0.01 0.04 0 0 0 0 0 0 0 0" dyntype="muscle" gainprm="0.75 1.05 -1 200 0.5 1.6 1.5 1.3 1.2 0" gaintype="muscle"/>

@@ -48,6 +48,7 @@
         <site name="PECM1_PECM1-P3" pos="0.0264476 0.004005 0.057232"/>
         <site name="PECM1_PECM1-P4" pos="0.00321 -0.00013 0.05113"/>
         <site class="marker" name="R.Clavicle_marker" pos="0.01835 -0.00464 -0.00046"/>
+        <site class="myo_scale_marker_myoarm" name="RACR" pos="-0.01835 0.00164 0.18046"/>
 
         <body name="clavphant" pos="-0.01433 0.02007 0.1355">
             <inertial diaginertia="1 1 1" mass="0.001" pos="0 0 0"/>
@@ -331,7 +332,10 @@
                                         <camera name="hand_bottom" pos="0.02 -0.2 -0.55" euler="0 3.14 0"/>
                                         <camera name="hand_side_inter" pos="0.5 -0.3 0" euler="1.57 1.57 0"/>
                                         <camera name="hand_side_exter" pos="-0.5 -0.3 0" euler="1.57 -1.57 0"/>
-
+                                        <site class="myo_scale_marker_myoarm" name="RHLE" pos="-0.02835 0.00364 -0.01546"/>
+                                        <site class="myo_scale_marker_myoarm" name="RFA1" pos="-0.00435 -0.09364 0.02546"/>
+                                        <site class="myo_scale_marker_myoarm" name="RRSP" pos="0.05435 -0.22364 0.02546"/>
+                                        <site class="myo_scale_marker_myoarm" name="RUSP" pos="-0.01835 -0.22364 0.03546"/>
                                         <joint axis="-0.017161 0.992666 -0.119668" name="pro_sup" pos="0 0 0" range="-1.5708 1.5708" damping="0.5"/>
                                         <geom class="myohand_coll" size="0.02" fromto="0.015 0 -.005 0.025 -0.24 0.025"/>
                                         <geom class="myohand_coll" size="0.02" fromto="-.01 0 -.010 0.015 -0.24 0.025"/>
