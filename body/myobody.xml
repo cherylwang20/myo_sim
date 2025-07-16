@@ -16,7 +16,7 @@
     <compiler angle="radian" meshdir=".." texturedir=".."/>
 
     <worldbody>
-        <body name="Full Body" pos="-.025 0.1 1">
+        <body name="Full Body" pos="-.025 0.1 1" euler="0 0 1.57">
             <include file="../torso/assets/myotorso_chain.xml"/>
             <include file="../leg/assets/myolegs_chain.xml"/>
             <freejoint name = 'root'/>

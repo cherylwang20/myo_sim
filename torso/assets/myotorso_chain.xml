@@ -483,9 +483,6 @@
                 <site name="MF_m1t.3_l_MF_m1t.3_l-P2" pos="-0.04094 -0.016 -0.0031"/>
                 <site name="MF_m1.laminar_l_MF_m1.laminar_l-P2" pos="-0.0341019 -0.00560525 -0.00619"/>
                 <body name="torso" pos="-0.018 -0.085 0" euler="0 0 -0.33">
-                  <body name = "head_model" pos="-0.005 -0.01 0">
-                    <include file="../../myo_sim/head/assets/myohead_rigid_chain.xml"/>
-                  </body>
                   <inertial pos="0.0046 0.246 0" mass="18.619" diaginertia="0.165 0.15 0.125"/>
                   <body name="head_attach" pos="-0.005 -0.01 0">
                     <include file="../../myo_sim/head/assets/myohead_rigid_chain.xml"/>
