@@ -16,7 +16,9 @@
     <compiler angle="radian" meshdir=".." texturedir=".."/>
 
     <worldbody>
-        <body name="Full Body" pos="-.025 0.1 1" euler="0 0 1.57">
+        <camera name="side" pos="-2.560 3.518 1.860" xyaxes="-0.744 -0.669 -0.000 0.165 -0.183 0.969"/>
+        
+        <body name="Full Body" pos="-.025 0.1 1.0" euler="0 0 1.57">
             <include file="../torso/assets/myotorso_chain.xml"/>
             <include file="../leg/assets/myolegs_chain.xml"/>
             <freejoint name = 'root'/>
