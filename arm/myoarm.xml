@@ -17,8 +17,8 @@
     </asset>
 
     <worldbody>
-        <camera name="side" pos="-0.958 -1.018 1.336" xyaxes="0.775 -0.632 -0.000 0.101 0.124 0.987"/>
-
+        <camera name="side" pos="0.439 -1.660 1.892" xyaxes="0.945 0.327 0.000 -0.112 0.325 0.939"/>
+        
         <geom name="body" type="mesh" mesh="human_body" euler="0 0 3.14" contype="0" conaffinity="0"/>
         <site class="myo_scale_marker_myoarm" name="CLAV" pos="0 0.05164 1.41046" euler="1.57 -1.57 0"/>
         <body name="full_body" pos="-.025 0.1 1.40">
