@@ -12,7 +12,7 @@
     <option timestep="0.002"/>
 
     <visual>
-        <headlight diffuse="1 1 1"/>
+        <headlight diffuse=".5 .5 .5"/>
         <scale actuatorwidth=".075"/>
     </visual>
 

@@ -6,6 +6,7 @@
     source	:: https://github.com/vikashplus
     License	:: Under Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 ====================================================== -->
+
     <body name="thoraxL" pos="0 0 0" childclass="arm" euler="-1.57 1.57 3.14">
         <inertial diaginertia="0.0764928 0.0573742 0.0471" mass="8.09341" pos="-0.02118 -0.128888 -9.98087e-05" quat="0.988645 -0.00439528 0.000169877 0.150204"/>
         <!-- <geom mesh="ground_geom_1_thorax" name="ground_geom_1" type="mesh"/> -->
@@ -43,7 +44,6 @@
         <joint axis="0.0153 -0.989299 0.1451" name="sternoclavicular_r2L" pos="0 0 0" range="-0.75 0" user="-2.32583e-06"/>  <!-- joint is correct -->
         <joint axis="-0.994473 0 0.104997" name="sternoclavicular_r3L" pos="0 0 0" range="0.0 0.318" user="9.85111e-07"/> <!-- joint is correct -->
         <geom mesh="clavicle_l" name="clavicle_geom_l1" type="mesh" euler="0 3.14 0"/>
-
         <site name="DELT1_DELT1-P4L" pos="0.014 0.01106 0.08021"/>
         <site name="PECM1_PECM1-P3L" pos="-0.0264476 0.004005 0.057232"/>
         <site name="PECM1_PECM1-P4L" pos="-0.00321 -0.00013 0.05113"/>
@@ -55,16 +55,17 @@
             <joint axis="0.0153 -0.989299 0.1451" name="unrotscap_r2L" pos="0 0 0" range="0.0 0.75" user="2.32583e-06"/> <!-- joint is correct -->
 
             <body name="scapulaL" pos="0 0 0" euler="0 0 0">  <!-- DONE WITH MIRRORING -->
-            <geom mesh="scapula_l" name="scapula_geom_l1" type="mesh" euler="0 3.14 0"/>
-
-            <geom class="wrap" name="Deltoid2_ellipsoidL" pos="0.0058 -0.0378 0.0096" quat="0.423842 -0.568442 0.433325 -0.556293" size="0.033"/> <!-- correct -->                
-            <geom class="wrap" name="Delt3_torusL" pos="0.0973 -0.0428 -0.037" quat="-0.916494 -0.246518 0.233162 -0.211903" size="0.04"/> <!-- correct -->
-            <geom class="wrap" name="INFSP_torusL" pos="0.0561 -0.0199 -0.0112" quat="-0.953924 -0.0340622 0.288198 0.0762223" size="0.008"/> <!-- correct -->
-            <geom class="wrap" name="TMIN_ellipsoidL" pos="0.0418 -0.0519 -0.0359" quat="-0.407504 0.492108 -0.706779 -0.3037" size="0.03"/> <!-- correct -->
-            <geom class="wrap" name="TRIlongglen_cylinderL" pos="0.0359 -0.0309 -0.0132" quat="-0.351544 -0.110456 -0.628265 0.685201"  size="0.003 0.015" type="cylinder"/> <!-- correct -->
-            <geom class="wrap" name="Deltoid2_ellipsoid_DELT2L" pos="0.0122268 -0.0345692 0.0127541" quat="0.423842 -0.568442 0.433325 -0.556293" size="0.0297339"/> <!-- correct -->
-
-
+                <inertial diaginertia="0.00199576 0.00103993 0.001" mass="0.70396" pos="0.054694 -0.035032 -0.043734" quat="0.453021 -0.77921 -0.0744129 0.426692"/> <!-- not sure if needs modification -->
+                <joint axis="0.157095 -0.947269 0.279291" name="acromioclavicular_r2L" pos="0 0 0" range="-0.152 -0.0" user="-4.70933e-07"/> <!-- joint is correct -->
+                <joint axis="-0.754084 -0.297594 -0.585487" name="acromioclavicular_r3L" pos="0 0 0" range="0.0 1.228" user="3.80592e-06"/> <!-- joint is correct -->
+                <joint axis="0.6377 -0.1186 -0.7611" name="acromioclavicular_r1L" pos="0 0 0" range="0.0 0.552" user="1.71073e-06"/> <!-- joint is correct -->
+                <geom mesh="scapula_l" name="scapula_geom_l1" type="mesh" euler="0 3.14 0"/>
+                <geom class="wrap" name="Deltoid2_ellipsoidL" pos="0.0058 -0.0378 0.0096" quat="0.423842 -0.568442 0.433325 -0.556293" size="0.033"/> <!-- correct -->                
+                <geom class="wrap" name="Delt3_torusL" pos="0.0973 -0.0428 -0.037" quat="-0.916494 -0.246518 0.233162 -0.211903" size="0.04"/> <!-- correct -->
+                <geom class="wrap" name="INFSP_torusL" pos="0.0561 -0.0199 -0.0112" quat="-0.953924 -0.0340622 0.288198 0.0762223" size="0.008"/> <!-- correct -->
+                <geom class="wrap" name="TMIN_ellipsoidL" pos="0.0418 -0.0519 -0.0359" quat="-0.407504 0.492108 -0.706779 -0.3037" size="0.03"/> <!-- correct -->
+                <geom class="wrap" name="TRIlongglen_cylinderL" pos="0.0359 -0.0309 -0.0132" quat="-0.351544 -0.110456 -0.628265 0.685201"  size="0.003 0.015" type="cylinder"/> <!-- correct -->
+                <geom class="wrap" name="Deltoid2_ellipsoid_DELT2L" pos="0.0122268 -0.0345692 0.0127541" quat="0.423842 -0.568442 0.433325 -0.556293" size="0.0297339"/> <!-- correct -->
                 <site name="Deltoid2_sidesiteL" pos="0.006523 -0.02881 0.04238"/>
                 <site name="Delt3_sidesiteL" pos="0.0973 -0.0428 -0.037"/>
                 <site name="INFSP_sidesiteL" pos="0.0561 -0.0199 -0.0112"/>
@@ -102,32 +103,19 @@
                 <site name="BICshort_BICshort-P1L" pos="-0.01268 -0.03931 -0.02625"/>
                 <site name="BICshort_BICshort-P2L" pos="-0.00093 -0.06704 -0.01593"/>
                 <site class="marker" name="L.Shoulder_marker" pos="-0.0014 -0.00147 0.01369"/>
-
-            
-
-                <inertial diaginertia="0.00199576 0.00103993 0.001" mass="0.70396" pos="0.054694 -0.035032 -0.043734" quat="0.453021 -0.77921 -0.0744129 0.426692"/> <!-- not sure if needs modification -->
-                <joint axis="0.157095 -0.947269 0.279291" name="acromioclavicular_r2L" pos="0 0 0" range="-0.152 -0.0" user="-4.70933e-07"/> <!-- joint is correct -->
-                <joint axis="-0.754084 -0.297594 -0.585487" name="acromioclavicular_r3L" pos="0 0 0" range="0.0 1.228" user="3.80592e-06"/> <!-- joint is correct -->
-                <joint axis="0.6377 -0.1186 -0.7611" name="acromioclavicular_r1L" pos="0 0 0" range="0.0 0.552" user="1.71073e-06"/> <!-- joint is correct -->
-
-                <!-- <site class="marker_arm" name="L.Shoulder_marker" pos="-0.0014 -0.00147 0.01369"/>         IDK about this -->
-                
-                <body name="scapphantL" pos="0.00955 -0.034 0.009" euler="0 0 0">
+                <body name="scapphantL" pos="0.00955 -0.034 0.009">
                     <inertial diaginertia="1 1 1" mass="0.001" pos="0 0 0"/> <!-- not sure if needs modification -->
                     <joint axis="0.6377 -0.1186 -0.7611" name="unrothum_r1L" pos="0 0 0" range="-0.552 -0.0" user="-1.71073e-06"/> <!-- joint is correct -->
                     <joint axis="-0.754084 -0.297594 -0.585487" name="unrothum_r3L" pos="0 0 0" range="-1.228 -0.0" user="-3.80592e-06"/> <!-- joint is correct -->
                     <joint axis="0.157095 -0.947269 0.279291" name="unrothum_r2L" pos="0 0 0" range="0.0 0.152" user="4.70933e-07"/> <!-- joint is correct -->
-                    
-                    <body name="humphantL" pos="0 0 0" euler="0 0 0">
+                    <body name="humphantL" pos="0 0 0">
                         <inertial diaginertia="1 1 1" mass="0.001" pos="0 0 0"/> <!-- not sure if needs modification -->
-                        <joint axis="0.00479995 -0.999089 -0.0423995" name="elv_angleL" pos="0 0 0" range="-1.658 2.269" user="0.251642"/> <!-- joint is correct -->
-                        
+                        <joint axis="0.00479995 -0.999089 -0.0423995" name="elv_angleL" pos="0 0 0" range="-1.658 2.269" user="0.251642"/> <!-- joint is correct -->    
                         <body name="humphant1L" pos="0 0 0" euler="0 0 0">
                             <inertial diaginertia="1 1 1" mass="0.001" pos="0 0 0"/> <!-- not sure if needs modification -->
                             <joint axis="-0.998261 -0.00229991 -0.0588977" name="shoulder_elvL" pos="0 0 0" range="0 3.142" user="9.61084e-06"/> <!-- joint is correct -->
                             <joint axis="0.00479995 -0.999089 -0.0423995" name="shoulder1_r2L" pos="0 0 0" range="-2.242 1.658" user="-0.251642"/> <!-- joint is correct -->
                             <body name="humerusL" pos="0 0 0" euler="0 0 0"> <!-- DONE WITH MIRRORING -->
-
                                 <inertial diaginertia="0.0128576 0.0121576 0.00239265" mass="1.99757" pos="-0.018064 -0.140141 -0.012746" quat="0.407851 -0.343714 0.567755 0.627034"/> <!-- not sure if needs modification -->
                                 <joint axis="0.00479995 -0.999089 -0.0423995" name="shoulder_rotL" pos="0 0 0" range="-1.571 2.094" user="0.161391"/> <!-- joint is correct -->
                                 <geom mesh="humerus_l" name="humerus_geom_l1" type="mesh" euler="0 3.14 0"/>
@@ -137,7 +125,6 @@
                                 <geom name="Elbow_PT_FCU_wrapL" type="sphere" size="0.015" pos="0.005 -0.29 -0.033" class="wrap"></geom>
                                 <site name="Elbow_PT_ECRL_site_ECRL_sideL" pos="-0.03 -0.2872 0.04"/>
                                 <site name="Elbow_PT_FCU_site_FCU_sideL" pos="-0.03 -0.2872 -0.04"/>
-
 
                                 <site name="ECRL-P1L" pos="0.0073 -0.2609 0.0091"/>
                                 <site name="ECRB-P1L" pos="-0.0135 -0.2905 0.017"/>
@@ -154,7 +141,6 @@
                                 <site name="EDC2-P1L" pos="-0.0006 -0.289 0.0187"/>
                                 <site name="EDM-P1L" pos="-0.0009 -0.2892 0.0185"/>
 
-
                                 <geom class="wrap" name="DELT1hh_ellipsoidL" pos="0.0139 -0.0127 -0.0262" quat="-0.83666 -0.160028 0.454758 0.259973" size="0.03"/> <!-- correct -->
                                 <geom class="wrap" name="delt2hum_cylinderL" pos="-0.0017 -0.0958 0.0011" quat="-0.713926 -0.699514 -0.0280022 0.014313" size="0.0109 0.12" type="cylinder"/> <!-- correct -->
                                 <geom class="wrap" name="delt3hum_ellipsoidL" pos="-0.0019 -0.0592 0.0011" quat="-0.156827 -0.126209 0.749421 -0.630749" size="0.01"/> <!-- correct -->
@@ -166,12 +152,8 @@
                                 <geom class="wrap" name="LIGhh_mi_ellipsoidL" pos="0.001 0.004 0.001" quat="-0.923956 0.382499 0 0" size="0.019"/> <!-- correct -->
                                 <geom class="wrap" name="TMINhum_cylinderL" pos="-0.003 -0.0255 0.0013" quat="0.0348606 0.0161876 -0.671884 0.739658" size="0.022 0.0565" type="cylinder" rgba="1 0 0 0"/> <!-- !correct -->
                                 <geom class="wrap" name="TMAJ_LAThum_cylinderL" pos="-0.0007 -0.0443 -0.0055" quat="-0.560987 -0.513042 -0.468432 0.45017" size="0.007 0.02" type="cylinder" rgba="1 0 0 0"/> <!-- !correct -->
-                                <geom class="wrap" name="PEC12hum_cylinderL" pos="-0.002 -0.0508 -0.0017" quat="-0.623759 -0.640765 0.289032 -0.341767" size="0.009 0.035" type="cylinder" rgba="1 0 0 0"/> <!-- !correct -->
-                                
-                                
-                                
-                                <geom class="wrap" name="PEC23hh_sphereL" pos="-0.0086 0.0021 -0.0004" size="0.02" rgba="1 0 0 0"/> <!-- NOT CORRECT correct -->
-                                
+                                <geom class="wrap" name="PEC12hum_cylinderL" pos="-0.002 -0.0508 -0.0017" quat="-0.623759 -0.640765 0.289032 -0.341767" size="0.009 0.035" type="cylinder" rgba="1 0 0 0"/> <!-- !correct -->                              
+                                <geom class="wrap" name="PEC23hh_sphereL" pos="0.0086 0.0021 -0.0004" size="0.02" rgba="1 0 0 0"/> <!-- NOT CORRECT correct -->                                
                                 <geom class="wrap" name="PEC1hh_ellipsoidL" pos="0.0037 0.0005 -0.0025" quat="-0.916754 0.32328 -0.0902682 0.216573" size="0.02"/> <!-- correct -->
                                 <geom class="wrap" name="PEC3hum_cylinderL" pos="-0.0009 -0.0551 -0.0004" quat="-0.495166 -0.406012 -0.520135 0.565176" size="0.008 0.05" type="cylinder" rgba="1 0 0 0"/> <!-- correct -->
                                 <geom class="wrap" name="LAT_TMAJhh_cylinderL" pos="0.0224 0.0102 0.0094" quat="-0.931143 0.140037 -0.0596766 -0.331362" size="0.007 0.0225" type="cylinder" rgba="1 0 0 0"/> <!-- correct -->
@@ -181,37 +163,23 @@
                                 <geom class="wrap" name="TRI_cylinderL" pos="-0.0028 -0.2919 -0.0119" quat="-0.994531 0.0700249 0.0022946 0.0774514" size="0.016 0.05" type="cylinder" rgba="1 0 0 0"/> <!-- correct -->
                                 <geom class="wrap" name="ANC_ellipsoidL" pos="-0.0134 -0.2861 -0.0008" quat="-0.86157 0.0459397 -0.0868616 0.498038" size="0.02"/> <!-- correct -->
                                 <geom class="wrap" name="BIClong_ellipsoidL" pos="-0.0033 0.005 0.0003" quat="-0.227685 0.774064 0.117793 0.578886" size="0.02"/> <!-- correct -->
-
-
                                 <geom class="wrap" name="TMAJ_LAT_PEC_CORBhh_sphereL" pos="-0.0007 0 0.006" size="0.03" rgba="1 0 0 0"/> <!-- correct -->
                                 <geom class="wrap" name="DELT_TMAJ_LAT_PEC_CORBhh_sphereL" pos="-0.0007 0 0.006" size="0.03"/> <!-- correct -->
-
                                 <geom class="wrap" name="CORBhum_cylinderL" pos="-0.0027 -0.1202 -0.0059" quat="-0.642357 0.637406 0.335002 0.262422" size="0.008 0.05" type="cylinder" rgba="1 0 0 0"/> <!-- correct -->
-                                <geom class="wrap" group="1" name="Elbow_PT_ECRL_ellipsoidL" pos="-0.003 -0.2872 -0.0069" quat="-0.947273 0.0932693 -0.0283097 0.305242" size="0.018"/> <!-- correct -->
-
+                                <geom class="wrap" name="Elbow_PT_ECRL_ellipsoidL" pos="-0.003 -0.2872 -0.0069" quat="-0.947273 0.0932693 -0.0283097 0.305242" size="0.018"/> <!-- correct -->
                                 <geom class="wrap" name="LIGhh_s_ellipsoid_s_glenohumL" pos="0.001 0.003 0.003" quat="-0.923956 0.382499 0 0" size="0.02"/> <!-- correct -->
                                 <geom class="wrap" name="LIGhh_mi_ellipsoid_m_glenohumL" pos="0.001 0.004 0.001" quat="-0.923956 0.382499 0 0" size="0.019"/> <!-- correct -->
                                 <geom class="wrap" name="LIGhh_mi_ellipsoid_i_glenohumL" pos="0.001 0.004 0.001" quat="-0.923956 0.382499 0 0" size="0.019"/> <!-- correct -->
                                 <geom class="wrap" name="LIGhh_s_ellipsoid_coracohumL" pos="0.001 0.003 0.003" quat="-0.923956 0.382499 0 0" size="0.02"/> <!-- correct -->
                                 <geom class="wrap" name="DELT1hh_ellipsoid_DELT1L" pos="0.0109974 -0.0095035 -0.0270664" quat="-0.83666 -0.160028 0.454758 0.259973" size="0.029726" rgba="1 0 0 0"/> <!-- correct -->
-
-
                                 <geom class="wrap" name="delt3hum_ellipsoid_DELT3L" pos="-0.0044 -0.0617 0.00343794" quat="-0.156827 -0.126209 0.749421 -0.630749" size="0.0125"/> <!-- correct -->
                                 <geom class="wrap" name="SUPSP_ellipsoid_SUPSPL" pos="-0.00110546 0.00820496 0.00197985" quat="-0.793859 -0.0125049 0.0149602 -0.607789" size="0.0202151"/> <!-- correct -->
                                 <geom class="wrap" name="SUBSCAP_ellipsoid_SUBSCL" pos="0.0026089 -0.00113613 -0.00633073" quat="-0.881836 0.408886 0.210176 0.104899" size="0.0171729"/> <!-- correct -->
                                 <geom class="wrap" name="INFSP_and_TMIN_hum_head_ellipsoid_TMINL" pos="0.000927281 -0.000469167 0.00327226" quat="-0.989183 0.142571 -0.00937337 -0.0332047" size="0.025" rgba="1 0 0 0"/> <!-- correct -->
-                               
-
-                               
                                 <geom class="wrap" name="PEC1hh_ellipsoid_PECM1L" pos="-0.0013 -0.0038025 -0.00451178" quat="-0.916754 0.32328 -0.0902682 0.216573" size="0.0221545"/> <!-- correct -->
-
                                 <geom class="wrap" name="TRIlonghh_ellipsoid_TRIlongL" pos="0.00 -0.00 -0.00" quat="-0.414166 -0.226558 -0.879857 -0.0546691" size="0.02"/> <!-- correct -->
                                 <geom class="wrap" name="ANC_ellipsoid_ANCL" pos="-0.0121714 -0.288051 -0.00144365" quat="-0.86157 0.0459397 -0.0868616 0.498038" size="0.0180029"/> <!-- correct -->
-
                                 <geom class="wrap" name="Elbow_BIC_BRD_ellipsoid_BIClongL" pos="-0.00296577 -0.290569 -0.0121662" quat="-0.995526 0.0630434 0.0695304 0.0108779" size="0.0150371"/> <!-- correct -->
-
-
-
                                 <geom class="wrap" name="BIClong_ellipsoid_BIClongL" pos="-0.0033 0.005 0.0003" quat="-0.227685 0.774064 0.117793 0.578886" size="0.02"/> <!-- correct -->
                                 <geom class="wrap" name="Elbow_BIC_BRD_ellipsoid_BICshortL" pos="-0.00286868 -0.290754 -0.0140545" quat="-0.995526 0.0630434 0.0695304 0.0108779" size="0.0162859"/> <!-- correct -->
 
@@ -323,15 +291,13 @@
                                 <site class="marker" name="L.Bicep_marker" pos="-0.01591 -0.181 -0.00553"/>
                                 <site class="marker" name="L.Elbow.Lateral_marker" pos="-0.00509 -0.2806 0.02884"/>
                                 <site class="marker" name="L.Elbow.Medial_marker" pos="0.00407 -0.2844 -0.05408"/>
- 
                                 <body name="ulnaL" pos="-0.0061 -0.2904 -0.0123" childclass="elbow" euler="0 0 0">  <!-- DONE WITH MIRRORING -->
-
                                     <inertial diaginertia="0.00543663 0.00523521 0.001" mass="1.1053" pos="-0.00971783 -0.0959509 0.024286" quat="0.792048 -0.609078 -0.0156735 0.0379256"/> <!-- not sure if needs modification -->
                                     <joint axis="0.0494004 -0.0366003 -0.998108" name="elbow_flexionL" pos="0 0 0" range="0 2.269" user="1.05676"/> <!-- joint is correct -->
                                     <geom mesh="ulna_l" name="ulna_geom_l1" type="mesh" euler="0 3.14 0"/>
                                     <geom name="PQ2_cylinderL" class="wrap" pos="0.0012 -0.2092 0.0428" quat="-0.540392 -0.481982 -0.422482 0.545141" size="0.007 0.05" type="cylinder"/> <!-- correct , had to change w and x in quat to work, changed x pos -->
+                                    
                                     <geom name="PQ2_wrapL" pos="0.0012 -0.2092 0.0428" quat="-0.540178 -0.481989 -0.422693 0.545183" class="wrap" size="0.007 0.005" type="cylinder"/> <!-- correct, had to change w and x in quat to work, had to change x pos to postive  -->
-
                                     <site name="ECU-P2L" pos="0.0139 -0.032 0.0295"/>
                                     <site name="ECU-P3L" pos="0.017 -0.0543 0.0287"/>
                                     <site name="ECU-P4L" pos="0.0179 -0.0957 0.0328"/>
@@ -357,25 +323,18 @@
                                     <site name="SUP_SUP-P3L" pos="0.0136 -0.03384 0.02013"/>
                                     <site name="BRA_BRA-P4L" pos="0.0032 -0.0239 0.0009"/>
                                     <site class="marker" name="L.Ulna_marker" pos="0.01672 -0.2416 0.04782"/>
-
-
-
                                     <body name="radiusL" pos="-0.0004 -0.0115 0.02" euler="0 0 0"> <!-- DONE WITH MIRRORING -->
-
                                         <inertial diaginertia="0.001 0.001 0.001" mass="0.23359" pos="-0.0336341 -0.181559 0.0156" quat="0.770264 -0.63559 -0.0119833 0.0507376"/> <!-- not sure if needs modification -->
+                                        
                                         <geom name="radius_collL" type="capsule" class="myoarm_coll" size="0.030" fromto="0 0 0 -0.015 -0.235841 0.028" euler="1.4 0.1 0.12"/> <!-- visual is correct but might need to change euler for the rest of the arm, not sure -->
-                       
-
                                         <joint axis="-0.017161 -0.992666 0.119668" name="pro_supL" pos="0 0 0" range="-1.5708 1.5708" damping="0.5"/> <!-- joint is correct -->
-                                        <geom name="ARM1" class="myohand_coll" size="0.02" fromto="-0.015 0 -.005 -0.025 -0.24 0.025"/> <!-- correct -->
-                                        <geom name="ARM2" class="myohand_coll" size="0.02" fromto=".01 0 -.010 -0.015 -0.24 0.025"/> <!-- correct -->
+                                        <geom class="myohand_coll" size="0.02" fromto="-0.015 0 -.005 -0.025 -0.24 0.025"/> <!-- correct -->
+                                        <geom class="myohand_coll" size="0.02" fromto=".01 0 -.010 -0.015 -0.24 0.025"/> <!-- correct -->
                                         <geom mesh="radius_l" name="radiusl" type="mesh" euler="0 3.14 0"/>
 
                                         <geom name="SUP_wrapL" pos="-0.0045 -0.0437 0.0059" quat="-0.348354 -0.118086 0.653837 -0.661213" class="wrap" size="0.008 0.02" type="cylinder"/> <!-- correct -->
                                         <geom name="PQ1_wrapL" pos="-0.0281 -0.1986 0.0288" quat="-0.15975 0.156797 -0.702725 -0.675331" class="wrap" size="0.01 0.005" type="cylinder"/> <!-- correct -->
                                         <geom name="ECU_torus_wrapL" pos="0.0163 -0.2417 0.0349" quat="-0.868975 0.476593 -0.0126204 0.132601" class="wrap" size="0.003"/> <!-- correct -->
-
-
                                         <site name="ECRL-P2L" pos="-0.032 -0.1346 0.0278"/>
                                         <site name="ECRL-P3L" pos="-0.0424 -0.2368 0.0362"/>
                                         <site name="ECRB-P2L" pos="-0.029 -0.1309 0.0238"/>
@@ -428,9 +387,7 @@
 
                                         <geom class="wrap" name="SUP_cylinderL" pos="-0.0045 -0.0437 0.0059" quat="-0.348335 -0.118148 0.653915 -0.661134" size="0.008 0.02" type="cylinder"/> <!-- correct -->
                                         <geom class="wrap" name="ECU_torusL" pos="0.0163 -0.2417 0.0349" quat="-0.868982 0.476579 -0.0126339 0.132605" size="0.006"/> <!-- correct -->
-                                        <geom class="wrap" name="PQ1_cylinderL" pos="-0.0281 -0.1986 0.0288" quat="-0.159804 0.156915 -0.702833 -0.675179" size="0.01 0.05" type="cylinder"/> <!-- correct -->
-                                       
-                                       
+                                        <geom class="wrap" name="PQ1_cylinderL" pos="-0.0281 -0.1986 0.0288" quat="-0.159804 0.156915 -0.702833 -0.675179" size="0.01 0.05" type="cylinder"/> <!-- correct -->    
                                         <site name="SUP_sidesiteL" pos="-0.01106 -0.04094 0.01141"/> <!-- correct -->
                                         <site name="ECU_sidesiteL" pos="0.0163 -0.2417 0.0349"/> <!-- correct -->
                                         <site name="SUP_SUP-P1L" pos="-0.00996 -0.06096 0.00075"/> <!-- correct -->
@@ -444,16 +401,11 @@
                                         <site name="BRD_BRD-P3L" pos="-0.0419 -0.221 0.0224"/> <!-- correct -->
                                         <site class="marker" name="L.Forearm_marker" pos="-0.03828 -0.1133 0.0174"/> <!-- correct -->
                                         <site class="marker" name="L.Radius_marker" pos="-0.05749 -0.2272 0.02738"/> <!-- correct -->
-                                            
-                                            <!--LEFT HAND -->
-                                            
-                                            
-                                            
+        
                                         <body name="lunateL" pos="-0.018 -0.242 0.025" childclass="wrist">
                                             <joint axis="0 0 1" name="deviationL" pos="0 0 0" range="-0.174533 0.436332" damping="0.25"/>
                                             <joint axis="1 0 0" name="flexionL" pos="0 0 0" range="-0.785398 0.785398" damping="0.25"/>
                                             <geom mesh="lunate_l" name="lunatel" type="mesh"/>
-                                            
                                             <geom name="WristExtensor_wrapL" pos="-0.0007 0 0.003" quat="0.807649 -0.0333177 -0.588355 -0.0207694" class="wrap" size="0.008 0.02" type="cylinder"/>
                                             <geom name="WristFlexor_wrapL" pos="0 -0.01 -0.004" quat="0.807649 -0.0333177 -0.588355 -0.0207694" class="wrap" size="0.007 0.02" type="cylinder" rgba="1 1 1 1"/>
                                             <geom name="ExtensorEllipse_ellipsoid_wrapL" pos="0.00145969 -0.0060009 -0.00892632" quat="0.977473 -0.106567 -0.15459 -0.0963907" class="wrap" size="0.0237409"/>
@@ -620,7 +572,6 @@
                                                     <site name="2ndmcp_ellipsoid_site_EDC2_sideL" pos="-0.0058 -0.0294 0.0087"/>
                                                     <site name="2ndmcp_ellipsoid_site_EIP_sideL" pos="-0.0058 -0.0294 0.0087"/>
                                                     <site name="2ndmcp_ellipsoid_site_RI2_sideL" pos="0.0107522 -0.0332733 0.00473501"/>
-
                                                     <body name="proxph2L" pos="-0.0020 -0.028243 0.00362">
                                                         <joint axis="0.995013 -0.1 0.1" name="mcp2_flexionL" pos="0 0 0" range="0 1.5708"/>
                                                         <joint axis="-0.054999 0.085899 0.994785"  name="mcp2_abductionL" pos="0 0 0" range="-0.261799 0.261799"/>
