@@ -136,6 +136,7 @@
         <mesh name="2distph_l" file="../myo_sim/meshes/2distphL.stl" scale="1 1 1"/>
         <mesh name="3mc_l" file="../myo_sim/meshes/3mcL.stl" scale="1 1 1"/>
         <mesh name="3proxph_l" file="../myo_sim/meshes/3proxphL.stl" scale="1 1 1"/>
+        <mesh name="3midph_l" file="../myo_sim/meshes/3midphL.stl" scale="1 1 1"/>
         <mesh name="3distph_l" file="../myo_sim/meshes/3distphL.stl" scale="1 1 1"/>
         <mesh name="4mc_l" file="../myo_sim/meshes/4mcL.stl" scale="1 1 1"/>
         <mesh name="4proxph_l" file="../myo_sim/meshes/4proxphL.stl" scale="1 1 1"/>
@@ -898,7 +899,7 @@
             <site site="PECM2_PECM2-P2L"/>
             <geom geom="TMAJ_LAT_PEC_CORBhh_sphereL" />
             <site site="PECM2_PECM2-P3L"/>
-            <geom geom="Thorax_ellipsoid_PECM2" sidesite="Thorax_ellipsoid_PECM2_3_sidesite"/>
+            <geom geom="Thorax_ellipsoid_PECM2L" sidesite="Thorax_ellipsoid_PECM2_3_sidesiteL"/>
             <site site="PECM2_PECM2-P4L"/>
         </spatial>
         <spatial name="PECM3_tendonL" class="upperarm_muscle">
@@ -906,7 +907,7 @@
             <site site="PECM3_PECM3-P2L"/>
             <geom geom="PEC23hh_sphereL" />
             <site site="PECM3_PECM3-P3L"/>
-            <geom geom="Thorax_ellipsoid_PECM3" sidesite="Thorax_ellipsoid_PECM3_3_sidesite"/>
+            <geom geom="Thorax_ellipsoid_PECM3L" sidesite="Thorax_ellipsoid_PECM3_3_sidesiteL"/>
             <site site="PECM3_PECM3-P4L"/>
         </spatial>
         <spatial name="LAT1_tendonL" class="upperarm_muscle">

@@ -37,6 +37,7 @@
         <site class="marker" name="C7_markerL" pos="0.05613 0.05528 -0.00151"/>
         <site name="TMAJ_LAT_PEC_CORBhh_sphere_PECM2_2_sidesiteL" pos="-0.0510248 -0.016092 -0.0573453" rgba="1 0 0 0"/>
     </body>
+    
     <body name="clavicleL" pos="-0.006325 -0.02547 0.00693" childclass="arm" euler="-1.57 1.57 3.14">
         <inertial diaginertia="0.001 0.001 0.001" mass="0.156" pos="0.011096 0.0063723 0.054168" quat="0.906292 -0.0334036 -0.164622 -0.387838"/> <!-- not sure if needs modification -->
         <joint axis="0.0153 -0.989299 0.1451" name="sternoclavicular_r2L" pos="0 0 0" range="-0.75 0" user="-2.32583e-06"/>  <!-- joint is correct -->
@@ -765,7 +766,7 @@
                                                         <body name="midph3L" pos="-0.00165 -0.044211 0.00623">
                                                             <joint axis="1 0 0" name="pm3_flexionL" pos="0 0 0" range="0 1.5708"/>
                                                             <geom class="myohand_coll" size="0.008 0.014" pos="0 -0.014 0.00" euler="1.5 0 -.35"/>
-                                                            <!--geom mesh="3midph_l" name="3midphL" type="mesh"/> This mesh is missing-->
+                                                            <geom mesh="3midph_l" name="3midphL" type="mesh"/>
                                                             <inertial pos="0 0 0" mass="0.002" fullinertia="0.0001 0.0001 0.0001 0 0 0"/>
                                                             <geom name="Thirdmd_wrapL" pos="-0.0014 -0.0289 0.0012" quat="0.708186 -0.0221627 0.701515 -0.0765368" class="wrap" size="0.003 0.005" type="cylinder"/>
                                                             <!-- <site name="FDS3-P8" pos="-0.001 -0.013 -0.006"/>
